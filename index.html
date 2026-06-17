@@ -387,6 +387,33 @@
       padding-left: 1.2rem;
       border-left: 2px solid var(--teal);
     }
+    .sobre-photo-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      max-width: 340px;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 60px rgba(31,58,82,0.18);
+    }
+    .sobre-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .sobre-photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 1.4rem;
+      background: linear-gradient(to top, rgba(31,58,82,0.92), transparent);
+      color: rgba(255,255,255,0.85);
+      font-family: var(--ff-label);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
     .sobre-right p {
       font-size: 0.96rem;
       color: var(--slate);
@@ -1051,6 +1078,10 @@
       </div>
 
       <div class="sobre-right reveal reveal-delay-2">
+        <div class="sobre-photo-wrap">
+          <img src="rodrigo-silva.png" alt="Rodrigo Silva — Fundador ANT Capital" />
+          <div class="sobre-photo-caption">Rodrigo Silva — Fundador &amp; Consultor</div>
+        </div>
         <p>A trajetória de <strong>Rodrigo Silva</strong> é pautada pela convicção de que a saúde financeira é o pilar de sustentação de qualquer projeto perene. Com mais de uma década de atuação como consultor especializado para escritórios de contabilidade, Rodrigo desenvolveu uma visão privilegiada sobre a gestão empresarial, ajudando dezenas de organizações a atingirem níveis superiores de performance operacional e técnica.</p>
 
         <p><strong>A Fundação da ANT Capital</strong> surgiu da observação atenta do mercado brasileiro. Ao presenciar o fechamento precoce de pequenas e médias empresas — muitas vezes por falta de uma reserva de contingência ou de processos financeiros básicos — Rodrigo identificou a necessidade de uma consultoria que fosse além do suporte contábil tradicional.</p>
