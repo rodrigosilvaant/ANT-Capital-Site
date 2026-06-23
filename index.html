@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT Capital — Planejamento Financeiro Estratégico</title>
+  <link rel="icon" type="image/png" href="LOGO_AZUL_TRANSPARENTE.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -953,6 +954,71 @@
       .hero-actions .btn { width: 100%; justify-content: center; }
       .sobre-pilares { grid-template-columns: 1fr 1fr; }
     }
+    /* ─── WHATSAPP FLUTUANTE ─── */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: #25D366;
+      color: white;
+      border-radius: 50px;
+      padding: 0.8rem 1.4rem 0.8rem 1rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      font-family: var(--ff-label);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+      animation: waEntrance 0.6s 1.5s var(--ease) both;
+    }
+    .wa-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+    }
+    .wa-float svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    @keyframes waEntrance {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* WhatsApp inline no contato */
+    .wa-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25D366;
+      color: white;
+      border-radius: 3px;
+      padding: 0.85rem 1.6rem;
+      font-family: var(--ff-label);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s var(--ease);
+      margin-top: 1.5rem;
+      width: 100%;
+      justify-content: center;
+    }
+    .wa-inline:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+    }
+    .wa-inline svg { width: 18px; height: 18px; flex-shrink: 0; }
   </style>
 </head>
 
@@ -1291,6 +1357,10 @@
             <span>Belo Horizonte, MG — Atendimento online para todo o Brasil</span>
           </div>
         </div>
+        <a class="wa-inline" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+          Prefiro falar pelo WhatsApp
+        </a>
       </div>
 
       <div class="form-box reveal reveal-delay-2">
@@ -1444,5 +1514,11 @@
       }
     }
   </script>
+  <!-- WhatsApp Flutuante -->
+  <a class="wa-float" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+    Falar no WhatsApp
+  </a>
+
 </body>
 </html>
