@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANT Processos — Automação para Escritórios Contábeis</title>
+  <meta name="description" content="Diagnóstico, automação e melhoria de processos para escritórios de contabilidade de 2 a 10 funcionários. Um serviço ANT Capital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0c10;
+      color: #e8eaf0;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── TOKENS ── */
+    :root {
+      --blue: #2563eb;
+      --blue-light: #3b82f6;
+      --blue-dim: rgba(37,99,235,0.12);
+      --blue-border: rgba(37,99,235,0.3);
+      --surface: #0f1117;
+      --surface-2: #14181f;
+      --surface-3: #1a1f2a;
+      --border: rgba(255,255,255,0.07);
+      --border-strong: rgba(255,255,255,0.13);
+      --text: #e8eaf0;
+      --text-2: #9ca3b0;
+      --text-3: #6b7080;
+      --amber: #f59e0b;
+      --amber-dim: rgba(245,158,11,0.1);
+      --radius: 10px;
+      --radius-lg: 16px;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3 { line-height: 1.2; letter-spacing: -0.03em; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 700; }
+    h3 { font-size: 1.1rem; font-weight: 600; }
+    .serif { font-family: 'Playfair Display', serif; font-style: italic; }
+    .label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--blue-light);
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section-sm { padding: 64px 0; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,12,16,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { height: 28px; }
+    .nav-divider {
+      width: 1px; height: 18px; background: var(--border-strong);
+    }
+    .nav-product {
+      font-size: 13px; font-weight: 600; color: var(--blue-light);
+      letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; color: var(--text-2);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .btn-nav {
+      font-size: 13px; font-weight: 600;
+      background: var(--blue); color: #fff;
+      padding: 8px 18px; border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .btn-nav:hover { background: var(--blue-light); }
+    .nav-mobile-btn { display: none; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 100px 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-dim); border: 1px solid var(--blue-border);
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 12px; font-weight: 500; color: var(--blue-light);
+      margin-bottom: 28px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue-light);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero h1 { max-width: 680px; margin-bottom: 20px; }
+    .hero h1 em { font-style: normal; color: var(--blue-light); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--text-2); max-width: 520px;
+      margin-bottom: 36px; line-height: 1.7;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: #fff;
+      font-size: 14px; font-weight: 600;
+      padding: 13px 24px; border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border-strong); color: var(--text-2);
+      font-size: 14px; font-weight: 500;
+      padding: 13px 24px; border-radius: var(--radius);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--text-3); color: var(--text); }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 56px;
+      padding-top: 40px; border-top: 1px solid var(--border);
+    }
+    .stat-value {
+      font-size: 1.8rem; font-weight: 700; color: var(--text);
+      letter-spacing: -0.03em;
+    }
+    .stat-label { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+
+    /* ── PROBLEMA ── */
+    .problema { background: var(--surface); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 48px;
+    }
+    .pain-item {
+      background: var(--surface-2);
+      padding: 28px;
+    }
+    .pain-emoji { font-size: 22px; margin-bottom: 14px; }
+    .pain-item h3 { font-size: 14px; margin-bottom: 8px; }
+    .pain-item p { font-size: 13px; color: var(--text-2); line-height: 1.65; }
+
+    /* ── SOLUÇÃO / FASES ── */
+    .fases-wrap { margin-top: 56px; }
+    .fase {
+      display: grid; grid-template-columns: 220px 1fr;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+    .fase:hover { border-color: var(--blue-border); }
+    .fase-left {
+      padding: 28px 24px;
+      background: var(--surface-2);
+      border-right: 1px solid var(--border);
+    }
+    .fase-num {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-3);
+      margin-bottom: 8px;
+    }
+    .fase-name {
+      font-size: 16px; font-weight: 600; color: var(--text);
+      margin-bottom: 8px;
+    }
+    .fase-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 500;
+      padding: 3px 10px; border-radius: 20px;
+      background: var(--blue-dim); color: var(--blue-light);
+      border: 1px solid var(--blue-border);
+    }
+    .fase-tag.green {
+      background: rgba(16,185,129,0.1);
+      color: #34d399;
+      border-color: rgba(16,185,129,0.25);
+    }
+    .fase-right { padding: 28px 32px; }
+    .fase-desc {
+      font-size: 14px; color: var(--text-2); line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .fase-bullets {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .fase-bullet {
+      font-size: 13px; color: var(--text-3);
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .fase-bullet::before {
+      content: '→';
+      color: var(--blue-light); flex-shrink: 0;
+    }
+
+    /* ── AUTOMAÇÕES ── */
+    .auto-section { background: var(--surface); }
+    .auto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px; margin-top: 48px;
+    }
+    .auto-card {
+      padding: 24px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .auto-card:hover { border-color: var(--blue-border); transform: translateY(-2px); }
+    .auto-icon { font-size: 24px; margin-bottom: 14px; }
+    .auto-card h3 { font-size: 14px; margin-bottom: 8px; }
+    .auto-card p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+    .auto-flow {
+      display: flex; align-items: center; gap: 6px;
+      margin-top: 12px; flex-wrap: wrap;
+    }
+    .flow-node {
+      font-size: 11px; color: var(--text-3);
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      border-radius: 4px; padding: 2px 8px;
+    }
+    .flow-arrow { color: var(--text-3); font-size: 11px; }
+
+    /* ── PLANOS ── */
+    .planos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; margin-top: 48px;
+    }
+    .plano-card {
+      padding: 28px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      position: relative;
+    }
+    .plano-card.featured {
+      border-color: var(--blue);
+      background: linear-gradient(135deg, var(--surface-2) 60%, rgba(37,99,235,0.06));
+    }
+    .plano-badge {
+      position: absolute; top: -11px; left: 20px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--blue); color: #fff;
+      padding: 3px 12px; border-radius: 20px;
+    }
+    .plano-name {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-3);
+      margin-bottom: 10px;
+    }
+    .plano-price {
+      font-size: 2rem; font-weight: 700; color: var(--text);
+      letter-spacing: -0.04em; margin-bottom: 4px;
+    }
+    .plano-price span { font-size: 14px; font-weight: 400; color: var(--text-3); }
+    .plano-recur {
+      font-size: 12px; color: var(--text-3); margin-bottom: 20px;
+    }
+    .plano-divider {
+      border: none; border-top: 1px solid var(--border); margin: 16px 0;
+    }
+    .plano-item {
+      font-size: 13px; color: var(--text-2);
+      display: flex; gap: 9px; align-items: flex-start;
+      padding: 4px 0;
+    }
+    .plano-item::before {
+      content: '✓'; color: var(--blue-light);
+      font-weight: 700; font-size: 12px;
+      flex-shrink: 0; margin-top: 1px;
+    }
+
+    /* ── GARANTIA ── */
+    .garantia-box {
+      background: rgba(16,185,129,0.06);
+      border: 1px solid rgba(16,185,129,0.2);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      display: flex; gap: 20px; align-items: flex-start;
+      margin-top: 48px;
+    }
+    .garantia-icon { font-size: 32px; flex-shrink: 0; }
+    .garantia-title {
+      font-size: 15px; font-weight: 600; color: #34d399;
+      margin-bottom: 6px;
+    }
+    .garantia-text { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+
+    /* ── SOBRE ── */
+    .sobre-section { background: var(--surface); }
+    .sobre-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .sobre-label { margin-bottom: 12px; }
+    .sobre-text {
+      font-size: 14px; color: var(--text-2); line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .sobre-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .sobre-img img { width: 100%; }
+    .sobre-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500; color: var(--blue-light);
+      border-bottom: 1px solid var(--blue-border);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .sobre-link:hover { color: var(--text); }
+
+    /* ── CTA FINAL ── */
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(135deg, var(--surface-2) 0%, rgba(37,99,235,0.06) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-section h2 { max-width: 560px; margin: 0 auto 16px; }
+    .cta-section p {
+      font-size: 15px; color: var(--text-2);
+      max-width: 440px; margin: 0 auto 32px;
+    }
+    .cta-contacts {
+      display: flex; justify-content: center; gap: 32px;
+      margin-top: 36px; flex-wrap: wrap;
+    }
+    .cta-contact-item {
+      font-size: 13px; color: var(--text-2);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .cta-contact-item span { font-size: 16px; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo img { height: 22px; opacity: 0.6; }
+    .footer-product {
+      font-size: 12px; color: var(--text-3);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a {
+      font-size: 12px; color: var(--text-3);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-2); }
+    .footer-copy { font-size: 12px; color: var(--text-3); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+      background: #25d366; color: #fff;
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      transition: transform 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: flex; }
+      .fase { grid-template-columns: 1fr; }
+      .fase-left { border-right: none; border-bottom: 1px solid var(--border); }
+      .sobre-inner { grid-template-columns: 1fr; }
+      .sobre-img { order: -1; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <div class="nav-logo">
+      <a href="https://www.antcapital.com.br">
+        <img src="https://www.antcapital.com.br/LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
+      </a>
+      <div class="nav-divider"></div>
+      <span class="nav-product">ANT Processos</span>
+    </div>
+    <div class="nav-links">
+      <a href="#problema">O Problema</a>
+      <a href="#solucao">Solução</a>
+      <a href="#automacoes">Automações</a>
+      <a href="#planos">Planos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20saber%20mais." class="btn-nav">Diagnóstico grátis</a>
+    </div>
+    <a href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20saber%20mais." class="btn-nav nav-mobile-btn">Falar agora</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-badge">Um serviço ANT Capital para escritórios de contabilidade</div>
+    <h1>Seu escritório contábil<br /><em>no piloto automático.</em></h1>
+    <p class="hero-sub">
+      Diagnóstico, automação e melhoria de processos para escritórios de 2 a 10 funcionários. Menos retrabalho, menos urgência, mais margem para o que realmente importa.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20agendar%20um%20diagn%C3%B3stico%20gratuito." class="btn-primary">
+        Agendar diagnóstico gratuito ↗
+      </a>
+      <a href="#automacoes" class="btn-ghost">Ver o que automatizamos</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-value">4–8h</div>
+        <div class="stat-label">economizadas por semana em média</div>
+      </div>
+      <div>
+        <div class="stat-value">30 dias</div>
+        <div class="stat-label">do diagnóstico ao go-live</div>
+      </div>
+      <div>
+        <div class="stat-value">R$ 0</div>
+        <div class="stat-label">custo do diagnóstico inicial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="section problema" id="problema">
+  <div class="container">
+    <div class="label">O problema</div>
+    <h2 style="margin-top: 12px; max-width: 560px;">
+      O maior gargalo do seu escritório<br />
+      <span class="serif">não é falta de cliente.</span>
+    </h2>
+    <p style="color: var(--text-2); max-width: 520px; margin-top: 14px; font-size: 15px; line-height: 1.7;">
+      É o tempo que a equipe perde todo mês em tarefas que poderiam estar rodando sozinhas — enquanto o trabalho técnico fica para depois.
+    </p>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <div class="pain-emoji">📄</div>
+        <h3>Cobrança manual de documentos</h3>
+        <p>Alguém da equipe passa horas enviando mensagens um por um pedindo notas, extratos e recibos. Todo mês, do zero.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-emoji">📅</div>
+        <h3>Prazos fiscais no improviso</h3>
+        <p>DCTF, eSocial, SPED, EFD-Reinf — cada cliente tem um calendário. Controlar tudo na cabeça ou em planilha é uma bomba-relógio.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-emoji">🔁</div>
+        <h3>Retrabalho constante</h3>
+        <p>Cliente manda dado errado ou incompleto. O contador corrige, devolve, espera, recebe errado de novo. O ciclo não para.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-emoji">🧑‍💼</div>
+        <h3>Onboarding sem padrão</h3>
+        <p>Cada cliente novo é uma correria diferente. Sem checklist, sem fluxo — sempre falta alguma coisa e sempre alguém retrabalha.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-emoji">💬</div>
+        <h3>Atendimento que interrompe tudo</h3>
+        <p>"Minha guia vence quando?" — o contador para o que está fazendo para responder o que um bot resolveria em segundos.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-emoji">⚙️</div>
+        <h3>Zero TI — e nunca vai ter</h3>
+        <p>Escritório de 2 a 10 pessoas não tem setor de TI. Nunca vai ter. E fica preso a ferramentas que não conversam entre si.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section class="section" id="solucao">
+  <div class="container">
+    <div class="label">Como funciona</div>
+    <h2 style="margin-top: 12px; max-width: 560px;">
+      Três fases. Do caos à<br />
+      <span class="serif">operação que roda sozinha.</span>
+    </h2>
+    <div class="fases-wrap">
+      <div class="fase">
+        <div class="fase-left">
+          <div class="fase-num">Fase 01</div>
+          <div class="fase-name">Diagnóstico Aprofundado</div>
+          <span class="fase-tag">1–2 semanas</span>
+        </div>
+        <div class="fase-right">
+          <p class="fase-desc">Mapeamos todos os processos internos do escritório, identificamos onde está o maior desperdício de tempo e definimos juntos quais automações têm maior impacto imediato.</p>
+          <div class="fase-bullets">
+            <div class="fase-bullet">Entrevista estruturada com toda a equipe</div>
+            <div class="fase-bullet">Mapa visual dos processos atuais</div>
+            <div class="fase-bullet">Relatório de prioridades com estimativa de ganho por automação</div>
+            <div class="fase-bullet">Validação do plano com o responsável do escritório</div>
+          </div>
+        </div>
+      </div>
+      <div class="fase">
+        <div class="fase-left">
+          <div class="fase-num">Fase 02</div>
+          <div class="fase-name">Implementação</div>
+          <span class="fase-tag">2–4 semanas</span>
+        </div>
+        <div class="fase-right">
+          <p class="fase-desc">Configuramos e implantamos as automações priorizadas, integramos com os sistemas que o escritório já usa e treinamos a equipe para operar tudo com autonomia.</p>
+          <div class="fase-bullets">
+            <div class="fase-bullet">Configuração dos fluxos no Make + inteligência artificial (Claude API)</div>
+            <div class="fase-bullet">Integração com seu sistema contábil, WhatsApp e e-mail</div>
+            <div class="fase-bullet">Testes e ajustes antes do go-live</div>
+            <div class="fase-bullet">Treinamento prático da equipe + documentação completa</div>
+          </div>
+        </div>
+      </div>
+      <div class="fase">
+        <div class="fase-left">
+          <div class="fase-num">Fase 03</div>
+          <div class="fase-name">Sustentação Mensal</div>
+          <span class="fase-tag green">Recorrente</span>
+        </div>
+        <div class="fase-right">
+          <p class="fase-desc">Após o go-live, acompanhamos mensalmente para garantir que tudo funcione, evoluímos as automações conforme o escritório cresce e respondemos às dúvidas da equipe.</p>
+          <div class="fase-bullets">
+            <div class="fase-bullet">Check-in mensal de performance das automações</div>
+            <div class="fase-bullet">Ajustes e correções sempre que necessário</div>
+            <div class="fase-bullet">Suporte via WhatsApp em horário comercial</div>
+            <div class="fase-bullet">Identificação de novas oportunidades de automação</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="garantia-box">
+      <div class="garantia-icon">🛡️</div>
+      <div>
+        <div class="garantia-title">Garantia de resultado</div>
+        <div class="garantia-text">Se ao final da implementação não entregarmos pelo menos 3 automações funcionando e gerando economia real de tempo para o escritório, devolvemos integralmente o valor investido. Nosso compromisso é com resultado — não com horas de consultoria.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOMAÇÕES -->
+<section class="section auto-section" id="automacoes">
+  <div class="container">
+    <div class="label">O que automatizamos</div>
+    <h2 style="margin-top: 12px; max-width: 520px;">
+      Processos que hoje<br />
+      <span class="serif">dependem de uma pessoa.</span>
+    </h2>
+    <p style="color: var(--text-2); max-width: 480px; margin-top: 14px; font-size: 15px; line-height: 1.7;">
+      Tudo que é repetitivo, previsível e não exige julgamento técnico pode e deve rodar sozinho.
+    </p>
+    <div class="auto-grid">
+      <div class="auto-card">
+        <div class="auto-icon">📲</div>
+        <h3>Régua de cobrança de documentos</h3>
+        <p>Lembretes automáticos no WhatsApp para cada cliente que ainda não enviou documentos — com sequência de 1, 3 e 7 dias.</p>
+        <div class="auto-flow">
+          <span class="flow-node">Planilha</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Make</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">WhatsApp</span>
+        </div>
+      </div>
+      <div class="auto-card">
+        <div class="auto-icon">⏰</div>
+        <h3>Alertas de prazos fiscais</h3>
+        <p>A equipe recebe notificação automática com 3 dias e 1 dia de antecedência de cada obrigação — por cliente, por responsável.</p>
+        <div class="auto-flow">
+          <span class="flow-node">Calendário</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Make</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">WhatsApp/E-mail</span>
+        </div>
+      </div>
+      <div class="auto-card">
+        <div class="auto-icon">🤖</div>
+        <h3>Triagem inteligente de e-mails</h3>
+        <p>E-mail com anexo chega → IA identifica o tipo de documento e extrai os dados relevantes → registra automaticamente no sistema.</p>
+        <div class="auto-flow">
+          <span class="flow-node">Gmail</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">IA</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Sistema contábil</span>
+        </div>
+      </div>
+      <div class="auto-card">
+        <div class="auto-icon">🧑‍💼</div>
+        <h3>Onboarding de cliente novo</h3>
+        <p>Novo cliente cadastrado dispara automaticamente e-mail de boas-vindas, checklist de documentos e agendamento de reunião inicial.</p>
+        <div class="auto-flow">
+          <span class="flow-node">Formulário</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Make</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">E-mail + Agenda</span>
+        </div>
+      </div>
+      <div class="auto-card">
+        <div class="auto-icon">💬</div>
+        <h3>Bot de atendimento ao cliente</h3>
+        <p>IA responde automaticamente dúvidas simples no WhatsApp — prazo de guia, status de entrega, valor do DAS — sem interromper o técnico.</p>
+        <div class="auto-flow">
+          <span class="flow-node">WhatsApp</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">IA</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Resposta automática</span>
+        </div>
+      </div>
+      <div class="auto-card">
+        <div class="auto-icon">📊</div>
+        <h3>Relatórios automáticos para clientes</h3>
+        <p>Todo mês, o sistema coleta os dados do cliente e envia um resumo gerencial em linguagem simples — sem o contador escrever nada.</p>
+        <div class="auto-flow">
+          <span class="flow-node">Sistema contábil</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">IA</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">E-mail cliente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="section" id="planos">
+  <div class="container">
+    <div class="label">Investimento</div>
+    <h2 style="margin-top: 12px; max-width: 520px;">
+      Planos desenhados para<br />
+      <span class="serif">a realidade do seu escritório.</span>
+    </h2>
+    <div class="planos-grid">
+      <div class="plano-card">
+        <div class="plano-name">Essencial</div>
+        <div class="plano-price">R$ 1.500 <span>projeto</span></div>
+        <div class="plano-recur">+ R$ 350/mês sustentação</div>
+        <hr class="plano-divider" />
+        <div class="plano-item">Diagnóstico de processos</div>
+        <div class="plano-item">1–2 automações implantadas</div>
+        <div class="plano-item">Treinamento da equipe</div>
+        <div class="plano-item">Suporte mensal básico</div>
+      </div>
+      <div class="plano-card featured">
+        <div class="plano-badge">Recomendado</div>
+        <div class="plano-name">Profissional</div>
+        <div class="plano-price">R$ 2.800 <span>projeto</span></div>
+        <div class="plano-recur">+ R$ 650/mês sustentação</div>
+        <hr class="plano-divider" />
+        <div class="plano-item">Diagnóstico completo</div>
+        <div class="plano-item">3–5 automações implantadas</div>
+        <div class="plano-item">Integração com seu sistema contábil</div>
+        <div class="plano-item">Treinamento + documentação</div>
+        <div class="plano-item">Suporte mensal + ajustes</div>
+        <div class="plano-item">Relatório de performance mensal</div>
+      </div>
+      <div class="plano-card">
+        <div class="plano-name">Avançado</div>
+        <div class="plano-price">R$ 4.500 <span>projeto</span></div>
+        <div class="plano-recur">+ R$ 1.000/mês sustentação</div>
+        <hr class="plano-divider" />
+        <div class="plano-item">Diagnóstico completo</div>
+        <div class="plano-item">6–10 automações + IA integrada</div>
+        <div class="plano-item">Bot de atendimento ao cliente</div>
+        <div class="plano-item">Treinamento + documentação</div>
+        <div class="plano-item">Suporte prioritário</div>
+        <div class="plano-item">Novos fluxos mensais incluídos</div>
+      </div>
+    </div>
+    <p style="font-size: 13px; color: var(--text-3); margin-top: 20px; text-align: center;">
+      Não tem certeza qual plano faz sentido? O diagnóstico gratuito define isso — sem compromisso.
+    </p>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section sobre-section" id="sobre">
+  <div class="container">
+    <div class="sobre-inner">
+      <div>
+        <div class="label sobre-label">Quem entrega</div>
+        <h2 style="margin-top: 12px; margin-bottom: 20px;">
+          Um consultor que<br />
+          <span class="serif">conhece a sua realidade.</span>
+        </h2>
+        <p class="sobre-text">
+          <strong style="color: var(--text);">Rodrigo Silva</strong> tem mais de uma década de atuação como consultor especializado para escritórios de contabilidade — o que significa que ele não precisa de um tour pelo seu escritório para entender como funciona um fechamento de mês.
+        </p>
+        <p class="sobre-text">
+          O ANT Processos nasceu dessa experiência acumulada: a percepção de que os maiores inimigos da produtividade dos escritórios contábeis não são técnicos — são operacionais. E que a maioria deles tem solução simples, desde que alguém configure.
+        </p>
+        <p class="sobre-text">
+          Rodrigo é também fundador da <strong style="color: var(--text);">ANT Capital</strong>, consultoria financeira para PMEs e pessoas físicas baseada em Belo Horizonte.
+        </p>
+        <a href="https://www.antcapital.com.br" class="sobre-link">
+          Conhecer a ANT Capital →
+        </a>
+      </div>
+      <div class="sobre-img">
+        <img src="https://www.antcapital.com.br/rodrigo-silva.png" alt="Rodrigo Silva — ANT Processos" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section cta-section" id="contato">
+  <div class="container">
+    <div class="label" style="text-align: center; margin-bottom: 16px;">Pronto para começar?</div>
+    <h2>O diagnóstico é gratuito.<br /><span class="serif">A transformação começa ali.</span></h2>
+    <p>
+      Em até 60 minutos, identificamos os maiores gargalos do seu escritório e mostramos o que dá pra automatizar. Sem compromisso, sem letras miúdas.
+    </p>
+    <a href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20agendar%20um%20diagn%C3%B3stico%20gratuito." class="btn-primary" style="display: inline-flex;">
+      Agendar diagnóstico gratuito ↗
+    </a>
+    <div class="cta-contacts">
+      <div class="cta-contact-item"><span>📞</span> (31) 9 9587-2806</div>
+      <div class="cta-contact-item"><span>✉️</span> rodrigo@antcapital.com.br</div>
+      <div class="cta-contact-item"><span>📍</span> Belo Horizonte, MG</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <img src="https://www.antcapital.com.br/LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
+      <span class="footer-product">ANT Processos</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.antcapital.com.br">ANT Capital</a>
+      <a href="#problema">O Problema</a>
+      <a href="#planos">Planos</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div class="footer-copy">© 2026 ANT Capital. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20saber%20mais." class="wa-float" title="Falar no WhatsApp">
+  💬
+</a>
+
+</body>
+</html>
