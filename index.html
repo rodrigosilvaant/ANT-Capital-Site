@@ -232,6 +232,18 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--white); }
+    .nav-links a.nav-processos {
+      color: rgba(26,143,168,0.9);
+      border: 1px solid rgba(26,143,168,0.35);
+      padding: 0.3rem 0.9rem;
+      border-radius: 3px;
+      transition: all 0.2s;
+    }
+    .nav-links a.nav-processos:hover {
+      color: var(--white);
+      background: rgba(26,143,168,0.15);
+      border-color: var(--teal);
+    }
     .nav-cta {
       display: flex;
       align-items: center;
@@ -268,6 +280,13 @@
       font-size: 2rem;
       color: var(--white);
       font-weight: 300;
+    }
+    .mobile-menu a.mob-processos {
+      font-size: 1.2rem;
+      color: var(--teal);
+      font-family: var(--ff-label);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     /* ─────────────────────────────────────────
@@ -626,6 +645,112 @@
       border-radius: 50%;
       background: var(--teal);
       flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       ANT PROCESSOS BAND
+    ───────────────────────────────────────── */
+    .processos-band {
+      padding-block: 5rem;
+      background: #111E2A;
+      position: relative;
+      overflow: hidden;
+    }
+    .processos-band::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: radial-gradient(ellipse at right, rgba(26,143,168,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .processos-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .processos-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--ff-label);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .processos-tag-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .processos-heading {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+    }
+    .processos-heading em {
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+    }
+    .processos-sub {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 55ch;
+      line-height: 1.7;
+    }
+    .processos-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+    .processos-pill {
+      font-family: var(--ff-label);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+    }
+    .processos-action {
+      flex-shrink: 0;
+    }
+    .btn-processos {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 3px;
+      padding: 1rem 2rem;
+      font-family: var(--ff-label);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: all 0.3s var(--ease);
+    }
+    .btn-processos:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,143,168,0.3);
     }
 
     /* ─────────────────────────────────────────
@@ -989,6 +1114,10 @@
       transition: color 0.2s;
     }
     .rodape-links a:hover { color: rgba(255,255,255,0.7); }
+    .rodape-links a.rodape-processos {
+      color: rgba(26,143,168,0.6);
+    }
+    .rodape-links a.rodape-processos:hover { color: var(--teal); }
     .rodape-copy {
       font-size: 0.75rem;
       color: rgba(255,255,255,0.25);
@@ -1014,6 +1143,8 @@
       .sobre-pilares { grid-template-columns: 1fr; }
 
       .servicos-grid { grid-template-columns: 1fr; }
+      .processos-inner { grid-template-columns: 1fr; }
+      .processos-action { margin-top: 1rem; }
 
       .metodologia-inner { grid-template-columns: 1fr; }
       .metodologia-action { margin-top: 1rem; }
@@ -1113,6 +1244,7 @@
         <a href="#servicos">Serviços</a>
         <a href="#depoimentos">Clientes</a>
         <a href="#faq">FAQ</a>
+        <a href="ant-processos.html" class="nav-processos">ANT Processos</a>
       </div>
       <div class="nav-cta">
         <a href="#contato" class="btn btn-outline" style="padding:0.65rem 1.4rem; font-size:0.75rem;">Agendar Diagnóstico</a>
@@ -1129,6 +1261,7 @@
     <a href="#servicos" class="mob-link">Serviços</a>
     <a href="#depoimentos" class="mob-link">Clientes</a>
     <a href="#faq" class="mob-link">FAQ</a>
+    <a href="ant-processos.html" class="mob-processos mob-link">ANT Processos ↗</a>
     <a href="#contato" class="btn btn-primary mob-link">Agendar Diagnóstico</a>
   </div>
 
@@ -1291,6 +1424,35 @@
             <span class="servico-item">Relatórios e dashboards personalizados</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────── ANT PROCESSOS BAND ────────── -->
+  <section class="processos-band" id="processos">
+    <div class="container processos-inner reveal">
+      <div class="processos-text">
+        <div class="processos-tag">
+          <div class="processos-tag-dot"></div>
+          Novo serviço ANT Capital
+        </div>
+        <h2 class="processos-heading">
+          Você tem um escritório contábil?<br>
+          <em>Automatize o que drena sua equipe.</em>
+        </h2>
+        <p class="processos-sub">
+          O ANT Processos entrega diagnóstico, automação e melhoria de processos para escritórios de 2 a 10 funcionários — cobrança de documentos, alertas de prazos, onboarding de clientes e muito mais, rodando sozinhos.
+        </p>
+        <div class="processos-pills">
+          <span class="processos-pill">Cobrança automática</span>
+          <span class="processos-pill">Alertas fiscais</span>
+          <span class="processos-pill">Onboarding</span>
+          <span class="processos-pill">Bot de atendimento</span>
+          <span class="processos-pill">Diagnóstico gratuito</span>
+        </div>
+      </div>
+      <div class="processos-action">
+        <a href="ant-processos.html" class="btn-processos">Conhecer o ANT Processos →</a>
       </div>
     </div>
   </section>
@@ -1495,8 +1657,9 @@
         <a href="#servicos">Serviços</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
+        <a href="ant-processos.html" class="rodape-processos">ANT Processos ↗</a>
       </div>
-      <div class="rodape-copy">© 2025 ANT Capital. Todos os direitos reservados.</div>
+      <div class="rodape-copy">© 2026 ANT Capital. Todos os direitos reservados.</div>
     </div>
   </footer>
 
