@@ -3,9 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ANT Capital — Planejamento Financeiro Estratégico</title>
-  <meta name="description" content="Consultoria financeira estratégica para PMEs, autônomos e pessoas físicas em Belo Horizonte. Diagnóstico gratuito." />
+  <title>ANT Capital — Planejamento Financeiro para PMEs e Autônomos em BH</title>
+  <meta name="description" content="A ANT Capital oferece planejamento financeiro estratégico para pequenas empresas, autônomos e pessoas físicas em Belo Horizonte. Agende um diagnóstico gratuito." />
+  <meta name="keywords" content="planejamento financeiro BH, consultoria financeira Belo Horizonte, consultoria financeira PME, planejamento financeiro autônomo, gestão financeira empresarial, consultoria financeira MG" />
+  <meta name="author" content="Rodrigo Silva — ANT Capital" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.antcapital.com.br/" />
+
+  <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.antcapital.com.br/" />
+  <meta property="og:title" content="ANT Capital — Planejamento Financeiro Estratégico" />
+  <meta property="og:description" content="Transforme dados em decisões que constroem riqueza. Consultoria financeira para PMEs, autônomos e pessoas físicas em BH. Diagnóstico gratuito." />
+  <meta property="og:image" content="https://www.antcapital.com.br/rodrigo-silva.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="ANT Capital" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ANT Capital — Planejamento Financeiro Estratégico" />
+  <meta name="twitter:description" content="Consultoria financeira para PMEs, autônomos e pessoas físicas em BH. Diagnóstico gratuito." />
+  <meta name="twitter:image" content="https://www.antcapital.com.br/rodrigo-silva.png" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="LOGO_AZUL_TRANSPARENTE.png" />
+  <link rel="apple-touch-icon" href="LOGO_AZUL_TRANSPARENTE.png" />
+
+  <!-- Schema Markup — Negócio Local + Serviço Financeiro -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FinancialService",
+        "@id": "https://www.antcapital.com.br/#business",
+        "name": "ANT Capital",
+        "description": "Consultoria de planejamento financeiro estratégico para PMEs, autônomos e pessoas físicas em Belo Horizonte, Minas Gerais.",
+        "url": "https://www.antcapital.com.br",
+        "logo": "https://www.antcapital.com.br/LOGO_AZUL_TRANSPARENTE.png",
+        "image": "https://www.antcapital.com.br/rodrigo-silva.png",
+        "telephone": "+55-31-99587-2806",
+        "email": "rodrigobrunosla@gmail.com",
+        "founder": {
+          "@type": "Person",
+          "name": "Rodrigo Silva",
+          "jobTitle": "Consultor Financeiro",
+          "worksFor": { "@id": "https://www.antcapital.com.br/#business" }
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Belo Horizonte",
+          "addressRegion": "MG",
+          "addressCountry": "BR"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Brasil"
+        },
+        "serviceType": [
+          "Planejamento Financeiro",
+          "Consultoria Financeira para PMEs",
+          "Planejamento Patrimonial",
+          "Diagnóstico Financeiro Empresarial"
+        ],
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "sameAs": [
+          "https://wa.me/5531995872806"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.antcapital.com.br/#website",
+        "url": "https://www.antcapital.com.br",
+        "name": "ANT Capital",
+        "description": "Planejamento financeiro estratégico para PMEs e autônomos",
+        "inLanguage": "pt-BR"
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -155,18 +232,6 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--white); }
-    .nav-links a.nav-processos {
-      color: rgba(26,143,168,0.9);
-      border: 1px solid rgba(26,143,168,0.35);
-      padding: 0.3rem 0.9rem;
-      border-radius: 3px;
-      transition: all 0.2s;
-    }
-    .nav-links a.nav-processos:hover {
-      color: var(--white);
-      background: rgba(26,143,168,0.15);
-      border-color: var(--teal);
-    }
     .nav-cta {
       display: flex;
       align-items: center;
@@ -204,13 +269,6 @@
       color: var(--white);
       font-weight: 300;
     }
-    .mobile-menu a.mob-processos {
-      font-size: 1.2rem;
-      color: var(--teal);
-      font-family: var(--ff-label);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
 
     /* ─────────────────────────────────────────
        HERO
@@ -223,6 +281,7 @@
       position: relative;
       overflow: hidden;
     }
+    /* Subtle grid texture */
     .hero::before {
       content: '';
       position: absolute;
@@ -232,6 +291,7 @@
         linear-gradient(90deg, rgba(26,143,168,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
     }
+    /* Teal glow top-right */
     .hero::after {
       content: '';
       position: absolute;
@@ -251,6 +311,7 @@
       align-items: center;
       padding-block: 120px 80px;
     }
+    .hero-left { }
     .hero-label {
       display: inline-flex;
       align-items: center;
@@ -332,11 +393,6 @@
       padding: 1rem;
       border: 1px solid rgba(26,143,168,0.15);
       border-radius: 6px;
-      transition: border-color 0.3s, background 0.3s;
-    }
-    .hero-stat:hover {
-      border-color: rgba(26,143,168,0.4);
-      background: rgba(26,143,168,0.05);
     }
     .hero-stat-number {
       font-family: var(--ff-display);
@@ -392,6 +448,7 @@
       gap: 5rem;
       align-items: start;
     }
+    .sobre-left { }
     .sobre-label { margin-bottom: 1rem; }
     .sobre-title { margin-bottom: 1.5rem; }
     .sobre-accent-line {
@@ -455,11 +512,6 @@
       border: 1px solid var(--border);
       border-radius: 6px;
       padding: 1.2rem 1.4rem;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .sobre-pilar:hover {
-      border-color: rgba(26,143,168,0.35);
-      box-shadow: 0 4px 16px rgba(31,58,82,0.07);
     }
     .sobre-pilar-icon {
       font-size: 1.3rem;
@@ -577,112 +629,6 @@
     }
 
     /* ─────────────────────────────────────────
-       ANT PROCESSOS BAND
-    ───────────────────────────────────────── */
-    .processos-band {
-      padding-block: 5rem;
-      background: #111E2A;
-      position: relative;
-      overflow: hidden;
-    }
-    .processos-band::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 50%; height: 100%;
-      background: radial-gradient(ellipse at right, rgba(26,143,168,0.07) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .processos-inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: center;
-    }
-    .processos-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--ff-label);
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1rem;
-    }
-    .processos-tag-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--teal);
-      animation: blink 2s ease-in-out infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    .processos-heading {
-      font-family: var(--ff-display);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 0.8rem;
-    }
-    .processos-heading em {
-      font-style: italic;
-      color: rgba(255,255,255,0.5);
-    }
-    .processos-sub {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.5);
-      max-width: 55ch;
-      line-height: 1.7;
-    }
-    .processos-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.2rem;
-    }
-    .processos-pill {
-      font-family: var(--ff-label);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 0.25rem 0.8rem;
-    }
-    .processos-action {
-      flex-shrink: 0;
-    }
-    .btn-processos {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--teal);
-      color: var(--white);
-      border-radius: 3px;
-      padding: 1rem 2rem;
-      font-family: var(--ff-label);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      transition: all 0.3s var(--ease);
-    }
-    .btn-processos:hover {
-      background: var(--blue);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(26,143,168,0.3);
-    }
-
-    /* ─────────────────────────────────────────
        METODOLOGIA / CTA BAND
     ───────────────────────────────────────── */
     .metodologia {
@@ -748,12 +694,11 @@
       border-radius: 8px;
       padding: 2rem;
       position: relative;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
     .depoimento-card:hover {
       border-color: rgba(26,143,168,0.35);
       box-shadow: 0 8px 32px rgba(31,58,82,0.08);
-      transform: translateY(-3px);
     }
     .depoimento-stars {
       display: flex;
@@ -1034,7 +979,6 @@
     .rodape-links {
       display: flex;
       gap: 2rem;
-      flex-wrap: wrap;
     }
     .rodape-links a {
       font-family: var(--ff-label);
@@ -1045,10 +989,6 @@
       transition: color 0.2s;
     }
     .rodape-links a:hover { color: rgba(255,255,255,0.7); }
-    .rodape-links a.rodape-processos {
-      color: rgba(26,143,168,0.6);
-    }
-    .rodape-links a.rodape-processos:hover { color: var(--teal); }
     .rodape-copy {
       font-size: 0.75rem;
       color: rgba(255,255,255,0.25);
@@ -1061,28 +1001,37 @@
     @media (max-width: 900px) {
       .nav-links, .nav-cta .btn-outline { display: none; }
       .hamburger { display: flex; }
-      .hero-inner { grid-template-columns: 1fr; padding-block: 100px 60px; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding-block: 100px 60px;
+      }
       .hero-divider { display: none; }
       .hero-right { display: none; }
       .hero-heading { font-size: 2.8rem; }
+
       .sobre-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .sobre-pilares { grid-template-columns: 1fr; }
+
       .servicos-grid { grid-template-columns: 1fr; }
-      .processos-inner { grid-template-columns: 1fr; }
-      .processos-action { margin-top: 1rem; }
+
       .metodologia-inner { grid-template-columns: 1fr; }
       .metodologia-action { margin-top: 1rem; }
+
       .depoimentos-grid { grid-template-columns: 1fr; }
+
       .faq-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
       .contato-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
       .rodape-inner { flex-direction: column; align-items: flex-start; }
     }
+
     @media (max-width: 600px) {
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; }
       .sobre-pilares { grid-template-columns: 1fr 1fr; }
     }
-
     /* ─── WHATSAPP FLUTUANTE ─── */
     .wa-float {
       position: fixed;
@@ -1111,11 +1060,17 @@
       transform: translateY(-3px);
       box-shadow: 0 8px 28px rgba(37,211,102,0.45);
     }
-    .wa-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+    .wa-float svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
     @keyframes waEntrance {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    /* WhatsApp inline no contato */
     .wa-inline {
       display: inline-flex;
       align-items: center;
@@ -1158,7 +1113,6 @@
         <a href="#servicos">Serviços</a>
         <a href="#depoimentos">Clientes</a>
         <a href="#faq">FAQ</a>
-        <a href="ant-processos.html" class="nav-processos">ANT Processos</a>
       </div>
       <div class="nav-cta">
         <a href="#contato" class="btn btn-outline" style="padding:0.65rem 1.4rem; font-size:0.75rem;">Agendar Diagnóstico</a>
@@ -1175,7 +1129,6 @@
     <a href="#servicos" class="mob-link">Serviços</a>
     <a href="#depoimentos" class="mob-link">Clientes</a>
     <a href="#faq" class="mob-link">FAQ</a>
-    <a href="ant-processos.html" class="mob-processos mob-link">ANT Processos ↗</a>
     <a href="#contato" class="btn btn-primary mob-link">Agendar Diagnóstico</a>
   </div>
 
@@ -1228,10 +1181,7 @@
         </div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="hero-scroll-line"></div>
-    </div>
+
   </section>
 
   <!-- ────────── SOBRE ────────── -->
@@ -1277,8 +1227,11 @@
           <div class="sobre-photo-caption">Rodrigo Silva — Fundador &amp; Consultor</div>
         </div>
         <p>A trajetória de <strong>Rodrigo Silva</strong> é pautada pela convicção de que a saúde financeira é o pilar de sustentação de qualquer projeto perene. Com mais de uma década de atuação como consultor especializado para escritórios de contabilidade, Rodrigo desenvolveu uma visão privilegiada sobre a gestão empresarial, ajudando dezenas de organizações a atingirem níveis superiores de performance operacional e técnica.</p>
+
         <p><strong>A Fundação da ANT Capital</strong> surgiu da observação atenta do mercado brasileiro. Ao presenciar o fechamento precoce de pequenas e médias empresas — muitas vezes por falta de uma reserva de contingência ou de processos financeiros básicos — Rodrigo identificou a necessidade de uma consultoria que fosse além do suporte contábil tradicional.</p>
+
         <p>Sua missão é clara: <strong>democratizar a inteligência financeira estratégica</strong> e oferecer às PMEs o rigor e a organização que o mercado exige.</p>
+
         <p>O diferencial reside na adaptação de metodologias de alta performance desenvolvidas ao longo de 10 anos de experiência. Não entregamos apenas números; <strong>estruturamos processos financeiros inteligentes e personalizados</strong>. Ao unir expertise em gestão de processos à análise financeira de precisão, garantimos que o empresário recupere o controle total de sua operação, transformando dados em decisões seguras e faturamento em lucro real.</p>
       </div>
     </div>
@@ -1292,6 +1245,7 @@
         <h2 class="section-title">Soluções para cada etapa<br>da sua jornada financeira.</h2>
         <p>Do diagnóstico inicial à gestão patrimonial — cobertura completa para PMEs, autônomos e pessoas físicas.</p>
       </div>
+
       <div class="servicos-grid">
         <div class="servico-card reveal">
           <div class="servico-number">01</div>
@@ -1341,35 +1295,6 @@
     </div>
   </section>
 
-  <!-- ────────── ANT PROCESSOS BAND ────────── -->
-  <section class="processos-band" id="processos">
-    <div class="container processos-inner reveal">
-      <div class="processos-text">
-        <div class="processos-tag">
-          <div class="processos-tag-dot"></div>
-          Novo serviço ANT Capital
-        </div>
-        <h2 class="processos-heading">
-          Você tem um escritório contábil?<br>
-          <em>Automatize o que drena sua equipe.</em>
-        </h2>
-        <p class="processos-sub">
-          O ANT Processos entrega diagnóstico, automação e melhoria de processos para escritórios de 2 a 10 funcionários — cobrança de documentos, alertas de prazos, onboarding de clientes e muito mais, rodando sozinhos.
-        </p>
-        <div class="processos-pills">
-          <span class="processos-pill">Cobrança automática</span>
-          <span class="processos-pill">Alertas fiscais</span>
-          <span class="processos-pill">Onboarding</span>
-          <span class="processos-pill">Bot de atendimento</span>
-          <span class="processos-pill">Diagnóstico gratuito</span>
-        </div>
-      </div>
-      <div class="processos-action">
-        <a href="ant-processos.html" class="btn-processos">Conhecer o ANT Processos →</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ────────── METODOLOGIA BAND ────────── -->
   <section class="metodologia">
     <div class="container metodologia-inner">
@@ -1391,7 +1316,6 @@
   <section class="depoimentos" id="depoimentos">
     <div class="container">
       <div class="depoimentos-header reveal">
-        <span class="label-eyebrow">Clientes</span>
         <h2 class="section-title">O que dizem nossos clientes.</h2>
       </div>
       <div class="depoimentos-grid">
@@ -1504,7 +1428,7 @@
           </div>
           <div class="contato-info-item">
             <div class="contato-info-icon">✉️</div>
-            <span>rodrigo@antcapital.com.br</span>
+            <span>rodrigobrunosla@gmail.com</span>
           </div>
           <div class="contato-info-item">
             <div class="contato-info-icon">📍</div>
@@ -1513,7 +1437,7 @@
         </div>
         <a class="wa-inline" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-          Falar com um consultor
+          Prefiro falar pelo WhatsApp
         </a>
       </div>
 
@@ -1571,9 +1495,8 @@
         <a href="#servicos">Serviços</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
-        <a href="ant-processos.html" class="rodape-processos">ANT Processos ↗</a>
       </div>
-      <div class="rodape-copy">© 2026 ANT Capital. Todos os direitos reservados.</div>
+      <div class="rodape-copy">© 2025 ANT Capital. Todos os direitos reservados.</div>
     </div>
   </footer>
 
@@ -1643,7 +1566,10 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
-            nome, email, whatsapp: wpp, perfil,
+            nome,
+            email,
+            whatsapp: wpp,
+            perfil,
             _subject: `Novo lead ANT Capital — ${nome}`
           })
         });
@@ -1651,6 +1577,7 @@
         if (response.ok) {
           document.getElementById('formContent').style.display = 'none';
           document.getElementById('formSuccess').style.display = 'block';
+
           const msg = encodeURIComponent(
             `Olá Rodrigo! Meu nome é ${nome}.\n\nSolicitei um diagnóstico gratuito pelo site da ANT Capital.\n\nPerfil: ${perfil}\nE-mail: ${email}\nWhatsApp: ${wpp}\n\nAguardo contato!`
           );
@@ -1665,7 +1592,6 @@
       }
     }
   </script>
-
   <!-- WhatsApp Flutuante -->
   <a class="wa-float" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
