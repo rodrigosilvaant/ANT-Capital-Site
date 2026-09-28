@@ -1,0 +1,821 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Simulador Financeiro — ANT Capital</title>
+<meta name="description" content="Descubra a saúde financeira da sua empresa ou da sua família em 2 minutos. Simulador gratuito da ANT Capital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#081626; --bg2:#0C1E33; --surface:#10263F; --surface2:#15304E;
+  --line:#21405F; --line2:#2C5176;
+  --text:#EEF4F9; --muted:#93A9BF; --soft:#C3D3E2;
+  --green:#2FCB8A; --green-hi:#6FF0B6; --green-deep:#0F5A42;
+  --gold:#F3BC4E; --red:#F2706B;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--green-hi);outline-offset:3px;border-radius:10px}
+.num{font-variant-numeric:tabular-nums}
+
+#ants{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.glow{position:fixed;inset:auto -20% -40% -20%;height:70%;background:radial-gradient(ellipse at 50% 100%, rgba(47,203,138,.16), transparent 60%);pointer-events:none;z-index:0}
+
+.app{position:relative;z-index:1;min-height:100%;display:flex;flex-direction:column;padding-inline:clamp(16px,3vw,40px)}
+
+/* Header */
+header{display:flex;align-items:center;gap:20px;padding-block:18px;flex-wrap:wrap}
+.brand{text-align:left;display:flex;align-items:center;gap:12px;background:none;border:0;padding:0;user-select:none}
+.mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(145deg,var(--green),var(--green-deep));display:grid;place-items:center}
+.brand-name{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.01em;line-height:1}
+.brand-name small{display:block;font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.tabs{margin-left:auto;display:flex;gap:6px;background:var(--bg2);border:1px solid var(--line);padding:6px;border-radius:999px}
+.tab{border:0;background:transparent;color:var(--soft);padding:10px 20px;border-radius:999px;font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.tab:hover{color:var(--text)}
+.tab[aria-selected="true"]{background:var(--green);color:#04261A}
+.tab .t-sub{font-weight:600;opacity:.7;font-size:12px}
+.hdr-tools{display:flex;gap:8px}
+.icon-btn{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);display:grid;place-items:center;color:var(--soft)}
+.icon-btn:hover{border-color:var(--line2);color:var(--text)}
+
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-block:12px 28px}
+.screen{animation:enter .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Attract */
+.attract{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;max-width:1240px;margin:0 auto;width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-hi)}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(47,203,138,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(47,203,138,0)}100%{box-shadow:0 0 0 0 rgba(47,203,138,0)}}
+.big{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.3vw,60px);line-height:1.02;letter-spacing:-.025em;margin:18px 0 18px;text-wrap:balance}
+.big em{font-style:normal;color:var(--green-hi)}
+.rotator{min-height:3.2em;font-size:clamp(18px,1.7vw,22px);color:var(--soft);max-width:34ch;transition:opacity .4s}
+.rotator b{color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{border:1px solid var(--line);background:rgba(16,38,63,.7);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600;color:var(--soft);display:flex;align-items:center;gap:8px}
+.chip svg{color:var(--green)}
+.counter{margin-top:26px;color:var(--muted);font-size:14px}
+.counter b{color:var(--text);font-size:18px}
+
+.choose{display:grid;gap:16px}
+.choose-title{font-weight:700;color:var(--muted);font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.path{position:relative;text-align:left;border:1px solid var(--line2);background:linear-gradient(160deg,var(--surface2),var(--surface));border-radius:24px;padding:26px 26px 24px;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;transition:transform .2s,border-color .2s,box-shadow .2s;overflow:hidden}
+.path:hover,.path:focus-visible{transform:translateY(-3px);border-color:var(--green);box-shadow:0 18px 40px -18px rgba(47,203,138,.45)}
+.path-ico{width:62px;height:62px;border-radius:16px;background:rgba(47,203,138,.14);display:grid;place-items:center;color:var(--green-hi)}
+.path h3{margin:0;font-family:var(--display);font-size:26px;font-weight:700;letter-spacing:-.01em}
+.path p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.path .go{width:48px;height:48px;border-radius:50%;background:var(--green);color:#04261A;display:grid;place-items:center}
+.path.pf .path-ico{background:rgba(243,188,78,.14);color:var(--gold)}
+.path.pf:hover,.path.pf:focus-visible{border-color:var(--gold);box-shadow:0 18px 40px -18px rgba(243,188,78,.4)}
+.path.pf .go{background:var(--gold)}
+.touch{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px;justify-content:center;margin-top:4px}
+
+/* Common flow */
+.flow{max-width:1120px;width:100%;margin:0 auto}
+.flow-top{display:flex;align-items:center;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.back{border:1px solid var(--line);background:var(--bg2);color:var(--soft);border-radius:12px;padding:10px 16px;font-weight:600;display:flex;align-items:center;gap:8px}
+.back:hover{color:var(--text);border-color:var(--line2)}
+.steps{flex:1;display:flex;gap:6px;min-width:200px}
+.steps i{flex:1;height:6px;border-radius:6px;background:var(--line)}
+.steps i.done{background:var(--green)}
+.steps i.now{background:linear-gradient(90deg,var(--green) 50%,var(--line) 50%)}
+.step-label{color:var(--muted);font-weight:600;font-size:14px;white-space:nowrap}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-hi)}
+.h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.02em;margin:8px 0 8px;text-wrap:balance}
+.lead{color:var(--soft);font-size:17px;margin:0 0 24px;max-width:60ch}
+
+/* Numbers */
+.sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.sl{border:1px solid var(--line);background:rgba(16,38,63,.85);border-radius:var(--r);padding:18px 20px}
+.sl-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.sl label{font-weight:700;font-size:15px}
+.sl .hint{color:var(--muted);font-size:13px;margin-top:2px}
+.sl-val{display:flex;align-items:center;gap:10px;margin:12px 0 8px}
+.sl-val output{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.01em;flex:1}
+.step-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line2);background:var(--surface2);font-size:22px;font-weight:700;line-height:1;display:grid;place-items:center}
+.step-btn:hover{border-color:var(--green)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:30px;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:8px;background:linear-gradient(90deg,var(--green) var(--p,50%),var(--line) var(--p,50%))}
+input[type=range]::-moz-range-track{height:8px;border-radius:8px;background:linear-gradient(90deg,var(--green) var(--p,50%),var(--line) var(--p,50%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--text);border:5px solid var(--green);margin-top:-10px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--text);border:5px solid var(--green)}
+.live{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.live span{border-radius:999px;padding:8px 14px;background:var(--bg2);border:1px solid var(--line);font-size:14px;color:var(--soft)}
+.live b{color:var(--text)}
+.cta-row{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin-top:24px;flex-wrap:wrap}
+.privacy{color:var(--muted);font-size:13px;margin-right:auto;display:flex;align-items:center;gap:8px}
+.btn{border:0;border-radius:14px;padding:16px 26px;font-weight:800;font-size:17px;display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#04261A;transition:transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(47,203,138,.7)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line2)}
+.btn.ghost:hover{box-shadow:none;border-color:var(--green)}
+
+/* Question */
+.q{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.q .h2{font-size:clamp(28px,3.2vw,42px)}
+.q-why{color:var(--muted);font-size:15px;max-width:44ch}
+.opts{display:grid;gap:12px}
+.opt{text-align:left;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:20px 22px;border-radius:var(--r);border:1px solid var(--line2);background:rgba(16,38,63,.9);font-size:17px;font-weight:600;transition:border-color .15s,background .15s,transform .15s}
+.opt:hover{border-color:var(--green);transform:translateX(4px)}
+.opt .k{width:36px;height:36px;border-radius:10px;border:1px solid var(--line2);display:grid;place-items:center;font-weight:800;color:var(--muted);font-size:15px}
+.opt.sel{border-color:var(--green);background:rgba(47,203,138,.14)}
+.opt.sel .k{background:var(--green);color:#04261A;border-color:var(--green)}
+
+/* Calc */
+.calc{text-align:center;max-width:560px;margin:0 auto}
+.spinner{width:92px;height:92px;margin:0 auto 26px;border-radius:50%;border:6px solid var(--line);border-top-color:var(--green);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.calc ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px;text-align:left}
+.calc li{padding:12px 16px;border-radius:12px;background:var(--bg2);border:1px solid var(--line);color:var(--muted);display:flex;gap:10px;align-items:center;transition:color .3s,border-color .3s}
+.calc li.ok{color:var(--text);border-color:var(--green-deep)}
+.calc li .dot{width:10px;height:10px;border-radius:50%;background:var(--line2)}
+.calc li.ok .dot{background:var(--green)}
+
+/* Result */
+.res{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px}
+.card{border:1px solid var(--line);background:rgba(16,38,63,.9);border-radius:22px;padding:24px}
+.hero-res{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.gauge{position:relative;width:210px;max-width:100%}
+.gauge svg{display:block;width:100%;height:auto}
+.gauge .g-num{position:absolute;left:0;right:0;bottom:6px;text-align:center}
+.gauge .g-num b{font-family:var(--display);font-size:56px;font-weight:800;line-height:1;letter-spacing:-.03em}
+.gauge .g-num span{display:block;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.badge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.res-title{font-family:var(--display);font-size:clamp(26px,2.8vw,36px);font-weight:700;line-height:1.1;margin:10px 0 8px;letter-spacing:-.02em}
+.res-desc{color:var(--soft);margin:0;font-size:16px}
+.pillars{display:grid;gap:14px}
+.pillars h4,.card h4{margin:0 0 4px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.pl{display:grid;grid-template-columns:130px 1fr 48px;gap:12px;align-items:center;font-size:15px;font-weight:600}
+.bar{height:12px;border-radius:12px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:12px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.pl .v{text-align:right;font-weight:800}
+.span2{grid-column:1/-1}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.kpi{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi span{display:block;color:var(--muted);font-size:13px;font-weight:600}
+.kpi b{font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:-.01em}
+.kpi small{display:block;color:var(--muted);font-size:12px}
+.ins{display:grid;gap:12px;margin-top:12px}
+.in{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 16px;border-radius:14px;background:var(--bg2);border:1px solid var(--line)}
+.in .sev{width:10px;border-radius:6px}
+.in b{display:block;font-size:16px;margin-bottom:2px}
+.in p{margin:0;color:var(--soft);font-size:14.5px}
+.in p.ant{color:var(--green-hi);margin-top:6px;font-weight:600}
+.chart svg{width:100%;height:auto;display:block}
+.chart-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin-top:8px}
+.chart-legend i{display:inline-block;width:14px;height:4px;border-radius:3px;vertical-align:middle;margin-right:6px}
+.note{color:var(--muted);font-size:12px;margin-top:8px}
+.bigmoney{font-family:var(--display);font-size:clamp(34px,4vw,48px);font-weight:800;color:var(--green-hi);letter-spacing:-.02em;line-height:1.05;margin:6px 0}
+
+.lead-card{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:center;background:linear-gradient(135deg,#123A33,#10263F 60%);border-color:var(--green-deep)}
+.lead-card h3{font-family:var(--display);font-size:clamp(24px,2.4vw,30px);margin:6px 0 6px;line-height:1.1;letter-spacing:-.01em}
+.lead-card p{margin:0;color:var(--soft)}
+form.lf{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fld{display:grid;gap:4px}
+.fld label{font-size:13px;font-weight:700;color:var(--soft)}
+.fld input{background:var(--bg);border:1px solid var(--line2);border-radius:12px;padding:14px 14px;font-size:17px}
+.fld input:focus{border-color:var(--green);outline:none}
+.consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+.consent input{width:20px;height:20px;accent-color:var(--green);margin-top:1px;flex-shrink:0}
+form.lf .btn{grid-column:1/-1;justify-content:center}
+.ferr{grid-column:1/-1;color:var(--gold);font-size:14px;min-height:1em;margin:0}
+.thanks{text-align:center;padding:10px}
+.thanks b{font-family:var(--display);font-size:26px;display:block;margin-bottom:4px}
+.end-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.auto-note{text-align:center;color:var(--muted);font-size:13px;margin-top:10px}
+
+/* Overlay */
+.ov{position:fixed;inset:0;z-index:20;background:rgba(4,12,22,.78);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px}
+.ov-box{background:var(--surface);border:1px solid var(--line2);border-radius:24px;padding:30px;max-width:460px;width:100%;text-align:center}
+.ov-box h3{font-family:var(--display);font-size:28px;margin:0 0 8px}
+.ov-box p{color:var(--soft);margin:0 0 20px}
+.ov-count{font-family:var(--display);font-size:64px;font-weight:800;color:var(--green-hi);line-height:1;margin-bottom:10px}
+.admin{max-width:900px;text-align:left}
+.admin .tbl{max-height:50vh;overflow:auto;border:1px solid var(--line);border-radius:12px;margin:14px 0}
+.admin table{width:100%;border-collapse:collapse;font-size:14px}
+.admin th,.admin td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.admin th{color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;position:sticky;top:0;background:var(--surface)}
+.admin textarea{width:100%;height:90px;background:var(--bg);color:var(--soft);border:1px solid var(--line);border-radius:10px;font-size:12px;padding:8px}
+
+footer{padding-block:0 16px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .attract,.q,.res,.lead-card{grid-template-columns:1fr}
+  .hero-res{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .tabs{margin-left:0;order:3;width:100%;justify-content:center}
+  .tab{flex:1;justify-content:center;padding:10px 12px}
+  .tab .t-sub{display:none}
+  .hdr-tools{margin-left:auto}
+  .kpis{grid-template-columns:1fr}
+  .pl{grid-template-columns:100px 1fr 40px}
+  form.lf{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+
+</head><body>
+<canvas id="ants" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
+
+<div class="app">
+  <header>
+    <button class="brand" id="brand" aria-label="ANT Capital — voltar ao início">
+      <span class="mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20 12 4l8 16" stroke="#EEF4F9" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 14h9" stroke="#6FF0B6" stroke-width="2.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-name">ANT Capital<small>Planejamento financeiro</small></span>
+    </button>
+    <a href="index.html" class="back-site" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(147,169,191,.7);text-decoration:none;border:1px solid rgba(33,64,95,.9);border-radius:8px;padding:6px 12px;background:rgba(12,30,51,.6);transition:color .2s,border-color .2s" onmouseover="this.style.color='#EEF4F9';this.style.borderColor='#2C5176'" onmouseout="this.style.color='rgba(147,169,191,.7)';this.style.borderColor='rgba(33,64,95,.9)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Voltar ao site</a><nav class="tabs" role="tablist" aria-label="Tipo de simulação">
+      <button class="tab" role="tab" id="tab-pme" aria-selected="false" data-flow="pme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        Empresa <span class="t-sub">PME</span>
+      </button>
+      <button class="tab" role="tab" id="tab-pf" aria-selected="false" data-flow="pf">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.5 3-5.5 6-5.5s5.4 2 6 5.5"/><circle cx="17.5" cy="9.5" r="2.4"/><path d="M16 14.6c2.6.1 4.4 1.9 5 4.9"/></svg>
+        Você e sua família <span class="t-sub">PF</span>
+      </button>
+    </nav>
+    <div class="hdr-tools">
+      <button class="icon-btn" id="fs" title="Tela cheia" aria-label="Tela cheia">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="stage" aria-live="polite"></main>
+
+  <footer>
+    <span>ANT Capital · Belo Horizonte · <a href="https://www.antcapital.com.br" style="color:inherit;text-decoration:underline;text-underline-offset:3px">antcapital.com.br</a></span>
+    <span>Simulação educativa. Não constitui recomendação de investimento.</span>
+  </footer>
+</div>
+
+<div id="overlay"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- utilidades ---------- */
+var BRL = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+function brl(v){ return BRL.format(Math.round(v)); }
+function pct(v,d){ return (v*100).toFixed(d==null?0:d).replace('.',',') + '%'; }
+function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+function lin(v,lo,hi){ return clamp((v-lo)/(hi-lo),0,1)*100; }
+function scale(segs){ var out=[]; segs.forEach(function(s){ for(var v=s[0]; v<=s[1]+1e-9; v+=s[2]) out.push(Math.round(v)); }); return out.filter(function(v,i,a){return a.indexOf(v)===i;}); }
+function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function store(k,v){ try{ if(v===undefined){ var r=localStorage.getItem(k); return r?JSON.parse(r):null; } localStorage.setItem(k,JSON.stringify(v)); }catch(e){ return null; } }
+
+var ICON_ARROW = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+var ICON_BACK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
+var ICON_LOCK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+
+/* ---------- conteúdo ---------- */
+var FLOWS = {
+  pme: {
+    name:'Empresa', tag:'PME',
+    numTitle:'Os números da sua empresa',
+    numLead:'Valores aproximados por mês já bastam. Arraste ou use os botões + e −.',
+    nums:[
+      {id:'fat',   label:'Faturamento mensal',        hint:'Média do que entra por mês', vals:scale([[5000,50000,2500],[55000,200000,5000],[210000,1000000,10000]]), def:80000},
+      {id:'cus',   label:'Custos e despesas',         hint:'Fornecedores, folha, aluguel, impostos (sem o seu pró-labore)', vals:scale([[2500,50000,2500],[55000,200000,5000],[210000,1000000,10000]]), def:60000},
+      {id:'pro',   label:'Sua retirada (pró-labore)', hint:'Quanto você tira da empresa por mês', vals:scale([[0,20000,500],[21000,60000,1000]]), def:8000},
+      {id:'par',   label:'Parcelas de empréstimos',   hint:'Financiamentos e capital de giro por mês', vals:scale([[0,20000,250],[21000,100000,1000]]), def:3000},
+      {id:'cai',   label:'Dinheiro em caixa hoje',    hint:'Saldo disponível nas contas da empresa', vals:scale([[0,50000,1000],[55000,500000,5000],[520000,2000000,20000]]), def:30000}
+    ],
+    qs:[
+      {p:'Gestão', t:'O dinheiro da empresa e o seu dinheiro pessoal ficam separados?', w:'Misturar as contas é a causa mais comum de "a empresa vende bem, mas o dinheiro some".',
+        o:[['Sim, com contas separadas e pró-labore fixo',100],['Contas separadas, mas retiro quando preciso',45],['Está tudo junto',0]]},
+      {p:'Gestão', t:'Você recebe todo mês o resultado da empresa (DRE) e usa para decidir?', w:'A DRE mostra se a empresa dá lucro de verdade, não só se entra dinheiro.',
+        o:[['Sim, recebo e uso nas decisões',100],['Recebo do contador, mas não uso',45],['Não recebo',0]]},
+      {p:'Caixa', t:'Você sabe quanto vai entrar e sair do caixa nos próximos 90 dias?', w:'Fluxo de caixa projetado é o que evita surpresas e empréstimos caros.',
+        o:[['Sim, tenho isso atualizado',100],['Tenho uma noção de cabeça',40],['Não sei',0]]},
+      {p:'Lucratividade', t:'Seu preço de venda é calculado com base nos custos e na margem desejada?', w:'Preço copiado da concorrência pode esconder produtos que dão prejuízo.',
+        o:[['Sim, tenho formação de preço',100],['Olho a concorrência e ajusto',40],['Nunca revisei',0]]},
+      {p:'Planejamento', t:'A empresa tem metas e um orçamento escrito para os próximos 12 meses?', w:'Sem orçamento, cada mês vira uma surpresa.',
+        o:[['Sim, escrito e acompanhado',100],['Tenho metas na cabeça',40],['Não tenho',0]]},
+      {p:'Planejamento', t:'No último ano você revisou com o contador se o regime tributário é o melhor?', w:'Escolher o regime certo pode reduzir bastante o imposto pago.',
+        o:[['Sim, revisamos',100],['Acho que o contador acompanha',45],['Nunca revisei',0]]}
+    ]
+  },
+  pf: {
+    name:'Você e sua família', tag:'PF',
+    numTitle:'Os números da sua casa',
+    numLead:'Valores aproximados por mês já bastam. Pode ser só você ou a renda da família.',
+    nums:[
+      {id:'ren', label:'Renda líquida mensal',      hint:'O que cai na conta, somando a família', vals:scale([[1000,20000,250],[20500,60000,500],[61000,150000,1000]]), def:9000},
+      {id:'gas', label:'Gastos do mês',             hint:'Moradia, mercado, escola, lazer, cartão (sem parcelas de dívidas)', vals:scale([[500,20000,250],[20500,60000,500],[61000,150000,1000]]), def:6500},
+      {id:'par', label:'Parcelas de dívidas',       hint:'Empréstimos, financiamentos, carnês', vals:scale([[0,10000,100],[10250,40000,250]]), def:1200},
+      {id:'res', label:'Reserva guardada',          hint:'Dinheiro que você pode usar se precisar', vals:scale([[0,20000,500],[21000,200000,1000],[205000,1000000,5000]]), def:5000},
+      {id:'inv', label:'Quanto investe por mês',    hint:'O que você guarda com regularidade', vals:scale([[0,5000,50],[5100,30000,100]]), def:300}
+    ],
+    qs:[
+      {p:'Controle', t:'Você sabe para onde vai o seu dinheiro todo mês?', w:'Quem acompanha os gastos costuma encontrar de 10% a 20% de desperdício.',
+        o:[['Sim, anoto ou uso um app',100],['Mais ou menos',40],['Não faço ideia',0]]},
+      {p:'Dívidas em dia', t:'Nos últimos 6 meses você usou cheque especial ou pagou só o mínimo do cartão?', w:'Esses são os juros mais caros do Brasil, podendo passar de 400% ao ano.',
+        o:[['Nunca',100],['Uma ou duas vezes',40],['Com frequência',0]]},
+      {p:'Investimentos', t:'Onde fica o dinheiro que você guarda?', w:'Dinheiro parado na conta perde para a inflação.',
+        o:[['Investido, com objetivo definido',100],['Na poupança ou na conta',40],['Não consigo guardar',0]]},
+      {p:'Futuro', t:'Você tem metas financeiras com valor e prazo definidos?', w:'Meta sem número e sem data vira só um desejo.',
+        o:[['Sim, com valor e prazo',100],['Tenho ideias, sem números',40],['Não tenho',0]]},
+      {p:'Futuro', t:'Você já calculou quanto precisa juntar para se aposentar com tranquilidade?', w:'Quanto antes o cálculo, menor o esforço mensal.',
+        o:[['Sim, e estou no caminho',100],['Penso nisso, mas nunca calculei',35],['Nunca pensei',0]]},
+      {p:'Futuro', t:'Se a sua renda parar, a família está protegida (seguro de vida, plano de saúde)?', w:'Proteção é o alicerce de qualquer plano financeiro.',
+        o:[['Sim, estamos protegidos',100],['Em parte',50],['Não',0]]}
+    ]
+  }
+};
+
+var ROTATE = [
+  '<b>Sua empresa fatura bem</b>, mas você sabe quanto sobra de lucro de verdade?',
+  'Se a renda parasse hoje, <b>quantos meses a sua família aguenta?</b>',
+  'Se a empresa parasse por 3 meses, <b>o caixa segura?</b>',
+  '<b>Quanto você teria em 10 anos</b> investindo com um plano?',
+  'O seu dinheiro pessoal e o da empresa <b>ainda estão misturados?</b>'
+];
+
+/* ---------- estado ---------- */
+var S = { screen:'attract', flow:null, nums:{}, ans:[], qi:0, result:null, leadSaved:false };
+var stage = document.getElementById('stage');
+var overlay = document.getElementById('overlay');
+var rotTimer = null, calcTimers = [];
+
+function setTabs(){
+  ['pme','pf'].forEach(function(f){ document.getElementById('tab-'+f).setAttribute('aria-selected', S.flow===f && S.screen!=='attract' ? 'true':'false'); });
+}
+function clearTimers(){ if(rotTimer){clearInterval(rotTimer);rotTimer=null;} calcTimers.forEach(clearTimeout); calcTimers=[]; }
+function show(node){ clearTimers(); stage.innerHTML=''; node.classList.add('screen'); stage.appendChild(node); setTabs(); window.scrollTo(0,0); }
+
+/* ---------- tela de abertura ---------- */
+function todayKey(){ var d=new Date(); return 'ant_sim_'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(); }
+function countToday(){ return store(todayKey()) || 0; }
+
+function renderAttract(){
+  S.screen='attract'; S.flow=null; S.result=null; S.leadSaved=false;
+  var n = countToday();
+  var w = el('section','attract');
+  w.innerHTML =
+    '<div>' +
+      '<span class="eyebrow"><span class="pulse" aria-hidden="true"></span>Simulador gratuito · resultado na hora</span>' +
+      '<h1 class="big">Descubra em 2 minutos a <em>saúde financeira</em> do seu negócio e da sua casa.</h1>' +
+      '<p class="rotator" id="rot">'+ROTATE[0]+'</p>' +
+      '<div class="chips">' +
+        chip('M12 7v5l3 2','Cerca de 2 minutos') + chip('M5 12l4 4 10-10','Nota de 0 a 100 por área') + chip('M4 19h16M7 16V9M12 16V5M17 16v-4','Plano de próximos passos') +
+      '</div>' +
+      (n>0 ? '<p class="counter"><b class="num">'+n+'</b> '+(n===1?'pessoa já fez':'pessoas já fizeram')+' o simulado hoje neste stand</p>' : '') +
+    '</div>' +
+    '<div class="choose">' +
+      '<span class="choose-title">Escolha como quer simular</span>' +
+      pathCard('pme','Minha empresa','Para donos de pequenas e médias empresas', '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 10h.01M15 10h.01"/></svg>') +
+      pathCard('pf','Eu e minha família','Para organizar a renda, sair das dívidas e investir', '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>') +
+      '<p class="touch"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6m0-2a2 2 0 0 1 4 0v3m0-1a2 2 0 0 1 3 1.7V15a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L4 16.5a2 2 0 0 1 3-2.6L9 16"/></svg>Toque em uma opção para começar</p>' +
+    '</div>';
+  show(w);
+  w.querySelectorAll('.path').forEach(function(b){ b.addEventListener('click',function(){ startFlow(b.dataset.flow); }); });
+  var i=0, rot=document.getElementById('rot');
+  rotTimer = setInterval(function(){ i=(i+1)%ROTATE.length; rot.style.opacity=0; setTimeout(function(){ rot.innerHTML=ROTATE[i]; rot.style.opacity=1; },400); }, 4200);
+}
+function chip(path,txt){ return '<span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+path+'"/></svg>'+txt+'</span>'; }
+function pathCard(f,t,s,ico){
+  return '<button class="path '+f+'" data-flow="'+f+'"><span class="path-ico" aria-hidden="true">'+ico+'</span><span><h3>'+t+'</h3><p>'+s+'</p></span><span class="go" aria-hidden="true">'+ICON_ARROW+'</span></button>';
+}
+
+/* ---------- fluxo ---------- */
+function startFlow(f){
+  S.flow=f; S.ans=[]; S.qi=0; S.nums={}; S.leadSaved=false;
+  FLOWS[f].nums.forEach(function(n){ S.nums[n.id]=n.def; });
+  renderNumbers();
+}
+function totalSteps(){ return 1 + FLOWS[S.flow].qs.length; }
+function stepsBar(cur){
+  var t=totalSteps(), h='<div class="steps" aria-hidden="true">';
+  for(var i=0;i<t;i++) h+='<i class="'+(i<cur?'done':(i===cur?'now':''))+'"></i>';
+  return h+'</div><span class="step-label">Etapa '+(cur+1)+' de '+t+'</span>';
+}
+function flowTop(cur, backFn){
+  var d=el('div','flow-top');
+  d.innerHTML='<button class="back">'+ICON_BACK+'Voltar</button>'+stepsBar(cur);
+  d.querySelector('.back').addEventListener('click',backFn);
+  return d;
+}
+
+function nearestIdx(vals,v){ var bi=0,bd=Infinity; vals.forEach(function(x,i){ var d=Math.abs(x-v); if(d<bd){bd=d;bi=i;} }); return bi; }
+
+function renderNumbers(){
+  S.screen='numbers';
+  var F=FLOWS[S.flow], w=el('section','flow');
+  w.appendChild(flowTop(0, renderAttract));
+  var head=el('div');
+  head.innerHTML='<span class="kicker">'+F.tag+' · Etapa 1</span><h2 class="h2">'+F.numTitle+'</h2><p class="lead">'+F.numLead+'</p>';
+  w.appendChild(head);
+  var grid=el('div','sliders');
+  F.nums.forEach(function(n){
+    var idx=nearestIdx(n.vals,S.nums[n.id]);
+    var c=el('div','sl');
+    c.innerHTML='<div class="sl-head"><div><label for="r-'+n.id+'">'+n.label+'</label><div class="hint">'+n.hint+'</div></div></div>'+
+      '<div class="sl-val"><button class="step-btn" data-d="-1" aria-label="Diminuir">−</button><output class="num" id="o-'+n.id+'"></output><button class="step-btn" data-d="1" aria-label="Aumentar">+</button></div>'+
+      '<input type="range" id="r-'+n.id+'" min="0" max="'+(n.vals.length-1)+'" step="1" value="'+idx+'">';
+    var r=c.querySelector('input'), o=c.querySelector('output');
+    function upd(){ var v=n.vals[+r.value]; S.nums[n.id]=v; o.textContent=brl(v); r.style.setProperty('--p',(r.value/r.max*100)+'%'); live(); }
+    r.addEventListener('input',upd);
+    c.querySelectorAll('.step-btn').forEach(function(b){ b.addEventListener('click',function(){ r.value=clamp(+r.value+ +b.dataset.d,0,+r.max); upd(); }); });
+    grid.appendChild(c);
+    setTimeout(upd,0);
+  });
+  w.appendChild(grid);
+  var lv=el('div','live'); lv.id='live'; w.appendChild(lv);
+  var row=el('div','cta-row');
+  row.innerHTML='<span class="privacy">'+ICON_LOCK+'Seus números não são enviados a ninguém.</span><button class="btn">Continuar para 6 perguntas rápidas '+ICON_ARROW+'</button>';
+  row.querySelector('.btn').addEventListener('click',function(){ S.qi=0; renderQuestion(); });
+  w.appendChild(row);
+  show(w);
+}
+function live(){
+  var lv=document.getElementById('live'); if(!lv) return; var n=S.nums, h='';
+  if(S.flow==='pme'){
+    var lucro=n.fat-n.cus-n.pro-n.par, m=n.fat?lucro/n.fat:0;
+    h='<span>Sobra estimada: <b class="num">'+brl(lucro)+'</b>/mês</span><span>Margem: <b class="num">'+pct(m,1)+'</b></span>';
+  } else {
+    var sobra=n.ren-n.gas-n.par;
+    h='<span>Sobra do mês: <b class="num">'+brl(sobra)+'</b></span><span>Dívidas comprometem: <b class="num">'+pct(n.ren?n.par/n.ren:0)+'</b> da renda</span>';
+  }
+  lv.innerHTML=h;
+}
+
+var LETTERS=['A','B','C','D'];
+function renderQuestion(){
+  S.screen='question';
+  var F=FLOWS[S.flow], q=F.qs[S.qi], w=el('section','flow');
+  w.appendChild(flowTop(S.qi+1, function(){ if(S.qi===0) renderNumbers(); else { S.qi--; renderQuestion(); } }));
+  var g=el('div','q');
+  var left=el('div');
+  left.innerHTML='<span class="kicker">'+q.p+' · Pergunta '+(S.qi+1)+' de '+F.qs.length+'</span><h2 class="h2">'+q.t+'</h2><p class="q-why">'+q.w+'</p>';
+  var right=el('div','opts');
+  q.o.forEach(function(op,i){
+    var b=el('button','opt'+(S.ans[S.qi]===i?' sel':''));
+    b.innerHTML='<span class="k">'+LETTERS[i]+'</span><span>'+op[0]+'</span>';
+    b.addEventListener('click',function(){ pick(i); });
+    right.appendChild(b);
+  });
+  g.appendChild(left); g.appendChild(right); w.appendChild(g);
+  show(w);
+}
+function pick(i){
+  var F=FLOWS[S.flow];
+  S.ans[S.qi]=i;
+  stage.querySelectorAll('.opt').forEach(function(b,j){ b.classList.toggle('sel',j===i); });
+  setTimeout(function(){
+    if(S.screen!=='question') return;
+    if(S.qi<F.qs.length-1){ S.qi++; renderQuestion(); } else renderCalc();
+  }, 320);
+}
+
+function renderCalc(){
+  S.screen='calc';
+  var w=el('section','calc');
+  var items = S.flow==='pme' ? ['Calculando margem e lucro real','Medindo o fôlego do caixa','Avaliando dívidas e gestão','Montando seus próximos passos'] : ['Calculando a sobra do mês','Medindo sua reserva de emergência','Avaliando dívidas e investimentos','Projetando seu patrimônio'];
+  w.innerHTML='<div class="spinner" aria-hidden="true"></div><h2 class="h2">Analisando suas respostas…</h2><ul>'+items.map(function(t){return '<li><span class="dot"></span>'+t+'</li>';}).join('')+'</ul>';
+  show(w);
+  var lis=w.querySelectorAll('li');
+  lis.forEach(function(li,i){ calcTimers.push(setTimeout(function(){ li.classList.add('ok'); }, 350+i*380)); });
+  calcTimers.push(setTimeout(function(){ compute(); store(todayKey(), countToday()+1); renderResult(); }, 350+lis.length*380+250));
+}
+
+/* ---------- cálculo ---------- */
+function A(i){ var q=FLOWS[S.flow].qs[i]; return q.o[S.ans[i]!=null?S.ans[i]:q.o.length-1][1]; }
+function compute(){
+  var n=S.nums, P={}, K={}, ins=[];
+  if(S.flow==='pme'){
+    var lucro=n.fat-n.cus-n.pro-n.par, m=n.fat?lucro/n.fat:0, saida=n.cus+n.pro+n.par, folego=saida?n.cai/saida:0, div=n.fat?n.par/n.fat:0;
+    P['Lucratividade']=Math.round(.7*lin(m,0,.15)+.3*A(3));
+    P['Caixa']=Math.round(.7*lin(folego,0,3)+.3*A(2));
+    P['Dívidas em dia']=Math.round(100-lin(div,.05,.25));
+    P['Gestão']=Math.round((A(0)+A(1))/2);
+    P['Planejamento']=Math.round((A(4)+A(5))/2);
+    K={lucro:lucro,m:m,folego:folego,div:div};
+    var TX={
+      'Lucratividade':['Lucro abaixo do potencial', lucro<=0 ? 'Pelos números, a empresa fecha o mês no vermelho: '+brl(lucro)+'.' : 'A margem estimada é de '+pct(m,1)+'. Uma referência saudável para PMEs fica acima de 10%.', 'Revisamos preço, custos e mix de produtos para aumentar a margem.'],
+      'Caixa':['Fôlego de caixa curto','O caixa atual cobre cerca de '+folego.toFixed(1).replace('.',',')+' '+(folego>=0.95&&folego<1.05?'mês':'meses')+' de operação. O recomendado é ter pelo menos 3 meses.', 'Montamos o fluxo de caixa de 90 dias e a meta de reserva da empresa.'],
+      'Dívidas em dia':['Parcelas pesando no faturamento','As parcelas levam '+pct(div,1)+' do faturamento. Acima de 10% já aperta o capital de giro.', 'Organizamos as dívidas e negociamos troca por crédito mais barato.'],
+      'Gestão':['Decisões sem dados','Sem separação PJ×PF e sem DRE mensal, fica difícil saber se a empresa realmente dá lucro.', 'Implantamos pró-labore, conta separada e um painel mensal simples.'],
+      'Planejamento':['Sem rota para os próximos 12 meses','Sem orçamento e revisão tributária, a empresa reage aos problemas em vez de se antecipar.', 'Criamos orçamento anual, metas mensais e revisão com seu contador.']
+    };
+  } else {
+    var sobra=n.ren-n.gas-n.par, s=n.ren?sobra/n.ren:0, comp=n.ren?n.par/n.ren:0, custo=n.gas+n.par, meses=custo?n.res/custo:0, tx=n.ren?n.inv/n.ren:0;
+    P['Controle']=Math.round(.5*lin(s,0,.2)+.5*A(0));
+    P['Dívidas em dia']=Math.round(.6*(100-lin(comp,.1,.4))+.4*A(1));
+    P['Reserva']=Math.round(lin(meses,0,6));
+    P['Investimentos']=Math.round(.7*lin(tx,0,.15)+.3*A(2));
+    P['Futuro']=Math.round((A(3)+A(4)+A(5))/3);
+    K={sobra:sobra,s:s,comp:comp,meses:meses,tx:tx};
+    var TX={
+      'Controle':['O dinheiro escapa no mês', sobra<=0 ? 'Pelos números, as contas passam da renda em '+brl(-sobra)+' por mês.' : 'Sobram '+brl(sobra)+' por mês ('+pct(s)+' da renda). O ideal é sobrar ao menos 20%.', 'Montamos seu orçamento e cortamos o que não traz valor para você.'],
+      'Dívidas em dia':['Dívidas apertando o orçamento','As parcelas levam '+pct(comp)+' da sua renda. Acima de 30% é sinal de alerta.', 'Criamos um plano para quitar as dívidas mais caras primeiro.'],
+      'Reserva':['Reserva de emergência curta','Sua reserva cobre '+meses.toFixed(1).replace('.',',')+' '+(meses>=0.95&&meses<1.05?'mês':'meses')+' de despesas. O recomendado é de 6 meses.', 'Definimos a meta de reserva e onde guardar com segurança e liquidez.'],
+      'Investimentos':['Investimento abaixo do potencial','Você investe '+pct(tx,1)+' da renda. Com 10% a 15% o patrimônio cresce de forma consistente.', 'Montamos uma carteira alinhada aos seus objetivos e ao seu perfil.'],
+      'Futuro':['Futuro sem números','Sem metas, cálculo da aposentadoria e proteção, a família fica exposta a imprevistos.', 'Calculamos sua aposentadoria e revisamos a proteção da família.']
+    };
+  }
+  var keys=Object.keys(P), sum=0; keys.forEach(function(k){ sum+=P[k]; });
+  var score=Math.round(sum/keys.length);
+  var weakest=keys.slice().sort(function(a,b){return P[a]-P[b];}).slice(0,3);
+  weakest.forEach(function(k){ ins.push({k:k,v:P[k],t:TX[k][0],d:TX[k][1],a:TX[k][2]}); });
+  S.result={score:score,P:P,K:K,ins:ins};
+}
+function level(v){
+  if(v<40) return {c:'var(--red)',t:'Zona de risco',bg:'rgba(242,112,107,.16)'};
+  if(v<70) return {c:'var(--gold)',t:'Em construção',bg:'rgba(243,188,78,.16)'};
+  return {c:'var(--green)',t:'Base sólida',bg:'rgba(47,203,138,.16)'};
+}
+
+/* ---------- resultado ---------- */
+function gaugeSVG(v,color){
+  var r=90, L=Math.PI*r;
+  return '<svg viewBox="0 0 220 130" role="img" aria-label="Nota '+v+' de 100">'+
+    '<path d="M20 115 A90 90 0 0 1 200 115" fill="none" stroke="#21405F" stroke-width="16" stroke-linecap="round"/>'+
+    '<path id="garc" d="M20 115 A90 90 0 0 1 200 115" fill="none" stroke="'+color+'" stroke-width="16" stroke-linecap="round" stroke-dasharray="'+L+'" stroke-dashoffset="'+L+'" style="transition:stroke-dashoffset 1.3s cubic-bezier(.2,.7,.2,1)" data-to="'+(L*(1-v/100))+'"/>'+
+  '</svg>';
+}
+function chartPF(){
+  var n=S.nums, sobra=S.result.K.sobra;
+  var atual=n.inv, plano=Math.max(n.inv, Math.round(n.ren*0.15/50)*50);
+  var i=0.006, months=120, a=[], b=[];
+  var va=n.res, vb=n.res;
+  for(var m=0;m<=months;m++){ if(m%12===0){ a.push(va); b.push(vb); } va=va*(1+i)+atual; vb=vb*(1+i)+plano; }
+  var W=540,H=230,pl=78,pr=34,pt=14,pb=30, max=Math.max(b[b.length-1],1);
+  var mag=Math.pow(10,Math.floor(Math.log10(max))), stepv=[1,2,2.5,5,10].map(function(x){return x*mag;}).find(function(s){return max/s<=5;})||mag*10;
+  var top=Math.ceil(max/stepv)*stepv;
+  function X(k){return pl+(W-pl-pr)*k/10;} function Y(v){return pt+(H-pt-pb)*(1-v/top);}
+  function short(v){ return v>=1e6 ? 'R$ '+(v/1e6).toFixed(v%1e6?1:0).replace('.',',')+' mi' : v>=1e3 ? 'R$ '+Math.round(v/1e3)+' mil' : 'R$ '+v; }
+  var g='';
+  for(var t=0;t<=top+1e-6;t+=stepv){ g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(t)+'" y2="'+Y(t)+'" stroke="#1B3754" stroke-width="1"/><text x="'+(pl-8)+'" y="'+(Y(t)+4)+'" fill="#93A9BF" font-size="11" text-anchor="end">'+short(t)+'</text>'; }
+  [0,2,4,6,8,10].forEach(function(k){ g+='<text x="'+X(k)+'" y="'+(H-8)+'" fill="#93A9BF" font-size="11" text-anchor="middle">'+(k===0?'Hoje':k+' anos')+'</text>'; });
+  function path(arr){ return arr.map(function(v,k){return (k?'L':'M')+X(k).toFixed(1)+' '+Y(v).toFixed(1);}).join(' '); }
+  var area=path(b)+' L'+X(10)+' '+Y(0)+' L'+X(0)+' '+Y(0)+' Z';
+  var svg='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Projeção de patrimônio em 10 anos">'+
+    '<defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FCB8A" stop-opacity=".35"/><stop offset="1" stop-color="#2FCB8A" stop-opacity="0"/></linearGradient></defs>'+
+    g+'<path d="'+area+'" fill="url(#ga)"/>'+
+    '<path d="'+path(a)+'" fill="none" stroke="#93A9BF" stroke-width="2.5" stroke-dasharray="5 5"/>'+
+    '<path d="'+path(b)+'" fill="none" stroke="#6FF0B6" stroke-width="3"/>'+
+    '<circle cx="'+X(10)+'" cy="'+Y(b[10])+'" r="5.5" fill="#6FF0B6"/><circle cx="'+X(10)+'" cy="'+Y(a[10])+'" r="4.5" fill="#93A9BF"/>'+
+  '</svg>';
+  var extra=b[10]-a[10];
+  var head = plano>atual
+    ? '<h4>Seu patrimônio em 10 anos</h4><div class="bigmoney num">'+brl(b[10])+'</div><p class="res-desc">investindo <b>'+brl(plano)+'/mês</b> (15% da renda), contra <b>'+brl(a[10])+'</b> no ritmo atual. Diferença de <b style="color:var(--green-hi)">'+brl(extra)+'</b>.</p>'
+    : '<h4>Seu patrimônio em 10 anos</h4><div class="bigmoney num">'+brl(b[10])+'</div><p class="res-desc">mantendo <b>'+brl(atual)+'/mês</b>. Você já investe acima de 15% da renda. O próximo passo é otimizar a carteira.</p>';
+  if(sobra<=0) head += '<p class="note" style="color:var(--gold)">Hoje as contas passam da renda. O primeiro passo do plano é abrir espaço no orçamento para investir.</p>';
+  return head+'<div class="chart">'+svg+'</div><div class="chart-legend"><span><i style="background:#6FF0B6"></i>Com plano (15% da renda)</span><span><i style="background:#93A9BF"></i>Ritmo atual</span></div><p class="note">Simulação ilustrativa: rendimento de 0,6% ao mês sobre a reserva atual mais os aportes. Não é promessa de rentabilidade.</p>';
+}
+function moneyPME(){
+  var n=S.nums, K=S.result.K;
+  var ganho1=n.fat*0.01*12, alvo=Math.max(0,0.10-K.m), ganhoAlvo=n.fat*alvo*12;
+  var h='<h4>Dinheiro na mesa</h4>';
+  if(alvo>0.001){
+    h+='<div class="bigmoney num">+'+brl(ganhoAlvo)+'<span style="font-size:.45em;color:var(--soft);font-weight:600"> /ano</span></div><p class="res-desc">é o lucro extra se a margem sair de <b>'+pct(K.m,1)+'</b> para <b>10%</b>, com o mesmo faturamento.</p>';
+  } else {
+    h+='<div class="bigmoney num">+'+brl(ganho1)+'<span style="font-size:.45em;color:var(--soft);font-weight:600"> /ano</span></div><p class="res-desc">para cada <b>1 ponto</b> a mais de margem. Sua margem já está em <b>'+pct(K.m,1)+'</b>. O foco passa a ser proteger o lucro e fazer o caixa render.</p>';
+  }
+  h+='<div class="kpis">'+
+    kpi('Lucro estimado', brl(K.lucro), 'por mês')+
+    kpi('Fôlego de caixa', K.folego.toFixed(1).replace('.',',')+' meses', 'meta: 3 meses')+
+    kpi('Parcelas / faturamento', pct(K.div,1), 'alerta acima de 10%')+
+  '</div><p class="note">Estimativa com base nos valores informados. Margem = (faturamento − custos − pró-labore − parcelas) ÷ faturamento.</p>';
+  return h;
+}
+function kpi(l,v,s){ return '<div class="kpi"><span>'+l+'</span><b class="num">'+v+'</b><small>'+s+'</small></div>'; }
+
+function renderResult(){
+  S.screen='result';
+  var R=S.result, L=level(R.score), F=FLOWS[S.flow];
+  var desc = R.score<40 ? 'Existem lacunas importantes. A boa notícia: tudo isso tem solução, e quanto antes começar, menor o custo.'
+    : R.score<70 ? 'Você já tem uma base, mas há pontos que estão custando dinheiro sem você perceber.'
+    : 'Você já tem disciplina. O próximo nível é fazer o dinheiro trabalhar mais, com estratégia e menos risco.';
+  var w=el('section','flow');
+  var top=el('div','flow-top');
+  top.innerHTML='<button class="back">'+ICON_BACK+'Início</button><span class="kicker" style="margin-left:auto">Resultado · '+F.name+'</span>';
+  top.querySelector('.back').addEventListener('click',renderAttract);
+  w.appendChild(top);
+
+  var g=el('div','res');
+  var c1=el('div','card');
+  c1.innerHTML='<div class="hero-res"><div class="gauge">'+gaugeSVG(R.score,L.c)+'<div class="g-num"><b class="num" id="gnum">0</b><span>de 100</span></div></div>'+
+    '<div><span class="badge" style="background:'+L.bg+';color:'+L.c+'">'+L.t+'</span><h2 class="res-title">'+(S.flow==='pme'?'Saúde financeira da empresa':'Saúde financeira da família')+'</h2><p class="res-desc">'+desc+'</p></div></div>';
+  var c2=el('div','card pillars');
+  var ph='<h4>Nota por área · quanto maior, melhor</h4>';
+  Object.keys(R.P).forEach(function(k){ var v=R.P[k], l=level(v); ph+='<div class="pl"><span>'+k+'</span><div class="bar"><i data-w="'+v+'" style="background:'+l.c+'"></i></div><span class="v num" style="color:'+l.c+'">'+v+'</span></div>'; });
+  c2.innerHTML=ph;
+  var c3=el('div','card'); c3.innerHTML = S.flow==='pf' ? chartPF() : moneyPME();
+  var c4=el('div','card');
+  var ih='<h4>Onde agir primeiro</h4><div class="ins">';
+  R.ins.forEach(function(x){ var l=level(x.v); ih+='<div class="in"><span class="sev" style="background:'+l.c+'"></span><div><b>'+x.t+'</b><p>'+x.d+'</p><p class="ant">Com a ANT: '+x.a+'</p></div></div>'; });
+  c4.innerHTML=ih+'</div>';
+  g.appendChild(c1); g.appendChild(c2); g.appendChild(c3); g.appendChild(c4);
+
+  var lc=el('div','card lead-card span2');
+  lc.innerHTML='<div><span class="kicker">Próximo passo</span><h3>Receba seu diagnóstico completo e uma conversa gratuita de 30 minutos</h3><p>Deixe seu nome e WhatsApp. O Rodrigo entra em contato para explicar o seu resultado com calma.</p></div>'+
+    '<div id="leadbox"><form class="lf" novalidate>'+
+      '<div class="fld"><label for="lf-nome">Nome</label><input id="lf-nome" autocomplete="off" placeholder="Seu nome"></div>'+
+      '<div class="fld"><label for="lf-wpp">WhatsApp</label><input id="lf-wpp" inputmode="tel" autocomplete="off" placeholder="(31) 99999-9999"></div>'+
+      (S.flow==='pme' ? '<div class="fld" style="grid-column:1/-1"><label for="lf-emp">Empresa (opcional)</label><input id="lf-emp" autocomplete="off" placeholder="Nome da empresa"></div>' : '')+
+      '<label class="consent"><input type="checkbox" id="lf-ok"> Autorizo a ANT Capital a entrar em contato comigo sobre este diagnóstico (LGPD).</label>'+
+      '<p class="ferr" id="lf-err"></p>'+
+      '<button class="btn" type="submit">Quero meu diagnóstico completo '+ICON_ARROW+'</button>'+
+    '</form></div>';
+  g.appendChild(lc);
+  w.appendChild(g);
+
+  var end=el('div');
+  var other=S.flow==='pme'?'pf':'pme';
+  end.innerHTML='<div class="end-row" style="margin-top:18px"><button class="btn ghost" id="b-other">Simular também '+(other==='pf'?'para sua família (PF)':'para sua empresa (PME)')+'</button><button class="btn ghost" id="b-new">Encerrar e liberar para o próximo</button></div><p class="auto-note">A tela volta ao início sozinha após 2 minutos sem uso.</p>';
+  w.appendChild(end);
+  show(w);
+
+  end.querySelector('#b-other').addEventListener('click',function(){ startFlow(other); });
+  end.querySelector('#b-new').addEventListener('click',renderAttract);
+  lc.querySelector('form').addEventListener('submit',saveLead);
+
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){
+    var arc=document.getElementById('garc'); if(arc) arc.style.strokeDashoffset=arc.dataset.to;
+    w.querySelectorAll('.bar i').forEach(function(b){ b.style.width=b.dataset.w+'%'; });
+    var gn=document.getElementById('gnum'), t0=performance.now();
+    (function tick(t){ var p=Math.min(1,(t-t0)/1200); gn.textContent=Math.round(R.score*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(tick); })(t0);
+  }); });
+}
+
+function saveLead(e){
+  e.preventDefault();
+  var nome=document.getElementById('lf-nome').value.trim(), wpp=document.getElementById('lf-wpp').value.trim(), ok=document.getElementById('lf-ok').checked;
+  var empEl=document.getElementById('lf-emp'), emp=empEl?empEl.value.trim():'';
+  var err=document.getElementById('lf-err');
+  if(nome.length<2){ err.textContent='Digite seu nome para continuar.'; return; }
+  if(wpp.replace(/\D/g,'').length<10){ err.textContent='Digite o WhatsApp com DDD, por exemplo (31) 99999-9999.'; return; }
+  if(!ok){ err.textContent='Marque a autorização de contato para continuar.'; return; }
+
+  var R=S.result;
+  var pil=Object.keys(R.P).map(function(k){return k+': '+R.P[k];}).join(' | ');
+  var tipo=FLOWS[S.flow].tag;
+  var nivel=level(R.score).t;
+
+  /* salva localmente também (backup para stand/offline) */
+  var leads=store('ant_stand_leads')||[];
+  leads.push({data:new Date().toLocaleString('pt-BR'),tipo:tipo,nome:nome,whatsapp:wpp,empresa:emp,nota:R.score,nivel:nivel,areas:pil,numeros:JSON.stringify(S.nums)});
+  store('ant_stand_leads',leads);
+
+  /* envia para Formspree */
+  var btn=e.target.querySelector('button[type=submit]');
+  if(btn){ btn.disabled=true; btn.textContent='Enviando…'; }
+  err.textContent='';
+
+  fetch('https://formspree.io/f/xlgkvyrw',{
+    method:'POST',
+    headers:{'Accept':'application/json','Content-Type':'application/json'},
+    body:JSON.stringify({
+      _subject:'[Simulador ANT] '+tipo+' · '+nome+' · Nota '+R.score,
+      nome:nome,
+      whatsapp:wpp,
+      empresa:emp||'—',
+      tipo_simulacao:tipo,
+      nota:R.score,
+      nivel:nivel,
+      areas:pil,
+      numeros:JSON.stringify(S.nums)
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    S.leadSaved=true;
+    if(data.ok){
+      document.getElementById('leadbox').innerHTML=
+        '<div class="thanks">'+
+        '<b>Obrigado, '+esc(nome.split(' ')[0])+'!</b>'+
+        '<p>Recebemos tudo. O Rodrigo vai entrar em contato pelo WhatsApp <b>'+esc(wpp)+'</b> para detalhar seu resultado.</p>'+
+        '<p style="margin-top:8px;color:var(--muted);font-size:13px">Ou fale agora: <a href="https://wa.me/5531995872806?text=Ol%C3%A1+Rodrigo%2C+fiz+o+simulador+da+ANT+Capital+e+quero+entender+melhor+o+meu+resultado!" style="color:var(--green-hi);font-weight:600">WhatsApp ↗</a></p>'+
+        '</div>';
+    } else {
+      /* Formspree retornou erro — lead já foi salvo no localStorage */
+      S.leadSaved=true;
+      document.getElementById('leadbox').innerHTML=
+        '<div class="thanks">'+
+        '<b>Obrigado, '+esc(nome.split(' ')[0])+'!</b>'+
+        '<p>Dados registrados. O Rodrigo vai entrar em contato pelo WhatsApp <b>'+esc(wpp)+'</b>.</p>'+
+        '</div>';
+    }
+  })
+  .catch(function(){
+    /* sem internet — lead salvo localmente, mostra confirmação mesmo assim */
+    S.leadSaved=true;
+    document.getElementById('leadbox').innerHTML=
+      '<div class="thanks">'+
+      '<b>Obrigado, '+esc(nome.split(' ')[0])+'!</b>'+
+      '<p>Dados registrados. O Rodrigo vai entrar em contato pelo WhatsApp <b>'+esc(wpp)+'</b>.</p>'+
+      '</div>';
+  });
+}
+
+/* ---------- abas ---------- */
+document.querySelectorAll('.tab').forEach(function(t){ t.addEventListener('click',function(){ startFlow(t.dataset.flow); }); });
+
+/* ---------- teclado ---------- */
+document.addEventListener('keydown',function(e){
+  if(e.target.tagName==='INPUT') return;
+  if(S.screen==='question'){ var k=e.key.toUpperCase(), i=LETTERS.indexOf(k); if(i<0 && /^[1-4]$/.test(e.key)) i=+e.key-1; if(i>=0 && i<FLOWS[S.flow].qs[S.qi].o.length) pick(i); }
+  if(e.ctrlKey && e.shiftKey && e.key.toLowerCase()==='l'){ e.preventDefault(); openAdmin(); }
+});
+
+/* ---------- tela cheia ---------- */
+document.getElementById('fs').addEventListener('click',function(){
+  try{ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(function(){}); }catch(err){}
+});
+
+/* ---------- ociosidade: volta ao início ---------- */
+var last=Date.now(), idleOpen=false, idleInt=null;
+['pointerdown','keydown','input','wheel','touchstart'].forEach(function(ev){ document.addEventListener(ev,function(){ last=Date.now(); },{passive:true}); });
+setInterval(function(){
+  if(S.screen==='attract' || idleOpen || overlay.dataset.admin) return;
+  var limit = S.screen==='result' ? 120000 : 75000;
+  if(Date.now()-last>limit) openIdle();
+},1000);
+function openIdle(){
+  idleOpen=true; var n=15;
+  overlay.innerHTML='<div class="ov"><div class="ov-box"><div class="ov-count num" id="ic">15</div><h3>Ainda está aí?</h3><p>Para proteger suas respostas, a tela vai voltar ao início.</p><button class="btn" id="ic-go">Continuar meu simulado</button></div></div>';
+  document.getElementById('ic-go').addEventListener('click',closeIdle);
+  idleInt=setInterval(function(){ n--; var c=document.getElementById('ic'); if(c) c.textContent=n; if(n<=0){ closeIdle(); renderAttract(); } },1000);
+}
+function closeIdle(){ clearInterval(idleInt); idleOpen=false; overlay.innerHTML=''; last=Date.now(); }
+
+/* ---------- painel do consultor (5 toques no logo ou Ctrl+Shift+L) ---------- */
+var taps=[];
+document.getElementById('brand').addEventListener('click',function(){
+  var now=Date.now(); taps=taps.filter(function(t){return now-t<2500;}); taps.push(now);
+  if(taps.length>=5){ taps=[]; openAdmin(); return; }
+  if(S.screen!=='attract') renderAttract();
+});
+function toCSV(rows){
+  var cols=['data','tipo','nome','whatsapp','empresa','nota','nivel','areas','numeros'];
+  return [cols.join(';')].concat(rows.map(function(r){ return cols.map(function(c){ return '"'+String(r[c]==null?'':r[c]).replace(/"/g,'""')+'"'; }).join(';'); })).join('\n');
+}
+function openAdmin(){
+  overlay.dataset.admin='1';
+  var leads=store('ant_stand_leads')||[];
+  var rows=leads.map(function(l){ return '<tr><td>'+esc(l.data)+'</td><td>'+esc(l.tipo)+'</td><td>'+esc(l.nome)+'</td><td>'+esc(l.whatsapp)+'</td><td>'+esc(l.empresa||'')+'</td><td class="num">'+esc(l.nota)+'</td><td>'+esc(l.nivel)+'</td></tr>'; }).join('');
+  overlay.innerHTML='<div class="ov"><div class="ov-box admin"><h3>Painel do consultor</h3><p>'+leads.length+' contato(s) registrados neste computador · '+countToday()+' simulado(s) hoje.</p>'+
+    '<div class="tbl"><table><thead><tr><th>Data</th><th>Tipo</th><th>Nome</th><th>WhatsApp</th><th>Empresa</th><th>Nota</th><th>Nível</th></tr></thead><tbody>'+(rows||'<tr><td colspan="7" style="color:var(--muted)">Nenhum contato ainda.</td></tr>')+'</tbody></table></div>'+
+    '<textarea id="csv" readonly aria-label="Dados em CSV">'+esc(toCSV(leads))+'</textarea>'+
+    '<div class="end-row" style="justify-content:flex-start;margin-top:12px"><button class="btn" id="ad-copy">Copiar CSV (cole no Excel)</button><button class="btn ghost" id="ad-clear">Apagar contatos</button><button class="btn ghost" id="ad-close">Fechar</button></div><p class="note" id="ad-msg"></p></div></div>';
+  var msg=document.getElementById('ad-msg');
+  document.getElementById('ad-close').addEventListener('click',closeAdmin);
+  document.getElementById('ad-copy').addEventListener('click',function(){
+    var ta=document.getElementById('csv');
+    function fallback(){ ta.focus(); ta.select(); try{ document.execCommand('copy'); msg.textContent='Copiado.'; }catch(e){ msg.textContent='Texto selecionado. Use Ctrl+C para copiar.'; } }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(ta.value).then(function(){ msg.textContent='Copiado. Cole no Excel ou no Google Planilhas.'; },fallback); } else fallback();
+  });
+  var armed=false;
+  document.getElementById('ad-clear').addEventListener('click',function(){
+    if(!armed){ armed=true; this.textContent='Confirmar: apagar tudo'; this.style.borderColor='var(--red)'; msg.textContent='Copie o CSV antes. Essa ação não pode ser desfeita.'; return; }
+    store('ant_stand_leads',[]); openAdmin();
+  });
+}
+function closeAdmin(){ delete overlay.dataset.admin; overlay.innerHTML=''; last=Date.now(); }
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ if(overlay.dataset.admin) closeAdmin(); else if(idleOpen) closeIdle(); } });
+
+/* ---------- fundo: trilhas de formigas ---------- */
+var cv=document.getElementById('ants'), cx=cv.getContext('2d'), trails=[], dpr=1;
+var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function sizeCanvas(){
+  dpr=Math.min(window.devicePixelRatio||1,2); cv.width=innerWidth*dpr; cv.height=innerHeight*dpr; cx.setTransform(dpr,0,0,dpr,0,0);
+  trails=[]; var rows=6;
+  for(var r=0;r<rows;r++){
+    var ants=[]; for(var k=0;k<22;k++) ants.push(Math.random());
+    trails.push({y:innerHeight*(0.12+r*0.16), amp:18+Math.random()*30, f:0.004+Math.random()*0.004, ph:Math.random()*6, sp:0.00012+Math.random()*0.00008, ants:ants});
+  }
+}
+function drawAnts(t){
+  t=t||0;
+  cx.clearRect(0,0,innerWidth,innerHeight);
+  var alpha = S.screen==='attract' ? 1 : 0.35;
+  trails.forEach(function(tr){
+    tr.ants.forEach(function(a,i){
+      var p=(a + (still?0:t*tr.sp))%1, x=p*(innerWidth+80)-40, y=tr.y+Math.sin(x*tr.f+tr.ph)*tr.amp;
+      var big = i%7===0;
+      cx.fillStyle = big ? 'rgba(111,240,182,'+(0.35*alpha)+')' : 'rgba(47,203,138,'+(0.18*alpha)+')';
+      cx.beginPath(); cx.arc(x,y,big?2.6:1.7,0,6.283); cx.fill();
+      if(big){ cx.fillStyle='rgba(243,188,78,'+(0.35*alpha)+')'; cx.fillRect(x-1.5,y-6.5,3,3); }
+    });
+  });
+  if(!still) requestAnimationFrame(drawAnts);
+}
+addEventListener('resize',sizeCanvas);
+sizeCanvas(); requestAnimationFrame(drawAnts);
+
+renderAttract();
+})();
+</script>
+</body></html>
