@@ -1163,6 +1163,56 @@
       .hero-actions .btn { width: 100%; justify-content: center; }
       .sobre-pilares { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ─── BANNER SIMULADOR ─── */
+    .sim-banner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(26,143,168,0.08);
+      border: 1px solid rgba(26,143,168,0.25);
+      border-radius: 10px;
+      padding: 0.9rem 1.2rem;
+      margin-top: 1.5rem;
+      max-width: 520px;
+    }
+    .sim-banner-pulse {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+      animation: sim-blink 2s ease-in-out infinite;
+    }
+    @keyframes sim-blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+    .sim-banner-text {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.4;
+      flex: 1;
+    }
+    .sim-banner-text strong {
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+    }
+    .sim-banner-link {
+      font-family: var(--ff-label);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+    .sim-banner-link:hover { color: #fff; }
+    @media (max-width: 600px) {
+      .sim-banner { flex-wrap: wrap; }
+      .sim-banner-link { width: 100%; text-align: right; }
+    }
     /* ─── WHATSAPP FLUTUANTE ─── */
     .wa-float {
       position: fixed;
@@ -1284,6 +1334,11 @@
         <div class="hero-actions">
           <a href="#contato" class="btn btn-primary">Agendar Diagnóstico Gratuito ↗</a>
           <a href="#servicos" class="btn btn-outline">Ver Serviços</a>
+        </div>
+        <div class="sim-banner">
+          <span class="sim-banner-pulse" aria-hidden="true"></span>
+          <span class="sim-banner-text"><strong>Descubra a saúde financeira</strong> da sua empresa ou da sua família em 2 minutos — resultado na hora.</span>
+          <a href="simulador.html" class="sim-banner-link">Fazer simulação →</a>
         </div>
       </div>
 
