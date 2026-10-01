@@ -10,7 +10,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.antcapital.com.br/" />
 
-  <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.antcapital.com.br/" />
   <meta property="og:title" content="ANT Capital — Planejamento Financeiro Estratégico" />
@@ -29,7 +29,7 @@
   <link rel="icon" type="image/png" href="LOGO_AZUL_TRANSPARENTE.png" />
   <link rel="apple-touch-icon" href="LOGO_AZUL_TRANSPARENTE.png" />
 
-  <!-- Schema Markup — Negócio Local + Serviço Financeiro -->
+  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,10 +56,7 @@
           "addressRegion": "MG",
           "addressCountry": "BR"
         },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Brasil"
-        },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
         "serviceType": [
           "Planejamento Financeiro",
           "Consultoria Financeira para PMEs",
@@ -68,9 +65,7 @@
         ],
         "priceRange": "$$",
         "openingHours": "Mo-Fr 08:00-18:00",
-        "sameAs": [
-          "https://wa.me/5531995872806"
-        ]
+        "sameAs": ["https://wa.me/5531995872806"]
       },
       {
         "@type": "WebSite",
@@ -83,38 +78,36 @@
     ]
   }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ─────────────────────────────────────────
-       TOKENS
-    ───────────────────────────────────────── */
     :root {
-      --navy:    #1F3A52;
-      --blue:    #2E6E8E;
-      --teal:    #1A8FA8;
-      --light:   #F8FAFC;
-      --slate:   #64748B;
-      --mid:     #94A3B8;
-      --white:   #FFFFFF;
-      --border:  rgba(46,110,142,0.18);
-      --ff-display: 'Cormorant Garamond', Georgia, serif;
-      --ff-body:    'DM Sans', sans-serif;
-      --ff-label:   'Jost', sans-serif;
+      --bg:       #081626;
+      --bg2:      #0C1E33;
+      --surface:  #10263F;
+      --surface2: #15304E;
+      --border:   rgba(47,203,138,0.12);
+      --border2:  rgba(255,255,255,0.07);
+      --green:    #2FCB8A;
+      --green-hi: #6FF0B6;
+      --gold:     #F3BC4E;
+      --text:     #E8F0F8;
+      --text2:    rgba(232,240,248,0.55);
+      --text3:    rgba(232,240,248,0.32);
+      --white:    #FFFFFF;
+      --ff-display: 'Bricolage Grotesque', sans-serif;
+      --ff-body:    'Manrope', sans-serif;
       --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-
-    /* ─────────────────────────────────────────
-       RESET
-    ───────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--ff-body);
-      color: var(--navy);
-      background: var(--white);
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -122,80 +115,94 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
 
-    /* ─────────────────────────────────────────
-       UTILITIES
-    ───────────────────────────────────────── */
+    /* Canvas formigas */
+    #ants {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .glow {
+      position: fixed;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(47,203,138,0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Utilities */
     .container {
       width: min(1160px, 92%);
       margin-inline: auto;
+      position: relative;
+      z-index: 2;
     }
     .label-eyebrow {
-      font-family: var(--ff-label);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--teal);
+      color: var(--green);
     }
     .section-title {
       font-family: var(--ff-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--navy);
+      font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+      font-weight: 600;
+      line-height: 1.12;
+      color: var(--text);
     }
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       padding: 0.85rem 2rem;
-      border-radius: 3px;
-      font-family: var(--ff-label);
+      border-radius: 6px;
+      font-family: var(--ff-body);
       font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       cursor: pointer;
       border: none;
       transition: all 0.3s var(--ease);
     }
     .btn-primary {
-      background: var(--teal);
-      color: var(--white);
+      background: var(--green);
+      color: #081626;
     }
     .btn-primary:hover {
-      background: var(--blue);
+      background: var(--green-hi);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(26,143,168,0.25);
+      box-shadow: 0 8px 28px rgba(47,203,138,0.35);
     }
     .btn-outline {
       background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.5);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.18);
     }
     .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.8);
+      border-color: var(--green);
+      color: var(--green);
+      background: rgba(47,203,138,0.06);
     }
 
-    /* reveal animation */
+    /* Reveal */
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(24px);
       transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* ─────────────────────────────────────────
-       NAV
-    ───────────────────────────────────────── */
+    /* NAV */
     .nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -203,9 +210,9 @@
       transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
     }
     .nav.scrolled {
-      background: rgba(31,58,82,0.97);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+      background: rgba(8,22,38,0.95);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(47,203,138,0.08);
     }
     .nav-inner {
       display: flex;
@@ -213,42 +220,30 @@
       justify-content: space-between;
       height: 70px;
     }
-    .nav-logo img {
-      height: 54px;
-      width: auto;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+    .nav-logo img { height: 54px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
     .nav-links a {
-      font-family: var(--ff-label);
+      font-family: var(--ff-body);
       font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
+      color: var(--text2);
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--text); }
     .nav-links a.nav-processos {
-      color: rgba(26,143,168,0.9);
-      border: 1px solid rgba(26,143,168,0.35);
+      color: var(--green);
+      border: 1px solid rgba(47,203,138,0.3);
       padding: 0.3rem 0.9rem;
-      border-radius: 3px;
+      border-radius: 4px;
       transition: all 0.2s;
     }
     .nav-links a.nav-processos:hover {
-      color: var(--white);
-      background: rgba(26,143,168,0.15);
-      border-color: var(--teal);
+      background: rgba(47,203,138,0.1);
+      border-color: var(--green);
     }
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    .nav-cta { display: flex; align-items: center; gap: 1rem; }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -260,14 +255,14 @@
       display: block;
       width: 24px;
       height: 1.5px;
-      background: rgba(255,255,255,0.8);
+      background: var(--text2);
       transition: all 0.3s var(--ease);
     }
     .mobile-menu {
       display: none;
       position: fixed;
       inset: 0;
-      background: var(--navy);
+      background: var(--bg);
       z-index: 99;
       flex-direction: column;
       align-items: center;
@@ -278,48 +273,25 @@
     .mobile-menu a {
       font-family: var(--ff-display);
       font-size: 2rem;
-      color: var(--white);
-      font-weight: 300;
+      color: var(--text);
+      font-weight: 500;
     }
     .mobile-menu a.mob-processos {
-      font-size: 1.2rem;
-      color: var(--teal);
-      font-family: var(--ff-label);
+      font-size: 1.1rem;
+      color: var(--green);
+      font-family: var(--ff-body);
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
-    /* ─────────────────────────────────────────
-       HERO
-    ───────────────────────────────────────── */
+    /* HERO */
     .hero {
       min-height: 100vh;
-      background: var(--navy);
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
-    }
-    /* Subtle grid texture */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(26,143,168,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26,143,168,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    /* Teal glow top-right */
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 55%;
-      height: 90%;
-      background: radial-gradient(ellipse, rgba(26,143,168,0.12) 0%, transparent 70%);
-      pointer-events: none;
     }
     .hero-inner {
       position: relative;
@@ -330,103 +302,125 @@
       align-items: center;
       padding-block: 120px 80px;
     }
-    .hero-left { }
-    .hero-label {
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
       margin-bottom: 1.5rem;
     }
-    .hero-label-line {
-      width: 30px;
+    .hero-eyebrow-line {
+      width: 28px;
       height: 1px;
-      background: var(--teal);
+      background: var(--green);
     }
     .hero-heading {
       font-family: var(--ff-display);
-      font-size: clamp(2.6rem, 5vw, 4.2rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--white);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--text);
       margin-bottom: 1.5rem;
     }
     .hero-heading em {
-      font-style: italic;
-      color: rgba(255,255,255,0.55);
-    }
-    .hero-heading strong {
-      font-weight: 500;
-      color: var(--white);
+      font-style: normal;
+      color: var(--green);
     }
     .hero-sub {
-      font-family: var(--ff-body);
       font-size: 1rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.62);
-      max-width: 42ch;
+      font-weight: 400;
+      color: var(--text2);
+      max-width: 44ch;
       margin-bottom: 2.5rem;
-      line-height: 1.7;
+      line-height: 1.75;
     }
     .hero-actions {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: 1.5rem;
     }
-    .hero-divider {
-      position: absolute;
-      left: 50%;
-      top: 15%;
-      bottom: 15%;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(26,143,168,0.4), transparent);
-    }
-    .hero-right {
+    .sim-banner {
       display: flex;
-      justify-content: center;
       align-items: center;
+      gap: 1rem;
+      background: rgba(47,203,138,0.07);
+      border: 1px solid rgba(47,203,138,0.2);
+      border-radius: 10px;
+      padding: 0.9rem 1.2rem;
+      max-width: 520px;
     }
+    .sim-banner-pulse {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      animation: sim-blink 2s ease-in-out infinite;
+    }
+    @keyframes sim-blink {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+    }
+    .sim-banner-text {
+      font-size: 0.83rem;
+      color: var(--text2);
+      line-height: 1.4;
+      flex: 1;
+    }
+    .sim-banner-text strong { color: var(--text); font-weight: 600; }
+    .sim-banner-link {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+    .sim-banner-link:hover { color: var(--green-hi); }
+    .hero-right { display: flex; justify-content: center; align-items: center; }
     .hero-glass {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(26,143,168,0.2);
-      border-radius: 12px;
+      background: rgba(16,38,63,0.75);
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 3rem 2.5rem;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(16px);
       text-align: center;
       max-width: 380px;
       width: 100%;
+      box-shadow: 0 0 60px rgba(47,203,138,0.06), 0 24px 48px rgba(0,0,0,0.35);
     }
-    .hero-glass img {
-      height: 80px;
-      width: auto;
-      margin: 0 auto 2rem;
-      filter: brightness(1.2);
+    .hero-glass img { height: 72px; width: auto; margin: 0 auto 1.5rem; filter: brightness(1.3); }
+    .hero-glass-tagline {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text2);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      font-weight: 400;
     }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .hero-stat {
       text-align: center;
       padding: 1rem;
-      border: 1px solid rgba(26,143,168,0.15);
-      border-radius: 6px;
+      background: rgba(47,203,138,0.05);
+      border: 1px solid rgba(47,203,138,0.12);
+      border-radius: 8px;
     }
     .hero-stat-number {
       font-family: var(--ff-display);
-      font-size: 2.2rem;
-      font-weight: 500;
-      color: var(--teal);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green);
       line-height: 1;
       margin-bottom: 0.3rem;
     }
     .hero-stat-label {
-      font-family: var(--ff-label);
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      color: var(--text3);
+      font-weight: 600;
     }
     .hero-scroll {
       position: absolute;
@@ -437,29 +431,34 @@
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      color: rgba(255,255,255,0.35);
-      font-family: var(--ff-label);
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
+      color: var(--text3);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      z-index: 2;
     }
     .hero-scroll-line {
       width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, rgba(26,143,168,0.6), transparent);
+      height: 36px;
+      background: linear-gradient(to bottom, var(--green), transparent);
       animation: scrollPulse 2s ease-in-out infinite;
     }
     @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; transform: scaleY(1); }
-      50% { opacity: 1; transform: scaleY(1.1); }
+      0%, 100% { opacity: 0.4; } 50% { opacity: 1; }
     }
 
-    /* ─────────────────────────────────────────
-       SOBRE NÓS
-    ───────────────────────────────────────── */
+    /* SOBRE */
     .sobre {
       padding-block: 7rem;
-      background: var(--light);
+      background: var(--bg2);
+      position: relative;
+    }
+    .sobre::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(47,203,138,0.04) 0%, transparent 60%);
+      pointer-events: none;
     }
     .sobre-inner {
       display: grid;
@@ -467,59 +466,33 @@
       gap: 5rem;
       align-items: start;
     }
-    .sobre-left { }
-    .sobre-label { margin-bottom: 1rem; }
+    .sobre-label { margin-bottom: 1rem; display: block; }
     .sobre-title { margin-bottom: 1.5rem; }
     .sobre-accent-line {
-      width: 48px;
+      width: 40px;
       height: 2px;
-      background: var(--teal);
+      background: var(--green);
       margin-bottom: 2rem;
     }
     .sobre-quote {
       font-family: var(--ff-display);
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--blue);
-      line-height: 1.5;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.55;
       padding-left: 1.2rem;
-      border-left: 2px solid var(--teal);
+      border-left: 2px solid var(--green);
     }
-    .sobre-photo-wrap {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      max-width: 340px;
-      margin-bottom: 2rem;
-      box-shadow: 0 20px 60px rgba(31,58,82,0.18);
-    }
-    .sobre-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+    .sobre-quote-author {
       display: block;
+      font-size: 0.76rem;
+      font-style: normal;
+      font-family: var(--ff-body);
+      letter-spacing: 0.1em;
+      color: var(--text3);
+      margin-top: 0.8rem;
+      font-weight: 600;
     }
-    .sobre-photo-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 1.2rem 1.4rem;
-      background: linear-gradient(to top, rgba(31,58,82,0.92), transparent);
-      color: rgba(255,255,255,0.85);
-      font-family: var(--ff-label);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .sobre-right p {
-      font-size: 0.96rem;
-      color: var(--slate);
-      line-height: 1.85;
-      margin-bottom: 1.2rem;
-    }
-    .sobre-right p:last-child { margin-bottom: 0; }
-    .sobre-right strong { color: var(--navy); font-weight: 500; }
     .sobre-pilares {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -527,141 +500,147 @@
       margin-top: 2rem;
     }
     .sobre-pilar {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.2rem 1.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: 1.3rem 1.5rem;
+      transition: border-color 0.3s, background 0.3s;
     }
-    .sobre-pilar-icon {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+    .sobre-pilar:hover {
+      border-color: rgba(47,203,138,0.25);
+      background: rgba(47,203,138,0.04);
     }
+    .sobre-pilar-icon { font-size: 1.3rem; margin-bottom: 0.5rem; }
     .sobre-pilar-title {
-      font-family: var(--ff-label);
       font-size: 0.75rem;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--navy);
+      color: var(--text);
       margin-bottom: 0.3rem;
     }
-    .sobre-pilar-text {
-      font-size: 0.82rem;
-      color: var(--slate);
-      line-height: 1.5;
+    .sobre-pilar-text { font-size: 0.82rem; color: var(--text2); line-height: 1.5; }
+    .sobre-photo-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      max-width: 340px;
+      margin-bottom: 2rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px var(--border2);
     }
+    .sobre-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .sobre-photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 1.4rem;
+      background: linear-gradient(to top, rgba(8,22,38,0.95), transparent);
+      color: var(--text2);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .sobre-right p {
+      font-size: 0.95rem;
+      color: var(--text2);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .sobre-right p:last-child { margin-bottom: 0; }
+    .sobre-right strong { color: var(--text); font-weight: 600; }
 
-    /* ─────────────────────────────────────────
-       SERVIÇOS
-    ───────────────────────────────────────── */
+    /* SERVIÇOS */
     .servicos {
       padding-block: 7rem;
-      background: var(--navy);
+      background: var(--bg);
       position: relative;
-      overflow: hidden;
     }
     .servicos::before {
       content: '';
       position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 60%;
-      height: 100%;
-      background: radial-gradient(ellipse, rgba(26,143,168,0.08) 0%, transparent 65%);
+      bottom: -20%;
+      left: -5%;
+      width: 50%;
+      height: 80%;
+      background: radial-gradient(ellipse, rgba(47,203,138,0.05) 0%, transparent 65%);
       pointer-events: none;
     }
-    .servicos-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    .servicos-header .label-eyebrow { margin-bottom: 1rem; }
-    .servicos-header .section-title { color: var(--white); }
-    .servicos-header p {
-      font-size: 0.96rem;
-      color: rgba(255,255,255,0.5);
-      max-width: 50ch;
-      margin: 1rem auto 0;
-    }
+    .servicos-header { text-align: center; margin-bottom: 4rem; }
+    .servicos-header .label-eyebrow { margin-bottom: 1rem; display: block; }
+    .servicos-header p { font-size: 0.95rem; color: var(--text2); max-width: 50ch; margin: 1rem auto 0; }
     .servicos-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5px;
-      background: rgba(26,143,168,0.15);
-      border: 1px solid rgba(26,143,168,0.15);
-      border-radius: 8px;
+      gap: 1px;
+      background: rgba(47,203,138,0.08);
+      border: 1px solid rgba(47,203,138,0.1);
+      border-radius: 14px;
       overflow: hidden;
     }
     .servico-card {
-      background: rgba(255,255,255,0.02);
+      background: var(--surface);
       padding: 2.5rem 2.8rem;
       transition: background 0.3s var(--ease);
-      position: relative;
     }
-    .servico-card:hover {
-      background: rgba(26,143,168,0.08);
-    }
+    .servico-card:hover { background: rgba(47,203,138,0.05); }
     .servico-number {
       font-family: var(--ff-display);
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: rgba(26,143,168,0.2);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(47,203,138,0.12);
       line-height: 1;
       margin-bottom: 1rem;
       transition: color 0.3s;
     }
-    .servico-card:hover .servico-number { color: rgba(26,143,168,0.5); }
+    .servico-card:hover .servico-number { color: rgba(47,203,138,0.35); }
     .servico-title {
       font-family: var(--ff-display);
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
       margin-bottom: 0.8rem;
       line-height: 1.2;
     }
-    .servico-desc {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-    .servico-itens {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+    .servico-desc { font-size: 0.88rem; color: var(--text2); line-height: 1.75; margin-bottom: 1.5rem; }
+    .servico-itens { display: flex; flex-direction: column; gap: 0.45rem; }
     .servico-item {
       display: flex;
       align-items: center;
       gap: 0.6rem;
       font-size: 0.8rem;
-      color: rgba(255,255,255,0.45);
-      font-family: var(--ff-label);
-      letter-spacing: 0.04em;
+      color: var(--text3);
+      font-weight: 500;
     }
     .servico-item::before {
       content: '';
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      background: var(--teal);
+      background: var(--green);
       flex-shrink: 0;
     }
 
-    /* ─────────────────────────────────────────
-       ANT PROCESSOS BAND
-    ───────────────────────────────────────── */
+    /* ANT PROCESSOS */
     .processos-band {
       padding-block: 5rem;
-      background: #111E2A;
+      background: var(--surface);
       position: relative;
       overflow: hidden;
+      border-top: 1px solid var(--border2);
+      border-bottom: 1px solid var(--border2);
     }
     .processos-band::before {
       content: '';
       position: absolute;
       top: 0; right: 0;
       width: 50%; height: 100%;
-      background: radial-gradient(ellipse at right, rgba(26,143,168,0.07) 0%, transparent 65%);
+      background: radial-gradient(ellipse at right, rgba(47,203,138,0.06) 0%, transparent 65%);
       pointer-events: none;
     }
     .processos-inner {
@@ -676,89 +655,75 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-family: var(--ff-label);
       font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--teal);
+      color: var(--green);
       margin-bottom: 1rem;
     }
     .processos-tag-dot {
       width: 6px; height: 6px;
       border-radius: 50%;
-      background: var(--teal);
+      background: var(--green);
       animation: blink 2s ease-in-out infinite;
     }
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
     }
     .processos-heading {
       font-family: var(--ff-display);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.15;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.18;
       margin-bottom: 0.8rem;
     }
     .processos-heading em {
       font-style: italic;
-      color: rgba(255,255,255,0.5);
+      color: var(--text2);
+      font-weight: 400;
     }
-    .processos-sub {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.5);
-      max-width: 55ch;
-      line-height: 1.7;
-    }
-    .processos-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.2rem;
-    }
+    .processos-sub { font-size: 0.92rem; color: var(--text2); max-width: 55ch; line-height: 1.75; }
+    .processos-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
     .processos-pill {
-      font-family: var(--ff-label);
       font-size: 0.68rem;
+      font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text3);
+      border: 1px solid var(--border2);
       border-radius: 20px;
       padding: 0.25rem 0.8rem;
     }
-    .processos-action {
-      flex-shrink: 0;
-    }
+    .processos-action { flex-shrink: 0; }
     .btn-processos {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--teal);
-      color: var(--white);
-      border-radius: 3px;
+      background: var(--green);
+      color: #081626;
+      border-radius: 6px;
       padding: 1rem 2rem;
-      font-family: var(--ff-label);
       font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       white-space: nowrap;
       transition: all 0.3s var(--ease);
     }
     .btn-processos:hover {
-      background: var(--blue);
+      background: var(--green-hi);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(26,143,168,0.3);
+      box-shadow: 0 8px 28px rgba(47,203,138,0.35);
     }
 
-    /* ─────────────────────────────────────────
-       METODOLOGIA / CTA BAND
-    ───────────────────────────────────────── */
+    /* METODOLOGIA */
     .metodologia {
       padding-block: 5rem;
-      background: var(--teal);
+      background: rgba(47,203,138,0.07);
+      border-top: 1px solid rgba(47,203,138,0.15);
+      border-bottom: 1px solid rgba(47,203,138,0.15);
     }
     .metodologia-inner {
       display: grid;
@@ -766,141 +731,78 @@
       gap: 3rem;
       align-items: center;
     }
-    .metodologia-text .label-eyebrow { color: rgba(255,255,255,0.7); }
+    .metodologia-text .label-eyebrow { display: block; margin-bottom: 0.8rem; }
     .metodologia-heading {
       font-family: var(--ff-display);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 400;
-      color: var(--white);
-      margin-top: 0.5rem;
-      line-height: 1.2;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 0.3rem;
+      line-height: 1.18;
     }
-    .metodologia-heading em {
-      font-style: italic;
-      color: rgba(255,255,255,0.7);
-    }
-    .metodologia-sub {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.7);
-      margin-top: 0.8rem;
-      max-width: 55ch;
-    }
-    .metodologia-action .btn-outline {
-      border-color: rgba(255,255,255,0.6);
-      font-size: 0.8rem;
-      padding: 1rem 2.2rem;
-      white-space: nowrap;
-    }
-    .metodologia-action .btn-outline:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: white;
-    }
+    .metodologia-heading em { font-style: italic; color: var(--green); font-weight: 400; }
+    .metodologia-sub { font-size: 0.92rem; color: var(--text2); margin-top: 0.8rem; max-width: 55ch; line-height: 1.75; }
 
-    /* ─────────────────────────────────────────
-       DEPOIMENTOS
-    ───────────────────────────────────────── */
+    /* DEPOIMENTOS */
     .depoimentos {
       padding-block: 7rem;
-      background: var(--light);
+      background: var(--bg2);
     }
-    .depoimentos-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    .depoimentos-header .label-eyebrow { margin-bottom: 1rem; }
+    .depoimentos-header { text-align: center; margin-bottom: 4rem; }
     .depoimentos-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
     .depoimento-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
       padding: 2rem;
-      position: relative;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
     }
     .depoimento-card:hover {
-      border-color: rgba(26,143,168,0.35);
-      box-shadow: 0 8px 32px rgba(31,58,82,0.08);
+      border-color: rgba(47,203,138,0.2);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      transform: translateY(-3px);
     }
-    .depoimento-stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 1rem;
-      color: var(--teal);
-      font-size: 0.9rem;
-    }
+    .depoimento-stars { display: flex; gap: 3px; margin-bottom: 1rem; color: var(--gold); font-size: 0.9rem; }
     .depoimento-text {
       font-family: var(--ff-display);
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-style: italic;
-      color: var(--slate);
-      line-height: 1.65;
+      color: var(--text2);
+      line-height: 1.7;
       margin-bottom: 1.5rem;
     }
-    .depoimento-author {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
+    .depoimento-author { display: flex; align-items: center; gap: 0.8rem; }
     .depoimento-avatar {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--teal));
+      background: rgba(47,203,138,0.1);
+      border: 1px solid rgba(47,203,138,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--ff-display);
-      font-size: 1rem;
-      color: var(--white);
-      font-weight: 400;
+      font-size: 0.9rem;
+      color: var(--green);
+      font-weight: 700;
       flex-shrink: 0;
     }
-    .depoimento-name {
-      font-family: var(--ff-label);
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--navy);
-      letter-spacing: 0.04em;
-    }
-    .depoimento-role {
-      font-size: 0.75rem;
-      color: var(--mid);
-    }
+    .depoimento-name { font-size: 0.82rem; font-weight: 700; color: var(--text); }
+    .depoimento-role { font-size: 0.74rem; color: var(--text3); }
 
-    /* ─────────────────────────────────────────
-       FAQ
-    ───────────────────────────────────────── */
-    .faq {
-      padding-block: 7rem;
-      background: var(--white);
-    }
-    .faq-inner {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .faq-left .label-eyebrow { margin-bottom: 1rem; }
+    /* FAQ */
+    .faq { padding-block: 7rem; background: var(--bg); }
+    .faq-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+    .faq-left .label-eyebrow { display: block; margin-bottom: 1rem; }
     .faq-left .section-title { margin-bottom: 1rem; }
-    .faq-left p {
-      font-size: 0.9rem;
-      color: var(--slate);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-    }
-    .faq-item {
-      border-top: 1px solid var(--border);
-      padding-block: 1.5rem;
-    }
-    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-left p { font-size: 0.9rem; color: var(--text2); line-height: 1.75; margin-bottom: 2rem; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--border2); padding-block: 1.5rem; }
+    .faq-item:last-child { border-bottom: 1px solid var(--border2); }
     .faq-question {
       display: flex;
       justify-content: space-between;
@@ -908,57 +810,33 @@
       cursor: pointer;
       gap: 1rem;
     }
-    .faq-q-text {
-      font-family: var(--ff-body);
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--navy);
-    }
+    .faq-q-text { font-size: 0.95rem; font-weight: 500; color: var(--text); }
     .faq-icon {
-      width: 24px;
-      height: 24px;
-      border: 1px solid var(--border);
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--border2);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       transition: background 0.25s, border-color 0.25s;
-      color: var(--slate);
+      color: var(--text2);
       font-size: 1rem;
       line-height: 1;
     }
-    .faq-item.open .faq-icon {
-      background: var(--teal);
-      border-color: var(--teal);
-      color: white;
-    }
-    .faq-answer {
-      display: none;
-      padding-top: 1rem;
-      font-size: 0.88rem;
-      color: var(--slate);
-      line-height: 1.75;
-    }
+    .faq-item.open .faq-icon { background: var(--green); border-color: var(--green); color: #081626; }
+    .faq-answer { display: none; padding-top: 1rem; font-size: 0.88rem; color: var(--text2); line-height: 1.8; }
     .faq-item.open .faq-answer { display: block; }
 
-    /* ─────────────────────────────────────────
-       CONTATO / LEAD FORM
-    ───────────────────────────────────────── */
-    .contato {
-      padding-block: 7rem;
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-    }
-    .contato::after {
+    /* CONTATO */
+    .contato { padding-block: 7rem; background: var(--bg2); position: relative; overflow: hidden; }
+    .contato::before {
       content: '';
       position: absolute;
-      top: -30%;
-      right: -20%;
-      width: 60%;
-      height: 100%;
-      background: radial-gradient(ellipse, rgba(26,143,168,0.1) 0%, transparent 65%);
+      top: -20%; right: -15%;
+      width: 55%; height: 100%;
+      background: radial-gradient(ellipse, rgba(47,203,138,0.07) 0%, transparent 65%);
       pointer-events: none;
     }
     .contato-inner {
@@ -969,124 +847,94 @@
       position: relative;
       z-index: 2;
     }
-    .contato-left .label-eyebrow { margin-bottom: 1rem; }
+    .contato-left .label-eyebrow { display: block; margin-bottom: 1rem; }
     .contato-heading {
       font-family: var(--ff-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.15;
+      font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.12;
       margin-bottom: 1.2rem;
     }
-    .contato-heading em { font-style: italic; color: rgba(255,255,255,0.5); }
-    .contato-sub {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-    .contato-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .contato-heading em { font-style: italic; color: var(--green); font-weight: 400; }
+    .contato-sub { font-size: 0.92rem; color: var(--text2); line-height: 1.75; margin-bottom: 2.5rem; }
+    .contato-info { display: flex; flex-direction: column; gap: 1rem; }
     .contato-info-item {
       display: flex;
       align-items: center;
       gap: 0.8rem;
-      color: rgba(255,255,255,0.65);
+      color: var(--text2);
       font-size: 0.9rem;
     }
     .contato-info-icon {
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(26,143,168,0.3);
-      border-radius: 4px;
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.9rem;
       flex-shrink: 0;
+      background: rgba(47,203,138,0.05);
     }
     .form-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(26,143,168,0.2);
-      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 2.5rem;
-      backdrop-filter: blur(8px);
+      box-shadow: 0 0 40px rgba(47,203,138,0.04), 0 20px 40px rgba(0,0,0,0.2);
     }
     .form-box h3 {
       font-family: var(--ff-display);
       font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--white);
+      font-weight: 600;
+      color: var(--text);
       margin-bottom: 0.4rem;
     }
-    .form-box p {
+    #formContent > p {
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.45);
+      color: var(--text3);
       margin-bottom: 1.8rem;
     }
-    .form-row {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+    .form-row { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
     .form-group label {
-      font-family: var(--ff-label);
       font-size: 0.7rem;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      color: var(--text3);
     }
     .form-group input,
     .form-group select {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(26,143,168,0.2);
-      border-radius: 4px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border2);
+      border-radius: 6px;
       padding: 0.75rem 1rem;
-      color: var(--white);
+      color: var(--text);
       font-family: var(--ff-body);
       font-size: 0.9rem;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
       appearance: none;
     }
-    .form-group input::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group input::placeholder { color: var(--text3); }
     .form-group input:focus,
-    .form-group select:focus { border-color: var(--teal); }
-    .form-group select option { background: var(--navy); }
-    .form-submit {
-      width: 100%;
-      justify-content: center;
-      margin-top: 0.5rem;
-      padding: 1rem;
+    .form-group select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(47,203,138,0.08);
     }
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 2rem;
-      color: var(--white);
-    }
+    .form-group select option { background: var(--surface); }
+    .form-submit { width: 100%; justify-content: center; margin-top: 0.5rem; padding: 1rem; font-size: 0.85rem; }
+    .form-success { display: none; text-align: center; padding: 2rem; color: var(--text); }
     .form-success .check { font-size: 3rem; margin-bottom: 1rem; }
-    .form-success h4 {
-      font-family: var(--ff-display);
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
-    .form-success p { font-size: 0.88rem; color: rgba(255,255,255,0.55); }
+    .form-success h4 { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .form-success p { font-size: 0.88rem; color: var(--text2); }
 
-    /* ─────────────────────────────────────────
-       RODAPÉ
-    ───────────────────────────────────────── */
+    /* RODAPÉ */
     .rodape {
-      background: #111E2A;
+      background: rgba(0,0,0,0.35);
+      border-top: 1px solid var(--border2);
       padding-block: 3rem;
     }
     .rodape-inner {
@@ -1096,124 +944,22 @@
       flex-wrap: wrap;
       gap: 1.5rem;
     }
-    .rodape-logo img {
-      height: 42px;
-      opacity: 0.75;
-      filter: brightness(1.3);
-    }
-    .rodape-links {
-      display: flex;
-      gap: 2rem;
-    }
+    .rodape-logo img { height: 40px; opacity: 0.7; filter: brightness(1.3); }
+    .rodape-links { display: flex; gap: 2rem; }
     .rodape-links a {
-      font-family: var(--ff-label);
       font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      transition: color 0.2s;
-    }
-    .rodape-links a:hover { color: rgba(255,255,255,0.7); }
-    .rodape-links a.rodape-processos {
-      color: rgba(26,143,168,0.6);
-    }
-    .rodape-links a.rodape-processos:hover { color: var(--teal); }
-    .rodape-copy {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.25);
-      font-family: var(--ff-label);
-    }
-
-    /* ─────────────────────────────────────────
-       RESPONSIVE
-    ───────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta .btn-outline { display: none; }
-      .hamburger { display: flex; }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding-block: 100px 60px;
-      }
-      .hero-divider { display: none; }
-      .hero-right { display: none; }
-      .hero-heading { font-size: 2.8rem; }
-
-      .sobre-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .sobre-pilares { grid-template-columns: 1fr; }
-
-      .servicos-grid { grid-template-columns: 1fr; }
-      .processos-inner { grid-template-columns: 1fr; }
-      .processos-action { margin-top: 1rem; }
-
-      .metodologia-inner { grid-template-columns: 1fr; }
-      .metodologia-action { margin-top: 1rem; }
-
-      .depoimentos-grid { grid-template-columns: 1fr; }
-
-      .faq-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-
-      .contato-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-
-      .rodape-inner { flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (max-width: 600px) {
-      .hero-actions { flex-direction: column; }
-      .hero-actions .btn { width: 100%; justify-content: center; }
-      .sobre-pilares { grid-template-columns: 1fr 1fr; }
-    }
-
-    /* ─── BANNER SIMULADOR ─── */
-    .sim-banner {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(26,143,168,0.08);
-      border: 1px solid rgba(26,143,168,0.25);
-      border-radius: 10px;
-      padding: 0.9rem 1.2rem;
-      margin-top: 1.5rem;
-      max-width: 520px;
-    }
-    .sim-banner-pulse {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--teal);
-      flex-shrink: 0;
-      animation: sim-blink 2s ease-in-out infinite;
-    }
-    @keyframes sim-blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.3; }
-    }
-    .sim-banner-text {
-      font-size: 0.83rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.4;
-      flex: 1;
-    }
-    .sim-banner-text strong {
-      color: rgba(255,255,255,0.9);
       font-weight: 600;
-    }
-    .sim-banner-link {
-      font-family: var(--ff-label);
-      font-size: 0.72rem;
-      font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--teal);
-      white-space: nowrap;
-      flex-shrink: 0;
+      color: var(--text3);
       transition: color 0.2s;
     }
-    .sim-banner-link:hover { color: #fff; }
-    @media (max-width: 600px) {
-      .sim-banner { flex-wrap: wrap; }
-      .sim-banner-link { width: 100%; text-align: right; }
-    }
-    /* ─── WHATSAPP FLUTUANTE ─── */
+    .rodape-links a:hover { color: var(--text2); }
+    .rodape-links a.rodape-processos { color: rgba(47,203,138,0.55); }
+    .rodape-links a.rodape-processos:hover { color: var(--green); }
+    .rodape-copy { font-size: 0.72rem; color: var(--text3); font-weight: 500; }
+
+    /* WHATSAPP */
     .wa-float {
       position: fixed;
       bottom: 2rem;
@@ -1227,9 +973,9 @@
       border-radius: 50px;
       padding: 0.8rem 1.4rem 0.8rem 1rem;
       box-shadow: 0 4px 20px rgba(37,211,102,0.35);
-      font-family: var(--ff-label);
+      font-family: var(--ff-body);
       font-size: 0.78rem;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       cursor: pointer;
@@ -1237,32 +983,22 @@
       transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
       animation: waEntrance 0.6s 1.5s var(--ease) both;
     }
-    .wa-float:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(37,211,102,0.45);
-    }
-    .wa-float svg {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-    }
+    .wa-float:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,0.45); }
+    .wa-float svg { width: 22px; height: 22px; flex-shrink: 0; }
     @keyframes waEntrance {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    /* WhatsApp inline no contato */
     .wa-inline {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
       background: #25D366;
       color: white;
-      border-radius: 3px;
+      border-radius: 6px;
       padding: 0.85rem 1.6rem;
-      font-family: var(--ff-label);
       font-size: 0.78rem;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       cursor: pointer;
@@ -1272,549 +1008,590 @@
       width: 100%;
       justify-content: center;
     }
-    .wa-inline:hover {
-      background: #1ebe5d;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37,211,102,0.3);
-    }
+    .wa-inline:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
     .wa-inline svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta .btn-outline { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; padding-block: 100px 60px; }
+      .hero-right { display: none; }
+      .hero-heading { font-size: 2.6rem; }
+      .sobre-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sobre-pilares { grid-template-columns: 1fr; }
+      .servicos-grid { grid-template-columns: 1fr; }
+      .processos-inner { grid-template-columns: 1fr; }
+      .processos-action { margin-top: 1rem; }
+      .metodologia-inner { grid-template-columns: 1fr; }
+      .metodologia-action { margin-top: 1rem; }
+      .depoimentos-grid { grid-template-columns: 1fr; }
+      .faq-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contato-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .rodape-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .sobre-pilares { grid-template-columns: 1fr 1fr; }
+      .sim-banner { flex-wrap: wrap; }
+      .sim-banner-link { width: 100%; text-align: right; }
+    }
   </style>
 </head>
-
 <body>
 
-  <!-- ────────── NAV ────────── -->
-  <nav class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="#hero" class="nav-logo">
-        <img src="LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
-      </a>
-      <div class="nav-links">
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#depoimentos">Clientes</a>
-        <a href="#faq">FAQ</a>
-        <a href="ant-processos.html" class="nav-processos">ANT Processos</a>
-      </div>
-      <div class="nav-cta">
-        <a href="#contato" class="btn btn-outline" style="padding:0.65rem 1.4rem; font-size:0.75rem;">Agendar Diagnóstico</a>
-      </div>
-      <div class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
+<canvas id="ants"></canvas>
+<div class="glow"></div>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#sobre" class="mob-link">Sobre</a>
-    <a href="#servicos" class="mob-link">Serviços</a>
-    <a href="#depoimentos" class="mob-link">Clientes</a>
-    <a href="#faq" class="mob-link">FAQ</a>
-    <a href="ant-processos.html" class="mob-processos mob-link">ANT Processos ↗</a>
-    <a href="#contato" class="btn btn-primary mob-link">Agendar Diagnóstico</a>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
+    </a>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#depoimentos">Clientes</a>
+      <a href="#faq">FAQ</a>
+      <a href="ant-processos.html" class="nav-processos">ANT Processos</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contato" class="btn btn-outline" style="padding:0.65rem 1.4rem;font-size:0.75rem;">Agendar Diagnóstico</a>
+    </div>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
   </div>
+</nav>
 
-  <!-- ────────── HERO ────────── -->
-  <section class="hero" id="hero">
-    <div class="hero-divider"></div>
-    <div class="container hero-inner">
-      <div class="hero-left">
-        <div class="hero-label">
-          <div class="hero-label-line"></div>
-          <span class="label-eyebrow">Planejamento Financeiro Estratégico</span>
-        </div>
-        <h1 class="hero-heading">
-          Transforme <em>dados</em> em<br>
-          <strong>decisões que constroem riqueza.</strong>
-        </h1>
-        <p class="hero-sub">
-          Da organização financeira à estruturação patrimonial — a ANT Capital entrega o rigor que PMEs, autônomos e famílias precisam para crescer com segurança e consistência.
-        </p>
-        <div class="hero-actions">
-          <a href="#contato" class="btn btn-primary">Agendar Diagnóstico Gratuito ↗</a>
-          <a href="#servicos" class="btn btn-outline">Ver Serviços</a>
-        </div>
-        <div class="sim-banner">
-          <span class="sim-banner-pulse" aria-hidden="true"></span>
-          <span class="sim-banner-text"><strong>Descubra a saúde financeira</strong> da sua empresa ou da sua família em 2 minutos — resultado na hora.</span>
-          <a href="simulador.html" class="sim-banner-link">Fazer simulação →</a>
-        </div>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre" class="mob-link">Sobre</a>
+  <a href="#servicos" class="mob-link">Serviços</a>
+  <a href="#depoimentos" class="mob-link">Clientes</a>
+  <a href="#faq" class="mob-link">FAQ</a>
+  <a href="ant-processos.html" class="mob-processos mob-link">ANT Processos ↗</a>
+  <a href="#contato" class="btn btn-primary mob-link">Agendar Diagnóstico</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="label-eyebrow">Planejamento Financeiro Estratégico</span>
       </div>
-
-      <div class="hero-right">
-        <div class="hero-glass">
-          <img src="LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
-          <p style="font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:rgba(255,255,255,0.5); line-height:1.6;">
-            "Constância constrói."
-          </p>
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <div class="hero-stat-number">10+</div>
-              <div class="hero-stat-label">Anos de experiência</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat-number">50+</div>
-              <div class="hero-stat-label">Clientes atendidos</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat-number">6</div>
-              <div class="hero-stat-label">Etapas da Jornada</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat-number">BH</div>
-              <div class="hero-stat-label">Base em MG</div>
-            </div>
-          </div>
-        </div>
+      <h1 class="hero-heading">
+        Transforme dados em<br>
+        decisões que<br>
+        <em>constroem riqueza.</em>
+      </h1>
+      <p class="hero-sub">
+        Da organização financeira à estruturação patrimonial — a ANT Capital entrega o rigor que PMEs, autônomos e famílias precisam para crescer com segurança e consistência.
+      </p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-primary">Agendar Diagnóstico Gratuito ↗</a>
+        <a href="#servicos" class="btn btn-outline">Ver Serviços</a>
+      </div>
+      <div class="sim-banner">
+        <span class="sim-banner-pulse" aria-hidden="true"></span>
+        <span class="sim-banner-text"><strong>Descubra a saúde financeira</strong> da sua empresa ou da sua família em 2 minutos — resultado na hora.</span>
+        <a href="simulador.html" class="sim-banner-link">Fazer simulação →</a>
       </div>
     </div>
-
-  </section>
-
-  <!-- ────────── SOBRE ────────── -->
-  <section class="sobre" id="sobre">
-    <div class="container sobre-inner">
-      <div class="sobre-left reveal">
-        <span class="label-eyebrow sobre-label">Quem somos</span>
-        <h2 class="section-title sobre-title">Uma visão diferente sobre finanças.</h2>
-        <div class="sobre-accent-line"></div>
-        <blockquote class="sobre-quote">
-          "A saúde financeira é o pilar de sustentação de qualquer projeto perene."
-          <br><br>
-          <span style="font-size:0.85rem; font-style:normal; font-family:'Jost',sans-serif; letter-spacing:0.08em; color:#94A3B8;">— Rodrigo Silva, fundador</span>
-        </blockquote>
-        <br>
-        <div class="sobre-pilares">
-          <div class="sobre-pilar">
-            <div class="sobre-pilar-icon">🎯</div>
-            <div class="sobre-pilar-title">Precisão</div>
-            <div class="sobre-pilar-text">Análise financeira com metodologia de alta performance.</div>
-          </div>
-          <div class="sobre-pilar">
-            <div class="sobre-pilar-icon">🏗️</div>
-            <div class="sobre-pilar-title">Processos</div>
-            <div class="sobre-pilar-text">Estruturamos sistemas financeiros inteligentes e duradouros.</div>
-          </div>
-          <div class="sobre-pilar">
-            <div class="sobre-pilar-icon">📈</div>
-            <div class="sobre-pilar-title">Rentabilidade</div>
-            <div class="sobre-pilar-text">Transformamos faturamento em lucro real e previsível.</div>
-          </div>
-          <div class="sobre-pilar">
-            <div class="sobre-pilar-icon">🛡️</div>
-            <div class="sobre-pilar-title">Longevidade</div>
-            <div class="sobre-pilar-text">Construímos bases para negócios que resistem ao tempo.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sobre-right reveal reveal-delay-2">
-        <div class="sobre-photo-wrap">
-          <img src="rodrigo-silva.png" alt="Rodrigo Silva — Fundador ANT Capital" />
-          <div class="sobre-photo-caption">Rodrigo Silva — Fundador &amp; Consultor</div>
-        </div>
-        <p>A trajetória de <strong>Rodrigo Silva</strong> é pautada pela convicção de que a saúde financeira é o pilar de sustentação de qualquer projeto perene. Com mais de uma década de atuação como consultor especializado para escritórios de contabilidade, Rodrigo desenvolveu uma visão privilegiada sobre a gestão empresarial, ajudando dezenas de organizações a atingirem níveis superiores de performance operacional e técnica.</p>
-
-        <p><strong>A Fundação da ANT Capital</strong> surgiu da observação atenta do mercado brasileiro. Ao presenciar o fechamento precoce de pequenas e médias empresas — muitas vezes por falta de uma reserva de contingência ou de processos financeiros básicos — Rodrigo identificou a necessidade de uma consultoria que fosse além do suporte contábil tradicional.</p>
-
-        <p>Sua missão é clara: <strong>democratizar a inteligência financeira estratégica</strong> e oferecer às PMEs o rigor e a organização que o mercado exige.</p>
-
-        <p>O diferencial reside na adaptação de metodologias de alta performance desenvolvidas ao longo de 10 anos de experiência. Não entregamos apenas números; <strong>estruturamos processos financeiros inteligentes e personalizados</strong>. Ao unir expertise em gestão de processos à análise financeira de precisão, garantimos que o empresário recupere o controle total de sua operação, transformando dados em decisões seguras e faturamento em lucro real.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ────────── SERVIÇOS ────────── -->
-  <section class="servicos" id="servicos">
-    <div class="container">
-      <div class="servicos-header reveal">
-        <span class="label-eyebrow">O que entregamos</span>
-        <h2 class="section-title">Soluções para cada etapa<br>da sua jornada financeira.</h2>
-        <p>Do diagnóstico inicial à gestão patrimonial — cobertura completa para PMEs, autônomos e pessoas físicas.</p>
-      </div>
-
-      <div class="servicos-grid">
-        <div class="servico-card reveal">
-          <div class="servico-number">01</div>
-          <h3 class="servico-title">Diagnóstico Financeiro</h3>
-          <p class="servico-desc">O ponto de partida. Mapeamos a situação real da sua empresa ou vida financeira com profundidade e sem julgamentos. Você terá clareza total sobre onde está e para onde pode ir.</p>
-          <div class="servico-itens">
-            <span class="servico-item">Levantamento de receitas e despesas</span>
-            <span class="servico-item">Análise de fluxo de caixa</span>
-            <span class="servico-item">Identificação de gargalos e riscos</span>
-            <span class="servico-item">Relatório com plano de ação</span>
-          </div>
-        </div>
-        <div class="servico-card reveal reveal-delay-1">
-          <div class="servico-number">02</div>
-          <h3 class="servico-title">Planejamento Financeiro para PMEs</h3>
-          <p class="servico-desc">Estruturamos os processos financeiros da sua empresa para que você saia do operacional e tome decisões com base em dados concretos, não intuição.</p>
-          <div class="servico-itens">
-            <span class="servico-item">Orçamento empresarial e DRE gerencial</span>
-            <span class="servico-item">Controle de custos e precificação</span>
-            <span class="servico-item">Reserva de contingência e capital de giro</span>
-            <span class="servico-item">Metas e KPIs financeiros</span>
-          </div>
-        </div>
-        <div class="servico-card reveal reveal-delay-2">
-          <div class="servico-number">03</div>
-          <h3 class="servico-title">Planejamento Pessoal e Patrimonial</h3>
-          <p class="servico-desc">Para autônomos, profissionais liberais e pessoas físicas que querem organizar as finanças, investir com consciência e construir patrimônio de forma consistente.</p>
-          <div class="servico-itens">
-            <span class="servico-item">Orçamento pessoal e controle de dívidas</span>
-            <span class="servico-item">Estratégia de investimentos alinhada ao perfil</span>
-            <span class="servico-item">Planejamento de aposentadoria</span>
-            <span class="servico-item">Proteção patrimonial e seguros</span>
-          </div>
-        </div>
-        <div class="servico-card reveal reveal-delay-3">
-          <div class="servico-number">04</div>
-          <h3 class="servico-title">Consultoria Contínua — Programa Jornada</h3>
-          <p class="servico-desc">Nosso programa de acompanhamento de 6 meses. Do diagnóstico à autonomia financeira, passando por 6 fases estruturadas de evolução com reuniões, ferramentas e suporte dedicado.</p>
-          <div class="servico-itens">
-            <span class="servico-item">6 fases de evolução estruturada</span>
-            <span class="servico-item">Reuniões mensais de acompanhamento</span>
-            <span class="servico-item">Acesso à plataforma ANT Capital</span>
-            <span class="servico-item">Relatórios e dashboards personalizados</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ────────── ANT PROCESSOS BAND ────────── -->
-  <section class="processos-band" id="processos">
-    <div class="container processos-inner reveal">
-      <div class="processos-text">
-        <div class="processos-tag">
-          <div class="processos-tag-dot"></div>
-          Novo serviço ANT Capital
-        </div>
-        <h2 class="processos-heading">
-          Você tem um escritório contábil?<br>
-          <em>Automatize o que drena sua equipe.</em>
-        </h2>
-        <p class="processos-sub">
-          O ANT Processos entrega diagnóstico, automação e melhoria de processos para escritórios de 2 a 10 funcionários — cobrança de documentos, alertas de prazos, onboarding de clientes e muito mais, rodando sozinhos.
-        </p>
-        <div class="processos-pills">
-          <span class="processos-pill">Cobrança automática</span>
-          <span class="processos-pill">Alertas fiscais</span>
-          <span class="processos-pill">Onboarding</span>
-          <span class="processos-pill">Bot de atendimento</span>
-          <span class="processos-pill">Diagnóstico gratuito</span>
-        </div>
-      </div>
-      <div class="processos-action">
-        <a href="ant-processos.html" class="btn-processos">Conhecer o ANT Processos →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ────────── METODOLOGIA BAND ────────── -->
-  <section class="metodologia">
-    <div class="container metodologia-inner">
-      <div class="metodologia-text reveal">
-        <span class="label-eyebrow">Nossa metodologia</span>
-        <h2 class="metodologia-heading">
-          Não entregamos relatórios.<br>
-          <em>Construímos sistemas.</em>
-        </h2>
-        <p class="metodologia-sub">A ANT Capital adapta metodologias de alta performance para a realidade de cada cliente. O resultado: processos financeiros que funcionam sem você estar presente em cada decisão.</p>
-      </div>
-      <div class="metodologia-action reveal reveal-delay-2">
-        <a href="#contato" class="btn btn-outline">Quero conhecer a metodologia →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ────────── DEPOIMENTOS ────────── -->
-  <section class="depoimentos" id="depoimentos">
-    <div class="container">
-      <div class="depoimentos-header reveal">
-        <h2 class="section-title">O que dizem nossos clientes.</h2>
-      </div>
-      <div class="depoimentos-grid">
-        <div class="depoimento-card reveal">
-          <div class="depoimento-stars">★★★★★</div>
-          <p class="depoimento-text">"Antes da ANT Capital eu achava que minha empresa tinha lucro. Depois do diagnóstico entendi que estava apenas movimentando dinheiro. Em 3 meses organizamos tudo e pela primeira vez em 5 anos eu sei exatamente onde estou."</p>
-          <div class="depoimento-author">
-            <div class="depoimento-avatar">MS</div>
-            <div>
-              <div class="depoimento-name">Marcos S.</div>
-              <div class="depoimento-role">Proprietário, Clínica Odontológica — BH</div>
-            </div>
-          </div>
-        </div>
-        <div class="depoimento-card reveal reveal-delay-1">
-          <div class="depoimento-stars">★★★★★</div>
-          <p class="depoimento-text">"O Rodrigo não é um consultor que passa números. Ele realmente entende o negócio, faz as perguntas certas e entrega um plano que a gente consegue executar. Recomendo para qualquer empresário que quer crescer de verdade."</p>
-          <div class="depoimento-author">
-            <div class="depoimento-avatar">CP</div>
-            <div>
-              <div class="depoimento-name">Camila P.</div>
-              <div class="depoimento-role">Sócia, Agência de Marketing — BH</div>
-            </div>
-          </div>
-        </div>
-        <div class="depoimento-card reveal reveal-delay-2">
-          <div class="depoimento-stars">★★★★★</div>
-          <p class="depoimento-text">"Autônomo há 8 anos, sempre misturei as finanças pessoais com as do trabalho. Em 6 meses com a ANT Capital separei tudo, criei minha reserva e comecei a investir. Foi uma virada de chave."</p>
-          <div class="depoimento-author">
-            <div class="depoimento-avatar">RL</div>
-            <div>
-              <div class="depoimento-name">Rafael L.</div>
-              <div class="depoimento-role">Arquiteto Autônomo — BH</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ────────── FAQ ────────── -->
-  <section class="faq" id="faq">
-    <div class="container faq-inner">
-      <div class="faq-left reveal">
-        <span class="label-eyebrow">Dúvidas frequentes</span>
-        <h2 class="section-title">Perguntas que todo cliente faz antes de começar.</h2>
-        <p>Não encontrou o que buscava? Entre em contato e respondemos em menos de 24 horas.</p>
-        <a href="#contato" class="btn btn-primary" style="align-self:flex-start;">Falar com a equipe →</a>
-      </div>
-      <div class="faq-list reveal reveal-delay-2">
-        <div class="faq-item open">
-          <div class="faq-question">
-            <span class="faq-q-text">Qual é o valor do diagnóstico inicial?</span>
-            <span class="faq-icon">−</span>
-          </div>
-          <div class="faq-answer">O diagnóstico inicial é gratuito. Em uma reunião de até 60 minutos, mapeamos sua situação financeira e apresentamos um plano de ação personalizado sem nenhum custo ou compromisso.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">Quais são os perfis de clientes que a ANT Capital atende?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">Atendemos pequenas e médias empresas (PMEs), profissionais autônomos e pessoas físicas que desejam organizar suas finanças e construir patrimônio com estratégia. Se você tem uma empresa de até 50 funcionários ou é um profissional liberal, estamos prontos para ajudar.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">O que é o Programa Jornada e como funciona?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">O Programa Jornada é nossa consultoria de acompanhamento contínuo com duração de 6 meses. Ele é estruturado em 6 fases — do diagnóstico à autonomia financeira — com reuniões mensais, ferramentas digitais exclusivas e relatórios personalizados. É ideal para quem quer uma transformação financeira completa.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">Preciso ter um contador para contratar a ANT Capital?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">Não. A ANT Capital atua como consultoria financeira estratégica e gerencial, complementando — mas não substituindo — o trabalho do contador. Trabalhamos com os dados que você já tem e organizamos a gestão financeira da operação.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">O atendimento é presencial ou online?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">Atendemos em ambas as modalidades. Clientes de Belo Horizonte têm a opção de reuniões presenciais; clientes de outras cidades são atendidos 100% online com a mesma qualidade e estrutura.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">Em quanto tempo vejo resultados?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">Os primeiros impactos — clareza financeira, controle de fluxo de caixa e identificação de desperdícios — são percebidos já nas primeiras semanas. Resultados mais estruturais, como crescimento de margem e formação de reservas, se consolidam ao longo de 3 a 6 meses de acompanhamento.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ────────── CONTATO ────────── -->
-  <section class="contato" id="contato">
-    <div class="container contato-inner">
-      <div class="contato-left reveal">
-        <span class="label-eyebrow">Agende seu diagnóstico</span>
-        <h2 class="contato-heading">
-          O primeiro passo<br>não custa nada. <em>Literalmente.</em>
-        </h2>
-        <p class="contato-sub">Em uma reunião gratuita de até 60 minutos, identificamos os principais pontos de melhoria da sua vida financeira e apresentamos um caminho claro para você. Sem compromisso, sem letras miúdas.</p>
-        <div class="contato-info">
-          <div class="contato-info-item">
-            <div class="contato-info-icon">📞</div>
-            <span>(31) 9 9587-2806</span>
-          </div>
-          <div class="contato-info-item">
-            <div class="contato-info-icon">✉️</div>
-            <span>rodrigobrunosla@gmail.com</span>
-          </div>
-          <div class="contato-info-item">
-            <div class="contato-info-icon">📍</div>
-            <span>Belo Horizonte, MG — Atendimento online para todo o Brasil</span>
-          </div>
-        </div>
-        <a class="wa-inline" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-          Prefiro falar pelo WhatsApp
-        </a>
-      </div>
-
-      <div class="form-box reveal reveal-delay-2">
-        <div id="formContent">
-          <h3>Agendar Diagnóstico Gratuito</h3>
-          <p>Preencha os dados abaixo e entraremos em contato em até 24 horas.</p>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nome">Nome completo</label>
-              <input type="text" id="nome" placeholder="Seu nome" />
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" placeholder="seu@email.com" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="whatsapp">WhatsApp</label>
-              <input type="tel" id="whatsapp" placeholder="(31) 9 0000-0000" />
-            </div>
-            <div class="form-group">
-              <label for="perfil">Seu perfil</label>
-              <select id="perfil">
-                <option value="" disabled selected>Selecione…</option>
-                <option>Dono de empresa (PME)</option>
-                <option>Profissional autônomo</option>
-                <option>Pessoa física</option>
-                <option>Outro</option>
-              </select>
-            </div>
-          </div>
-          <button class="btn btn-primary form-submit" id="formBtn" onclick="submitForm()">
-            Quero meu Diagnóstico Gratuito →
-          </button>
-        </div>
-        <div class="form-success" id="formSuccess">
-          <div class="check">✅</div>
-          <h4>Recebemos sua solicitação!</h4>
-          <p>Entraremos em contato em até 24 horas pelo WhatsApp ou e-mail informado.<br><br>Enquanto isso, que tal nos seguir no Instagram?</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ────────── RODAPÉ ────────── -->
-  <footer class="rodape">
-    <div class="container rodape-inner">
-      <a href="#hero" class="rodape-logo">
+    <div class="hero-right">
+      <div class="hero-glass">
         <img src="LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
-      </a>
-      <div class="rodape-links">
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contato">Contato</a>
-        <a href="ant-processos.html" class="rodape-processos">ANT Processos ↗</a>
+        <p class="hero-glass-tagline">"Constância constrói."</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number">10+</div>
+            <div class="hero-stat-label">Anos de experiência</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">50+</div>
+            <div class="hero-stat-label">Clientes atendidos</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">6</div>
+            <div class="hero-stat-label">Etapas da Jornada</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">BH</div>
+            <div class="hero-stat-label">Base em MG</div>
+          </div>
+        </div>
       </div>
-      <div class="rodape-copy">© 2026 ANT Capital. Todos os direitos reservados.</div>
     </div>
-  </footer>
+  </div>
+  <div class="hero-scroll">
+    <span>scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
 
-  <!-- ────────── JS ────────── -->
-  <script>
-    /* NAV scroll */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="container sobre-inner">
+    <div class="sobre-left reveal">
+      <span class="label-eyebrow sobre-label">Quem somos</span>
+      <h2 class="section-title sobre-title">Uma visão diferente sobre finanças.</h2>
+      <div class="sobre-accent-line"></div>
+      <blockquote class="sobre-quote">
+        "A saúde financeira é o pilar de sustentação de qualquer projeto perene."
+        <span class="sobre-quote-author">— Rodrigo Silva, fundador</span>
+      </blockquote>
+      <div class="sobre-pilares">
+        <div class="sobre-pilar">
+          <div class="sobre-pilar-icon">🎯</div>
+          <div class="sobre-pilar-title">Precisão</div>
+          <div class="sobre-pilar-text">Análise financeira com metodologia de alta performance.</div>
+        </div>
+        <div class="sobre-pilar">
+          <div class="sobre-pilar-icon">🏗️</div>
+          <div class="sobre-pilar-title">Processos</div>
+          <div class="sobre-pilar-text">Estruturamos sistemas financeiros inteligentes e duradouros.</div>
+        </div>
+        <div class="sobre-pilar">
+          <div class="sobre-pilar-icon">📈</div>
+          <div class="sobre-pilar-title">Rentabilidade</div>
+          <div class="sobre-pilar-text">Transformamos faturamento em lucro real e previsível.</div>
+        </div>
+        <div class="sobre-pilar">
+          <div class="sobre-pilar-icon">🛡️</div>
+          <div class="sobre-pilar-title">Longevidade</div>
+          <div class="sobre-pilar-text">Construímos bases para negócios que resistem ao tempo.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sobre-right reveal reveal-delay-2">
+      <div class="sobre-photo-wrap">
+        <img src="rodrigo-silva.png" alt="Rodrigo Silva — Fundador ANT Capital" />
+        <div class="sobre-photo-caption">Rodrigo Silva — Fundador &amp; Consultor</div>
+      </div>
+      <p>A trajetória de <strong>Rodrigo Silva</strong> é pautada pela convicção de que a saúde financeira é o pilar de sustentação de qualquer projeto perene. Com mais de uma década de atuação como consultor especializado para escritórios de contabilidade, Rodrigo desenvolveu uma visão privilegiada sobre a gestão empresarial, ajudando dezenas de organizações a atingirem níveis superiores de performance operacional e técnica.</p>
+      <p><strong>A Fundação da ANT Capital</strong> surgiu da observação atenta do mercado brasileiro. Ao presenciar o fechamento precoce de pequenas e médias empresas — muitas vezes por falta de uma reserva de contingência ou de processos financeiros básicos — Rodrigo identificou a necessidade de uma consultoria que fosse além do suporte contábil tradicional.</p>
+      <p>Sua missão é clara: <strong>democratizar a inteligência financeira estratégica</strong> e oferecer às PMEs o rigor e a organização que o mercado exige.</p>
+      <p>O diferencial reside na adaptação de metodologias de alta performance desenvolvidas ao longo de 10 anos de experiência. Não entregamos apenas números; <strong>estruturamos processos financeiros inteligentes e personalizados</strong>. Ao unir expertise em gestão de processos à análise financeira de precisão, garantimos que o empresário recupere o controle total de sua operação, transformando dados em decisões seguras e faturamento em lucro real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="container">
+    <div class="servicos-header reveal">
+      <span class="label-eyebrow">O que entregamos</span>
+      <h2 class="section-title">Soluções para cada etapa<br>da sua jornada financeira.</h2>
+      <p>Do diagnóstico inicial à gestão patrimonial — cobertura completa para PMEs, autônomos e pessoas físicas.</p>
+    </div>
+    <div class="servicos-grid">
+      <div class="servico-card reveal">
+        <div class="servico-number">01</div>
+        <h3 class="servico-title">Diagnóstico Financeiro</h3>
+        <p class="servico-desc">O ponto de partida. Mapeamos a situação real da sua empresa ou vida financeira com profundidade e sem julgamentos. Você terá clareza total sobre onde está e para onde pode ir.</p>
+        <div class="servico-itens">
+          <span class="servico-item">Levantamento de receitas e despesas</span>
+          <span class="servico-item">Análise de fluxo de caixa</span>
+          <span class="servico-item">Identificação de gargalos e riscos</span>
+          <span class="servico-item">Relatório com plano de ação</span>
+        </div>
+      </div>
+      <div class="servico-card reveal reveal-delay-1">
+        <div class="servico-number">02</div>
+        <h3 class="servico-title">Planejamento Financeiro para PMEs</h3>
+        <p class="servico-desc">Estruturamos os processos financeiros da sua empresa para que você saia do operacional e tome decisões com base em dados concretos, não intuição.</p>
+        <div class="servico-itens">
+          <span class="servico-item">Orçamento empresarial e DRE gerencial</span>
+          <span class="servico-item">Controle de custos e precificação</span>
+          <span class="servico-item">Reserva de contingência e capital de giro</span>
+          <span class="servico-item">Metas e KPIs financeiros</span>
+        </div>
+      </div>
+      <div class="servico-card reveal reveal-delay-2">
+        <div class="servico-number">03</div>
+        <h3 class="servico-title">Planejamento Pessoal e Patrimonial</h3>
+        <p class="servico-desc">Para autônomos, profissionais liberais e pessoas físicas que querem organizar as finanças, investir com consciência e construir patrimônio de forma consistente.</p>
+        <div class="servico-itens">
+          <span class="servico-item">Orçamento pessoal e controle de dívidas</span>
+          <span class="servico-item">Estratégia de investimentos alinhada ao perfil</span>
+          <span class="servico-item">Planejamento de aposentadoria</span>
+          <span class="servico-item">Proteção patrimonial e seguros</span>
+        </div>
+      </div>
+      <div class="servico-card reveal reveal-delay-3">
+        <div class="servico-number">04</div>
+        <h3 class="servico-title">Consultoria Contínua — Programa Jornada</h3>
+        <p class="servico-desc">Nosso programa de acompanhamento de 6 meses. Do diagnóstico à autonomia financeira, passando por 6 fases estruturadas de evolução com reuniões, ferramentas e suporte dedicado.</p>
+        <div class="servico-itens">
+          <span class="servico-item">6 fases de evolução estruturada</span>
+          <span class="servico-item">Reuniões mensais de acompanhamento</span>
+          <span class="servico-item">Acesso à plataforma ANT Capital</span>
+          <span class="servico-item">Relatórios e dashboards personalizados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANT PROCESSOS -->
+<section class="processos-band" id="processos">
+  <div class="container processos-inner reveal">
+    <div class="processos-text">
+      <div class="processos-tag">
+        <div class="processos-tag-dot"></div>
+        Novo serviço ANT Capital
+      </div>
+      <h2 class="processos-heading">
+        Você tem um escritório contábil?<br>
+        <em>Automatize o que drena sua equipe.</em>
+      </h2>
+      <p class="processos-sub">
+        O ANT Processos entrega diagnóstico, automação e melhoria de processos para escritórios de 2 a 10 funcionários — cobrança de documentos, alertas de prazos, onboarding de clientes e muito mais, rodando sozinhos.
+      </p>
+      <div class="processos-pills">
+        <span class="processos-pill">Cobrança automática</span>
+        <span class="processos-pill">Alertas fiscais</span>
+        <span class="processos-pill">Onboarding</span>
+        <span class="processos-pill">Bot de atendimento</span>
+        <span class="processos-pill">Diagnóstico gratuito</span>
+      </div>
+    </div>
+    <div class="processos-action">
+      <a href="ant-processos.html" class="btn-processos">Conhecer o ANT Processos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section class="metodologia">
+  <div class="container metodologia-inner">
+    <div class="metodologia-text reveal">
+      <span class="label-eyebrow">Nossa metodologia</span>
+      <h2 class="metodologia-heading">
+        Não entregamos relatórios.<br>
+        <em>Construímos sistemas.</em>
+      </h2>
+      <p class="metodologia-sub">A ANT Capital adapta metodologias de alta performance para a realidade de cada cliente. O resultado: processos financeiros que funcionam sem você estar presente em cada decisão.</p>
+    </div>
+    <div class="metodologia-action reveal reveal-delay-2">
+      <a href="#contato" class="btn btn-primary">Quero conhecer a metodologia →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div class="container">
+    <div class="depoimentos-header reveal">
+      <h2 class="section-title">O que dizem nossos clientes.</h2>
+    </div>
+    <div class="depoimentos-grid">
+      <div class="depoimento-card reveal">
+        <div class="depoimento-stars">★★★★★</div>
+        <p class="depoimento-text">"Antes da ANT Capital eu achava que minha empresa tinha lucro. Depois do diagnóstico entendi que estava apenas movimentando dinheiro. Em 3 meses organizamos tudo e pela primeira vez em 5 anos eu sei exatamente onde estou."</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">MS</div>
+          <div>
+            <div class="depoimento-name">Marcos S.</div>
+            <div class="depoimento-role">Proprietário, Clínica Odontológica — BH</div>
+          </div>
+        </div>
+      </div>
+      <div class="depoimento-card reveal reveal-delay-1">
+        <div class="depoimento-stars">★★★★★</div>
+        <p class="depoimento-text">"O Rodrigo não é um consultor que passa números. Ele realmente entende o negócio, faz as perguntas certas e entrega um plano que a gente consegue executar. Recomendo para qualquer empresário que quer crescer de verdade."</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">CP</div>
+          <div>
+            <div class="depoimento-name">Camila P.</div>
+            <div class="depoimento-role">Sócia, Agência de Marketing — BH</div>
+          </div>
+        </div>
+      </div>
+      <div class="depoimento-card reveal reveal-delay-2">
+        <div class="depoimento-stars">★★★★★</div>
+        <p class="depoimento-text">"Autônomo há 8 anos, sempre misturei as finanças pessoais com as do trabalho. Em 6 meses com a ANT Capital separei tudo, criei minha reserva e comecei a investir. Foi uma virada de chave."</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">RL</div>
+          <div>
+            <div class="depoimento-name">Rafael L.</div>
+            <div class="depoimento-role">Arquiteto Autônomo — BH</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container faq-inner">
+    <div class="faq-left reveal">
+      <span class="label-eyebrow">Dúvidas frequentes</span>
+      <h2 class="section-title">Perguntas que todo cliente faz antes de começar.</h2>
+      <p>Não encontrou o que buscava? Entre em contato e respondemos em menos de 24 horas.</p>
+      <a href="#contato" class="btn btn-primary" style="align-self:flex-start;">Falar com a equipe →</a>
+    </div>
+    <div class="faq-list reveal reveal-delay-2">
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span class="faq-q-text">Qual é o valor do diagnóstico inicial?</span>
+          <span class="faq-icon">−</span>
+        </div>
+        <div class="faq-answer">O diagnóstico inicial é gratuito. Em uma reunião de até 60 minutos, mapeamos sua situação financeira e apresentamos um plano de ação personalizado sem nenhum custo ou compromisso.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Quais são os perfis de clientes que a ANT Capital atende?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Atendemos pequenas e médias empresas (PMEs), profissionais autônomos e pessoas físicas que desejam organizar suas finanças e construir patrimônio com estratégia. Se você tem uma empresa de até 50 funcionários ou é um profissional liberal, estamos prontos para ajudar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">O que é o Programa Jornada e como funciona?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">O Programa Jornada é nossa consultoria de acompanhamento contínuo com duração de 6 meses. Ele é estruturado em 6 fases — do diagnóstico à autonomia financeira — com reuniões mensais, ferramentas digitais exclusivas e relatórios personalizados. É ideal para quem quer uma transformação financeira completa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Preciso ter um contador para contratar a ANT Capital?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Não. A ANT Capital atua como consultoria financeira estratégica e gerencial, complementando — mas não substituindo — o trabalho do contador. Trabalhamos com os dados que você já tem e organizamos a gestão financeira da operação.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">O atendimento é presencial ou online?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Atendemos em ambas as modalidades. Clientes de Belo Horizonte têm a opção de reuniões presenciais; clientes de outras cidades são atendidos 100% online com a mesma qualidade e estrutura.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Em quanto tempo vejo resultados?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Os primeiros impactos — clareza financeira, controle de fluxo de caixa e identificação de desperdícios — são percebidos já nas primeiras semanas. Resultados mais estruturais, como crescimento de margem e formação de reservas, se consolidam ao longo de 3 a 6 meses de acompanhamento.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="container contato-inner">
+    <div class="contato-left reveal">
+      <span class="label-eyebrow">Agende seu diagnóstico</span>
+      <h2 class="contato-heading">
+        O primeiro passo<br>não custa nada. <em>Literalmente.</em>
+      </h2>
+      <p class="contato-sub">Em uma reunião gratuita de até 60 minutos, identificamos os principais pontos de melhoria da sua vida financeira e apresentamos um caminho claro para você. Sem compromisso, sem letras miúdas.</p>
+      <div class="contato-info">
+        <div class="contato-info-item">
+          <div class="contato-info-icon">📞</div>
+          <span>(31) 9 9587-2806</span>
+        </div>
+        <div class="contato-info-item">
+          <div class="contato-info-icon">✉️</div>
+          <span>rodrigobrunosla@gmail.com</span>
+        </div>
+        <div class="contato-info-item">
+          <div class="contato-info-icon">📍</div>
+          <span>Belo Horizonte, MG — Atendimento online para todo o Brasil</span>
+        </div>
+      </div>
+      <a class="wa-inline" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+        Prefiro falar pelo WhatsApp
+      </a>
+    </div>
+    <div class="form-box reveal reveal-delay-2">
+      <div id="formContent">
+        <h3>Agendar Diagnóstico Gratuito</h3>
+        <p>Preencha os dados abaixo e entraremos em contato em até 24 horas.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" placeholder="Seu nome" />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" placeholder="(31) 9 0000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="perfil">Seu perfil</label>
+            <select id="perfil">
+              <option value="" disabled selected>Selecione…</option>
+              <option>Dono de empresa (PME)</option>
+              <option>Profissional autônomo</option>
+              <option>Pessoa física</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary form-submit" id="formBtn" onclick="submitForm()">
+          Quero meu Diagnóstico Gratuito →
+        </button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✅</div>
+        <h4>Recebemos sua solicitação!</h4>
+        <p>Entraremos em contato em até 24 horas pelo WhatsApp ou e-mail informado.<br><br>Enquanto isso, que tal nos seguir no Instagram?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer class="rodape">
+  <div class="container rodape-inner">
+    <a href="#hero" class="rodape-logo">
+      <img src="LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
+    </a>
+    <div class="rodape-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+      <a href="ant-processos.html" class="rodape-processos">ANT Processos ↗</a>
+    </div>
+    <div class="rodape-copy">© 2026 ANT Capital. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a class="wa-float" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+  Falar no WhatsApp
+</a>
+
+<script>
+/* ── CANVAS FORMIGAS ── */
+(function(){
+  const canvas = document.getElementById('ants');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  function resize(){
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const N = 28;
+  const ants = Array.from({length: N}, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    angle: Math.random() * Math.PI * 2,
+    speed: 0.35 + Math.random() * 0.55,
+    turn:  0.04 + Math.random() * 0.06,
+    trail: [],
+    trailMax: 55 + Math.floor(Math.random() * 35),
+    size:  1 + Math.random() * 1.2,
+    alpha: 0.18 + Math.random() * 0.22
+  }));
+
+  function step(){
+    ctx.clearRect(0, 0, W, H);
+    ants.forEach(a => {
+      a.angle += (Math.random() - 0.5) * a.turn * 2;
+      a.x += Math.cos(a.angle) * a.speed;
+      a.y += Math.sin(a.angle) * a.speed;
+      if (a.x < 0) a.x = W; if (a.x > W) a.x = 0;
+      if (a.y < 0) a.y = H; if (a.y > H) a.y = 0;
+      a.trail.push({x: a.x, y: a.y});
+      if (a.trail.length > a.trailMax) a.trail.shift();
+      if (a.trail.length < 2) return;
+      ctx.beginPath();
+      ctx.moveTo(a.trail[0].x, a.trail[0].y);
+      for (let i = 1; i < a.trail.length; i++) ctx.lineTo(a.trail[i].x, a.trail[i].y);
+      const grad = ctx.createLinearGradient(
+        a.trail[0].x, a.trail[0].y,
+        a.trail[a.trail.length-1].x, a.trail[a.trail.length-1].y
+      );
+      grad.addColorStop(0, 'rgba(47,203,138,0)');
+      grad.addColorStop(1, `rgba(47,203,138,${a.alpha})`);
+      ctx.strokeStyle = grad;
+      ctx.lineWidth   = a.size;
+      ctx.lineCap     = 'round';
+      ctx.lineJoin    = 'round';
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, a.size * 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(47,203,138,${a.alpha + 0.15})`;
+      ctx.fill();
     });
+    requestAnimationFrame(step);
+  }
+  step();
+})();
 
-    /* Hamburger */
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
+/* NAV scroll */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+/* Hamburger */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+/* Scroll reveal */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* FAQ */
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-icon').textContent = '+'; });
+    if (!wasOpen){ item.classList.add('open'); q.querySelector('.faq-icon').textContent = '−'; }
+  });
+});
+
+/* Form submit */
+async function submitForm(){
+  const nome   = document.getElementById('nome').value.trim();
+  const email  = document.getElementById('email').value.trim();
+  const wpp    = document.getElementById('whatsapp').value.trim();
+  const perfil = document.getElementById('perfil').value;
+  const btn    = document.getElementById('formBtn');
+  if (!nome || !email || !wpp || !perfil){ alert('Por favor, preencha todos os campos antes de enviar.'); return; }
+  btn.textContent = 'Enviando…'; btn.disabled = true;
+  try {
+    const response = await fetch('https://formspree.io/f/xlgkvyrw', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ nome, email, whatsapp: wpp, perfil, _subject: `Novo lead ANT Capital — ${nome}` })
     });
-    document.querySelectorAll('.mob-link').forEach(l => {
-      l.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    });
-
-    /* Scroll reveal */
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    /* FAQ */
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.closest('.faq-item');
-        const wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-icon').textContent = '+';
-        });
-        if (!wasOpen) {
-          item.classList.add('open');
-          q.querySelector('.faq-icon').textContent = '−';
-        }
-      });
-    });
-
-    /* Form submit — Formspree + WhatsApp */
-    async function submitForm() {
-      const nome   = document.getElementById('nome').value.trim();
-      const email  = document.getElementById('email').value.trim();
-      const wpp    = document.getElementById('whatsapp').value.trim();
-      const perfil = document.getElementById('perfil').value;
-      const btn    = document.getElementById('formBtn');
-
-      if (!nome || !email || !wpp || !perfil) {
-        alert('Por favor, preencha todos os campos antes de enviar.');
-        return;
-      }
-
-      btn.textContent = 'Enviando…';
-      btn.disabled = true;
-
-      try {
-        const response = await fetch('https://formspree.io/f/xlgkvyrw', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            nome,
-            email,
-            whatsapp: wpp,
-            perfil,
-            _subject: `Novo lead ANT Capital — ${nome}`
-          })
-        });
-
-        if (response.ok) {
-          document.getElementById('formContent').style.display = 'none';
-          document.getElementById('formSuccess').style.display = 'block';
-
-          const msg = encodeURIComponent(
-            `Olá Rodrigo! Meu nome é ${nome}.\n\nSolicitei um diagnóstico gratuito pelo site da ANT Capital.\n\nPerfil: ${perfil}\nE-mail: ${email}\nWhatsApp: ${wpp}\n\nAguardo contato!`
-          );
-          setTimeout(() => window.open(`https://wa.me/5531995872806?text=${msg}`, '_blank'), 800);
-        } else {
-          throw new Error('Erro no envio');
-        }
-      } catch (err) {
-        btn.textContent = 'Quero meu Diagnóstico Gratuito →';
-        btn.disabled = false;
-        alert('Houve um problema ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
-      }
-    }
-  </script>
-  <!-- WhatsApp Flutuante -->
-  <a class="wa-float" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-    Falar no WhatsApp
-  </a>
-
+    if (response.ok){
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      const msg = encodeURIComponent(`Olá Rodrigo! Meu nome é ${nome}.\n\nSolicitei um diagnóstico gratuito pelo site da ANT Capital.\n\nPerfil: ${perfil}\nE-mail: ${email}\nWhatsApp: ${wpp}\n\nAguardo contato!`);
+      setTimeout(() => window.open(`https://wa.me/5531995872806?text=${msg}`, '_blank'), 800);
+    } else { throw new Error('erro'); }
+  } catch(err) {
+    btn.textContent = 'Quero meu Diagnóstico Gratuito →'; btn.disabled = false;
+    alert('Houve um problema ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
+  }
+}
+</script>
 </body>
 </html>
