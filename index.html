@@ -65,7 +65,7 @@
         ],
         "priceRange": "$$",
         "openingHours": "Mo-Fr 08:00-18:00",
-        "sameAs": ["https://wa.me/5531995872806"]
+        "sameAs": ["https://www.instagram.com/antconsultoria/", "https://wa.me/5531995872806"]
       },
       {
         "@type": "WebSite",
@@ -974,6 +974,11 @@
     .rodape-links a:hover { color: var(--text2); }
     .rodape-links a.rodape-processos { color: rgba(47,203,138,0.55); }
     .rodape-links a.rodape-processos:hover { color: var(--green); }
+    .rodape-links a.rodape-ig { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .rodape-links { flex-wrap: wrap; }
+    .form-legal { margin-top: 0.9rem; font-size: 0.75rem; color: var(--text3); text-align: center; }
+    .form-legal a { color: var(--text2); text-decoration: underline; }
+    .form-legal a:hover { color: var(--green); }
     .rodape-copy { font-size: 0.72rem; color: var(--text3); font-weight: 500; }
 
     /* WHATSAPP */
@@ -1054,7 +1059,128 @@
       .sim-banner { flex-wrap: wrap; }
       .sim-banner-link { width: 100%; text-align: right; }
     }
+
+    /* ===== NOVAS SEÇÕES (out/2026) ===== */
+    .sec { padding-block: 6.5rem; position: relative; }
+    .sec-alt { background: var(--bg2); }
+    .sec-header { text-align: center; margin-bottom: 3.5rem; }
+    .sec-header .label-eyebrow { display: block; margin-bottom: 1rem; }
+    .sec-header p { font-size: 0.98rem; color: var(--text2); max-width: 58ch; margin: 1rem auto 0; }
+    .sec-cta { text-align: center; margin-top: 2.8rem; }
+
+    /* Por onde começar */
+    .escada { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; counter-reset: passo; }
+    .degrau { position: relative; display: flex; flex-direction: column; gap: 0.8rem; background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 1.8rem 1.6rem; transition: border-color .3s var(--ease), transform .3s var(--ease); }
+    .degrau:hover { border-color: rgba(47,203,138,0.35); transform: translateY(-4px); }
+    .degrau-num { font-family: var(--ff-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text3); }
+    .degrau h3 { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; line-height: 1.2; }
+    .degrau-preco { align-self: flex-start; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); background: rgba(47,203,138,0.1); border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 4px; }
+    .degrau p { font-size: 0.9rem; color: var(--text2); line-height: 1.65; }
+    .degrau-link { margin-top: auto; padding-top: 0.6rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); }
+    .degrau-link:hover { color: var(--green-hi); }
+    .degrau.destaque { border-color: rgba(47,203,138,0.4); background: linear-gradient(180deg, rgba(47,203,138,0.09), var(--surface)); }
+
+    /* Para quem é */
+    .publico { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+    .publico-card { display: grid; grid-template-columns: 52px 1fr; gap: 1.2rem; align-items: start; background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 1.8rem; }
+    .publico-icon { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: rgba(47,203,138,0.1); border: 1px solid var(--border); color: var(--green); }
+    .publico-icon svg { width: 24px; height: 24px; }
+    .publico-card h3 { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .publico-card .dor { font-size: 0.95rem; color: var(--text); font-weight: 600; margin-bottom: 0.35rem; }
+    .publico-card p { font-size: 0.9rem; color: var(--text2); line-height: 1.65; }
+
+    /* App */
+    .app-inner { display: grid; grid-template-columns: 1.25fr 1fr; gap: 4rem; align-items: center; }
+    .app-text .section-title { margin: 1rem 0 1rem; }
+    .app-text > p { color: var(--text2); font-size: 1rem; line-height: 1.7; max-width: 52ch; }
+    .app-features { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.6rem; }
+    .app-feature { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: var(--text2); line-height: 1.55; }
+    .app-feature strong { color: var(--text); font-weight: 600; display: block; }
+    .app-feature svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--green); margin-top: 2px; }
+    .plano { background: linear-gradient(180deg, rgba(21,48,78,0.95), rgba(16,38,63,0.95)); border: 1px solid rgba(47,203,138,0.35); border-radius: 18px; padding: 2.4rem 2.2rem; box-shadow: 0 30px 80px rgba(0,0,0,0.35); }
+    .plano-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #081626; background: var(--green); padding: 0.3rem 0.75rem; border-radius: 4px; }
+    .plano h3 { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; margin: 1rem 0 0.4rem; }
+    .plano-preco { display: flex; align-items: baseline; gap: 0.4rem; margin: 0.6rem 0 1.4rem; }
+    .plano-preco .valor { font-family: var(--ff-display); font-size: 3rem; font-weight: 700; color: var(--text); line-height: 1; }
+    .plano-preco .periodo { color: var(--text2); font-size: 0.95rem; }
+    .plano ul { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.8rem; }
+    .plano li { display: flex; gap: 0.6rem; font-size: 0.92rem; color: var(--text2); }
+    .plano li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .plano .btn { width: 100%; justify-content: center; }
+    .plano-nota { margin-top: 1rem; font-size: 0.8rem; color: var(--text3); text-align: center; line-height: 1.6; }
+    .plano-nota a { color: var(--text2); text-decoration: underline; }
+    .plano-nota a:hover { color: var(--green); }
+
+    /* Como funciona o diagnóstico */
+    .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .passo { background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 2rem 1.8rem; }
+    .passo-num { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-family: var(--ff-display); font-weight: 700; color: #081626; background: var(--green); margin-bottom: 1.2rem; }
+    .passo h3 { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .passo p { font-size: 0.9rem; color: var(--text2); line-height: 1.65; }
+
+    /* Agendamento direto e rodapé */
+    .agenda-direta { display: none; margin-top: 1rem; }
+    .rodape-cnpj { display: none; }
+
+    @media (max-width: 1100px) {
+      .escada { grid-template-columns: repeat(2, 1fr); }
+      .app-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 760px) {
+      .sec { padding-block: 4.5rem; }
+      .escada, .publico, .passos, .app-features { grid-template-columns: 1fr; }
+      .publico-card { grid-template-columns: 1fr; }
+      .plano { padding: 2rem 1.5rem; }
+    }
   </style>
+
+  <!-- =====================================================================
+       CONFIGURAÇÕES DO SITE — preencha aqui (deixe '' para desativar)
+       ===================================================================== -->
+  <script>
+    window.ANT_CONFIG = {
+      GA4_ID:         '',  // Google Analytics 4 — ex.: 'G-XXXXXXXXXX'
+      CLARITY_ID:     '',  // Microsoft Clarity — ex.: 'abcd1234ef'
+      META_PIXEL_ID:  '',  // Meta Pixel (Facebook/Instagram Ads) — ex.: '123456789012345'
+      AGENDA_URL:     '',  // Link da página de agendamento (Google Agenda / Calendly)
+      ASSINATURA_URL: 'https://app.antcapital.com.br',  // Link de assinatura do app (checkout)
+      LINKEDIN_URL:   '',  // ex.: 'https://www.linkedin.com/in/seu-perfil/'
+      CNPJ:           ''   // ex.: '00.000.000/0001-00'
+    };
+  </script>
+  <script>
+  /* Carrega as ferramentas de medição somente se o ID estiver preenchido */
+  (function(){
+    var C = window.ANT_CONFIG || {};
+    if (C.GA4_ID) {
+      var g = document.createElement('script'); g.async = true;
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=' + C.GA4_ID;
+      document.head.appendChild(g);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ dataLayer.push(arguments); };
+      gtag('js', new Date()); gtag('config', C.GA4_ID);
+    }
+    if (C.CLARITY_ID) {
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",C.CLARITY_ID);
+    }
+    if (C.META_PIXEL_ID) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', C.META_PIXEL_ID); fbq('track', 'PageView');
+    }
+    /* Registro de eventos de conversão em todas as ferramentas ativas */
+    window.antTrack = function(evento, pixelEvento, dados){
+      try { if (window.gtag) gtag('event', evento, dados || {}); } catch(e){}
+      try { if (window.clarity) clarity('event', evento); } catch(e){}
+      try { if (window.fbq && pixelEvento) fbq('track', pixelEvento, dados || {}); } catch(e){}
+    };
+  })();
+  </script>
 </head>
 <body>
 
@@ -1071,7 +1197,7 @@
     <div class="nav-links">
       <a href="#sobre">Sobre</a>
       <a href="#servicos">Serviços</a>
-      <a href="#depoimentos">Clientes</a>
+      <a href="#app">App</a>
       <a href="#faq">FAQ</a>
       <a href="/blog/">Blog</a>
       <a href="ant-processos.html" class="nav-processos">ANT Processos</a>
@@ -1090,7 +1216,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="#sobre" class="mob-link">Sobre</a>
   <a href="#servicos" class="mob-link">Serviços</a>
-  <a href="#depoimentos" class="mob-link">Clientes</a>
+  <a href="#app" class="mob-link">App</a>
   <a href="#faq" class="mob-link">FAQ</a>
   <a href="/blog/" class="mob-link">Blog</a>
   <a href="ant-processos.html" class="mob-processos mob-link">ANT Processos ↗</a>
@@ -1104,20 +1230,19 @@
     <div class="hero-left">
       <div class="hero-eyebrow">
         <div class="hero-eyebrow-line"></div>
-        <span class="label-eyebrow">Planejamento Financeiro Estratégico</span>
+        <span class="label-eyebrow">Planejamento financeiro · Belo Horizonte</span>
       </div>
       <h1 class="hero-heading">
-        Transforme dados em<br>
-        decisões que<br>
-        <em>constroem riqueza.</em>
+        Você ganha bem.<br>
+        Mas sabe quanto<br>
+        <em>realmente sobra?</em>
       </h1>
       <p class="hero-sub">
-        Da organização financeira à estruturação patrimonial — a ANT Capital entrega o rigor que PMEs, autônomos e famílias precisam para crescer com segurança e consistência.
+        A ANT Capital organiza as finanças de pequenas empresas, autônomos e famílias: diagnóstico claro, plano de ação e acompanhamento até o dinheiro passar a sobrar — e virar patrimônio.
       </p>
       <div class="hero-actions">
         <a href="#contato" class="btn btn-primary">Agendar Diagnóstico Gratuito ↗</a>
-        <a href="#servicos" class="btn btn-outline">Ver Serviços</a>
-        <a href="https://app.antcapital.com.br" class="btn btn-outline">Acessar o Sistema</a>
+        <a href="#app" class="btn btn-outline">Conhecer o App</a>
       </div>
       <div class="sim-banner">
         <span class="sim-banner-pulse" aria-hidden="true"></span>
@@ -1153,6 +1278,47 @@
   <div class="hero-scroll">
     <span>scroll</span>
     <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- POR ONDE COMEÇAR -->
+<section class="sec sec-alt" id="comecar">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="label-eyebrow">Por onde começar</span>
+      <h2 class="section-title">Um caminho claro, do primeiro passo<br>ao patrimônio construído.</h2>
+      <p>Comece de graça e avance no seu ritmo. Cada etapa entrega valor por si só — e prepara a próxima.</p>
+    </div>
+    <div class="escada">
+      <div class="degrau reveal">
+        <span class="degrau-num">Passo 1</span>
+        <h3>Simulador financeiro</h3>
+        <span class="degrau-preco">Grátis · 2 minutos</span>
+        <p>Descubra a nota de 0 a 100 da saúde financeira da sua empresa ou da sua casa, com os próximos passos na hora.</p>
+        <a href="simulador.html" class="degrau-link">Fazer simulação →</a>
+      </div>
+      <div class="degrau destaque reveal reveal-delay-1">
+        <span class="degrau-num">Passo 2</span>
+        <h3>Diagnóstico com o Rodrigo</h3>
+        <span class="degrau-preco">Grátis · até 60 minutos</span>
+        <p>Uma conversa para mapear receitas, despesas, dívidas e objetivos. Você sai com um plano de ação, sem compromisso.</p>
+        <a href="#contato" class="degrau-link">Agendar diagnóstico →</a>
+      </div>
+      <div class="degrau reveal reveal-delay-2">
+        <span class="degrau-num">Passo 3</span>
+        <h3>App ANT Capital</h3>
+        <span class="degrau-preco">R$ 79,90 por mês</span>
+        <p>Organize contas, faturas, dívidas e metas no dia a dia, com a ajuda do Assistente ANT, nossa inteligência artificial.</p>
+        <a href="#app" class="degrau-link">Conhecer o app →</a>
+      </div>
+      <div class="degrau reveal reveal-delay-3">
+        <span class="degrau-num">Passo 4</span>
+        <h3>Programa Jornada</h3>
+        <span class="degrau-preco">Sob proposta · 6 meses</span>
+        <p>Acompanhamento próximo, em 6 fases, do diagnóstico à autonomia financeira — com reuniões mensais e o app incluído.</p>
+        <a href="#servicos" class="degrau-link">Ver serviços →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1200,6 +1366,51 @@
       <p>Sua missão é clara: <strong>democratizar a inteligência financeira estratégica</strong> e oferecer às PMEs o rigor e a organização que o mercado exige.</p>
       <p>O diferencial reside na adaptação de metodologias de alta performance desenvolvidas ao longo de 10 anos de experiência. Não entregamos apenas números; <strong>estruturamos processos financeiros inteligentes e personalizados</strong>. Ao unir expertise em gestão de processos à análise financeira de precisão, garantimos que o empresário recupere o controle total de sua operação, transformando dados em decisões seguras e faturamento em lucro real.</p>
     </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="sec" id="para-quem">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="label-eyebrow">Para quem é</span>
+      <h2 class="section-title">Se você se reconhece aqui,<br>a ANT Capital é para você.</h2>
+    </div>
+    <div class="publico">
+      <div class="publico-card reveal">
+        <div class="publico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12M6 12h12"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg></div>
+        <div>
+          <h3>Donos de clínicas e consultórios</h3>
+          <p class="dor">Agenda cheia, mas o caixa não acompanha?</p>
+          <p>Organizamos custos, pró-labore, precificação e reserva para o negócio crescer sem depender só do seu esforço extra.</p>
+        </div>
+      </div>
+      <div class="publico-card reveal reveal-delay-1">
+        <div class="publico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <div>
+          <h3>Donos de pequenas empresas e agências</h3>
+          <p class="dor">O faturamento sobe e desce e você não sabe se dá lucro?</p>
+          <p>Estruturamos fluxo de caixa, DRE gerencial, metas e indicadores para você decidir com números, não com intuição.</p>
+        </div>
+      </div>
+      <div class="publico-card reveal">
+        <div class="publico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+        <div>
+          <h3>Profissionais autônomos</h3>
+          <p class="dor">Renda variável e contas pessoais misturadas com as do trabalho?</p>
+          <p>Separamos as finanças, criamos a sua reserva e um plano para investir com constância, mesmo com renda que oscila.</p>
+        </div>
+      </div>
+      <div class="publico-card reveal reveal-delay-1">
+        <div class="publico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div>
+        <div>
+          <h3>Famílias</h3>
+          <p class="dor">Sente que o salário acaba antes do mês?</p>
+          <p>Montamos o orçamento da casa, um plano para sair das dívidas e metas para os projetos e a aposentadoria.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sec-cta reveal"><a href="#contato" class="btn btn-primary">Agendar diagnóstico gratuito ↗</a></div>
   </div>
 </section>
 
@@ -1260,6 +1471,39 @@
   </div>
 </section>
 
+<!-- APP -->
+<section class="sec sec-alt" id="app">
+  <div class="container app-inner">
+    <div class="app-text reveal">
+      <span class="label-eyebrow">Aplicativo ANT Capital</span>
+      <h2 class="section-title">Seu planejamento financeiro no bolso, com a ajuda de inteligência artificial.</h2>
+      <p>A mesma metodologia que usamos com os nossos clientes, numa plataforma simples para acompanhar o seu dinheiro todos os dias — no celular ou no computador.</p>
+      <div class="app-features">
+        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Faturas organizadas pela IA</strong>Importe a fatura em PDF (Nubank, Inter, Itaú, Bradesco, XP) e os lançamentos são classificados para você.</div></div>
+        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Assistente ANT</strong>Tire dúvidas sobre o seu dinheiro a qualquer hora e receba orientações práticas.</div></div>
+        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Metas e reservas</strong>Defina objetivos e acompanhe a evolução da sua reserva de emergência.</div></div>
+        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Controle de dívidas</strong>Visualize todas as dívidas e acompanhe o plano para quitá-las.</div></div>
+        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Projeções e aposentadoria</strong>Simule o futuro e saiba quanto guardar para chegar lá.</div></div>
+        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Relatórios claros</strong>Entenda para onde vai cada real, por categoria e por mês.</div></div>
+      </div>
+    </div>
+    <div class="plano reveal reveal-delay-2">
+      <span class="plano-tag">Plano Essencial</span>
+      <h3>Organização financeira completa</h3>
+      <div class="plano-preco"><span class="valor">R$ 79,90</span><span class="periodo">/mês</span></div>
+      <ul>
+        <li>Acesso completo à plataforma ANT Capital</li>
+        <li>300 perguntas por mês ao Assistente ANT</li>
+        <li>Importação de faturas com inteligência artificial</li>
+        <li>Metas, dívidas, projeções e relatórios</li>
+        <li>Instalação no celular como aplicativo</li>
+      </ul>
+      <a href="https://app.antcapital.com.br" class="btn btn-primary" id="btnAssinar" data-track="assinar_app">Assinar o plano Essencial →</a>
+      <p class="plano-nota">Clientes do Programa Jornada têm o app incluído.<br>Já é cliente? <a href="https://app.antcapital.com.br">Acessar o sistema</a></p>
+    </div>
+  </div>
+</section>
+
 <!-- ANT PROCESSOS -->
 <section class="processos-band" id="processos">
   <div class="container processos-inner reveal">
@@ -1306,47 +1550,32 @@
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="depoimentos" id="depoimentos">
+<!-- COMO FUNCIONA O DIAGNÓSTICO -->
+<section class="sec" id="como-funciona">
   <div class="container">
-    <div class="depoimentos-header reveal">
-      <h2 class="section-title">O que dizem nossos clientes.</h2>
+    <div class="sec-header reveal">
+      <span class="label-eyebrow">Diagnóstico gratuito</span>
+      <h2 class="section-title">Como funciona o primeiro passo.</h2>
+      <p>Sem compromisso e sem letras miúdas. Você sai da conversa sabendo exatamente onde está e o que fazer.</p>
     </div>
-    <div class="depoimentos-grid">
-      <div class="depoimento-card reveal">
-        <div class="depoimento-stars">★★★★★</div>
-        <p class="depoimento-text">"Antes da ANT Capital eu achava que minha empresa tinha lucro. Depois do diagnóstico entendi que estava apenas movimentando dinheiro. Em 3 meses organizamos tudo e pela primeira vez em 5 anos eu sei exatamente onde estou."</p>
-        <div class="depoimento-author">
-          <div class="depoimento-avatar">MS</div>
-          <div>
-            <div class="depoimento-name">Marcos S.</div>
-            <div class="depoimento-role">Proprietário, Clínica Odontológica — BH</div>
-          </div>
-        </div>
+    <div class="passos">
+      <div class="passo reveal">
+        <div class="passo-num">1</div>
+        <h3>Você agenda</h3>
+        <p>Pelo formulário abaixo ou pelo WhatsApp. A conversa pode ser online ou presencial, em Belo Horizonte.</p>
       </div>
-      <div class="depoimento-card reveal reveal-delay-1">
-        <div class="depoimento-stars">★★★★★</div>
-        <p class="depoimento-text">"O Rodrigo não é um consultor que passa números. Ele realmente entende o negócio, faz as perguntas certas e entrega um plano que a gente consegue executar. Recomendo para qualquer empresário que quer crescer de verdade."</p>
-        <div class="depoimento-author">
-          <div class="depoimento-avatar">CP</div>
-          <div>
-            <div class="depoimento-name">Camila P.</div>
-            <div class="depoimento-role">Sócia, Agência de Marketing — BH</div>
-          </div>
-        </div>
+      <div class="passo reveal reveal-delay-1">
+        <div class="passo-num">2</div>
+        <h3>Conversamos por até 60 minutos</h3>
+        <p>Mapeamos receitas, despesas, dívidas e objetivos — da empresa, da casa ou dos dois — com sigilo e sem julgamentos.</p>
       </div>
-      <div class="depoimento-card reveal reveal-delay-2">
-        <div class="depoimento-stars">★★★★★</div>
-        <p class="depoimento-text">"Autônomo há 8 anos, sempre misturei as finanças pessoais com as do trabalho. Em 6 meses com a ANT Capital separei tudo, criei minha reserva e comecei a investir. Foi uma virada de chave."</p>
-        <div class="depoimento-author">
-          <div class="depoimento-avatar">RL</div>
-          <div>
-            <div class="depoimento-name">Rafael L.</div>
-            <div class="depoimento-role">Arquiteto Autônomo — BH</div>
-          </div>
-        </div>
+      <div class="passo reveal reveal-delay-2">
+        <div class="passo-num">3</div>
+        <h3>Você recebe o plano de ação</h3>
+        <p>Com as prioridades em ordem. Depois, você decide: seguir por conta própria, usar o app ou contar com o nosso acompanhamento.</p>
       </div>
     </div>
+    <div class="sec-cta reveal"><a href="#contato" class="btn btn-primary">Quero agendar meu diagnóstico ↗</a></div>
   </div>
 </section>
 
@@ -1380,6 +1609,13 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">O Programa Jornada é nossa consultoria de acompanhamento contínuo com duração de 6 meses. Ele é estruturado em 6 fases — do diagnóstico à autonomia financeira — com reuniões mensais, ferramentas digitais exclusivas e relatórios personalizados. É ideal para quem quer uma transformação financeira completa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Como funciona o aplicativo e quanto custa?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">O app ANT Capital é a nossa plataforma de organização financeira: você registra ou importa as faturas do cartão, acompanha metas, dívidas e projeções e conta com o Assistente ANT, nossa inteligência artificial. O plano Essencial custa R$ 79,90 por mês e inclui 300 perguntas mensais ao Assistente. Para clientes do Programa Jornada, o acesso já está incluído.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
@@ -1433,6 +1669,7 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
         Prefiro falar pelo WhatsApp
       </a>
+      <a class="btn btn-outline agenda-direta" id="agendaDireta" href="#" target="_blank" rel="noopener" data-track="agenda_direta">Prefiro escolher o horário agora →</a>
     </div>
     <div class="form-box reveal reveal-delay-2">
       <div id="formContent">
@@ -1467,11 +1704,14 @@
         <button class="btn btn-primary form-submit" id="formBtn" onclick="submitForm()">
           Quero meu Diagnóstico Gratuito →
         </button>
+        <p class="form-legal">Ao enviar, você concorda com a nossa <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</p>
       </div>
       <div class="form-success" id="formSuccess">
         <div class="check">✅</div>
+        <a class="btn btn-primary agenda-direta" id="agendaSucesso" href="#" target="_blank" rel="noopener" style="margin-bottom:1.2rem;" data-track="agenda_direta">Escolher meu horário agora →</a>
         <h4>Recebemos sua solicitação!</h4>
         <p>Entraremos em contato em até 24 horas pelo WhatsApp ou e-mail informado.<br><br>Enquanto isso, que tal nos seguir no Instagram?</p>
+        <a href="https://www.instagram.com/antconsultoria/" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1.2rem;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @antconsultoria</a>
       </div>
     </div>
   </div>
@@ -1490,8 +1730,11 @@
       <a href="/blog/">Blog</a>
       <a href="#contato">Contato</a>
       <a href="ant-processos.html" class="rodape-processos">ANT Processos ↗</a>
+      <a href="/politica-de-privacidade.html">Privacidade</a>
+      <a href="#" target="_blank" rel="noopener" id="rodapeLinkedin" style="display:none;">LinkedIn</a>
+      <a href="https://www.instagram.com/antconsultoria/" target="_blank" rel="noopener" class="rodape-ig" aria-label="Instagram da ANT Capital"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a>
     </div>
-    <div class="rodape-copy">© 2026 ANT Capital. Todos os direitos reservados.</div>
+    <div class="rodape-copy">© 2026 ANT Capital. Todos os direitos reservados.<span class="rodape-cnpj" id="rodapeCnpj"></span></div>
   </div>
 </footer>
 
@@ -1608,6 +1851,8 @@ async function submitForm(){
     if (response.ok){
       document.getElementById('formContent').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
+      if (window.antTrack) antTrack('generate_lead', 'Lead', { perfil: perfil });
+      if ((window.ANT_CONFIG || {}).AGENDA_URL) return;
       const msg = encodeURIComponent(`Olá Rodrigo! Meu nome é ${nome}.\n\nSolicitei um diagnóstico gratuito pelo site da ANT Capital.\n\nPerfil: ${perfil}\nE-mail: ${email}\nWhatsApp: ${wpp}\n\nAguardo contato!`);
       setTimeout(() => window.open(`https://wa.me/5531995872806?text=${msg}`, '_blank'), 800);
     } else { throw new Error('erro'); }
@@ -1616,6 +1861,33 @@ async function submitForm(){
     alert('Houve um problema ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
   }
 }
+</script>
+
+<script>
+/* ── APLICA AS CONFIGURAÇÕES E REGISTRA CLIQUES IMPORTANTES ── */
+(function(){
+  var C = window.ANT_CONFIG || {};
+  if (C.AGENDA_URL) {
+    document.querySelectorAll('.agenda-direta').forEach(function(a){ a.href = C.AGENDA_URL; a.style.display = 'inline-flex'; });
+    var sub = document.querySelector('#formContent > p');
+    if (sub) sub.textContent = 'Preencha os dados abaixo e, em seguida, escolha o melhor horário na agenda.';
+  }
+  if (C.ASSINATURA_URL) { var b = document.getElementById('btnAssinar'); if (b) b.href = C.ASSINATURA_URL; }
+  if (C.LINKEDIN_URL) { var l = document.getElementById('rodapeLinkedin'); if (l) { l.href = C.LINKEDIN_URL; l.style.display = ''; } }
+  if (C.CNPJ) { var c = document.getElementById('rodapeCnpj'); if (c) { c.textContent = ' · CNPJ ' + C.CNPJ; c.style.display = 'inline'; } }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a'); if (!a || !window.antTrack) return;
+    var h = a.getAttribute('href') || '';
+    var t = a.getAttribute('data-track');
+    if (t === 'assinar_app')         antTrack('clique_assinar_app', 'InitiateCheckout');
+    else if (t === 'agenda_direta')  antTrack('clique_agenda', 'Schedule');
+    else if (h.indexOf('wa.me') > -1)            antTrack('contato_whatsapp', 'Contact');
+    else if (h.indexOf('simulador.html') > -1)   antTrack('clique_simulador');
+    else if (h.indexOf('app.antcapital.com.br') > -1) antTrack('clique_acessar_sistema');
+    else if (h.indexOf('instagram.com') > -1)    antTrack('clique_instagram');
+  });
+})();
 </script>
 </body>
 </html>
