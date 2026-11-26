@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANT Processos — Automação para Escritórios Contábeis</title>
-  <meta name="description" content="Diagnóstico, automação e melhoria de processos para escritórios de contabilidade de 2 a 10 funcionários. Um serviço ANT Capital." />
+  <meta name="description" content="Consultoria de processos, automação e inteligência artificial para escritórios contábeis: diagnóstico, implementação e acompanhamento. Um serviço ANT Capital." />
   <meta name="author" content="Rodrigo Silva — ANT Capital" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.antcapital.com.br/ant-processos.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.antcapital.com.br/ant-processos.html" />
-  <meta property="og:title" content="ANT Processos — Seu escritório contábil no piloto automático" />
-  <meta property="og:description" content="Diagnóstico, automação e melhoria de processos para escritórios de contabilidade de 2 a 10 funcionários." />
+  <meta property="og:title" content="ANT Processos — Processos inteligentes. Empresas mais eficientes." />
+  <meta property="og:description" content="Consultoria de processos, automação e inteligência artificial para escritórios contábeis." />
   <meta property="og:image" content="https://www.antcapital.com.br/rodrigo-silva.png" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="ANT Capital" />
@@ -30,7 +30,7 @@
     "@type": "Service",
     "name": "ANT Processos",
     "serviceType": "Automação e melhoria de processos para escritórios de contabilidade",
-    "description": "Diagnóstico, automação e melhoria de processos para escritórios de contabilidade de 2 a 10 funcionários.",
+    "description": "Consultoria de processos, automação e inteligência artificial para escritórios contábeis.",
     "areaServed": { "@type": "Country", "name": "Brasil" },
     "provider": { "@type": "Organization", "name": "ANT Capital", "url": "https://www.antcapital.com.br/" },
     "url": "https://www.antcapital.com.br/ant-processos.html"
@@ -89,11 +89,6 @@
     .fase li { display: flex; gap: .6rem; font-size: .86rem; color: var(--text2); line-height: 1.5; }
     .fase li::before { content: '✓'; color: var(--green); font-weight: 700; }
 
-    .garantia { margin-top: 1.6rem; display: grid; grid-template-columns: 64px 1fr; gap: 1.4rem; align-items: center; background: linear-gradient(110deg, rgba(243,188,78,.1), rgba(16,38,63,.9) 55%); border: 1px solid rgba(243,188,78,.28); border-radius: 16px; padding: 1.8rem 2rem; }
-    .garantia-icon { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: rgba(243,188,78,.12); color: var(--gold); }
-    .garantia-icon svg { width: 30px; height: 30px; }
-    .garantia h3 { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 600; margin-bottom: .35rem; }
-    .garantia p { color: var(--text2); font-size: .95rem; line-height: 1.65; }
 
     /* Automações */
     .flow { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border2); }
@@ -169,9 +164,60 @@
       .p-hero { padding-top: 120px; }
       .grid-3, .fases, .planos, .row { grid-template-columns: 1fr; }
       .plano.top { order: -1; }
-      .garantia { grid-template-columns: 1fr; text-align: left; }
       .metric { grid-template-columns: 96px 1fr; }
       .form { padding: 1.6rem; }
+    }
+
+    /* ===== Ajustes nov/2026 ===== */
+    .p-hero h1 { font-size: clamp(2.3rem, 4.6vw, 3.6rem); }
+    .p-hero .lead + .lead { margin-top: 1rem; font-size: 1rem; }
+    .brand-tag { font-family: var(--ff-display); font-weight: 800; font-size: .95rem; letter-spacing: .28em; color: var(--text); margin-top: 1.3rem; display: block; }
+    .pilares { background: linear-gradient(180deg, rgba(21,48,78,.92), rgba(16,38,63,.92)); border: 1px solid var(--border); border-radius: 18px; padding: 2rem; backdrop-filter: blur(8px); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+    .pilares h3 { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text3); margin-bottom: .6rem; }
+    .pilar { display: grid; grid-template-columns: 46px 1fr; gap: 1rem; align-items: start; padding: 1.1rem 0; border-top: 1px solid var(--border2); }
+    .pilar:first-of-type { border-top: 0; }
+    .pilar .card-icon { margin: 0; }
+    .pilar b { display: block; font-family: var(--ff-display); font-size: 1.08rem; color: var(--text); margin-bottom: .2rem; }
+    .pilar span { color: var(--text2); font-size: .9rem; line-height: 1.5; }
+
+    .dores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .dor { display: flex; gap: .9rem; align-items: flex-start; background: rgba(16,38,63,.88); border: 1px solid var(--border2); border-radius: 12px; padding: 1.3rem 1.4rem; font-size: .95rem; color: var(--text); line-height: 1.5; }
+    .dor svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--gold); margin-top: 2px; }
+    .insight { margin-top: 2rem; border-left: 3px solid var(--green); padding: .4rem 0 .4rem 1.3rem; font-family: var(--ff-display); font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 600; line-height: 1.35; max-width: 46ch; }
+    .insight em { font-style: normal; color: var(--green); }
+
+    .fase .fase-sub { font-family: var(--ff-display); font-size: 1rem; color: var(--green); font-weight: 600; margin: -.2rem 0 1rem; }
+    .recebe { margin-top: 1.3rem; background: rgba(47,203,138,.08); border: 1px solid var(--border); border-radius: 10px; padding: .9rem 1rem; font-size: .86rem; color: var(--text2); line-height: 1.55; }
+    .recebe b { display: block; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin-bottom: .3rem; }
+
+    .auto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .auto-grid .card:nth-child(4), .auto-grid .card:nth-child(5) { grid-column: span 1; }
+    .auto-nota { margin-top: 2rem; color: var(--text2); font-size: .95rem; text-align: center; }
+
+    .projeto { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; background: linear-gradient(120deg, rgba(47,203,138,.1), rgba(16,38,63,.92) 60%); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; }
+    .projeto h2 { font-family: var(--ff-display); font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.12; margin: 1rem 0; }
+    .projeto h2 em { font-style: normal; color: var(--green); }
+    .projeto p { color: var(--text2); font-size: 1rem; line-height: 1.75; }
+    .projeto p + p { margin-top: .9rem; }
+    .investimento { background: rgba(8,22,38,.7); border: 1px solid var(--border2); border-radius: 16px; padding: 2rem; }
+    .investimento .tag-inv { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text3); }
+    .investimento strong { display: block; font-family: var(--ff-display); font-size: 1.7rem; color: var(--text); margin: .5rem 0 .8rem; }
+    .investimento ul { display: flex; flex-direction: column; gap: .55rem; margin-bottom: 1.6rem; }
+    .investimento li { display: flex; gap: .6rem; font-size: .92rem; color: var(--text2); }
+    .investimento li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .investimento .btn { width: 100%; }
+
+    .assinatura { text-align: center; padding: 3.5rem 0 1rem; position: relative; z-index: 2; }
+    .assinatura b { font-family: var(--ff-display); font-weight: 800; letter-spacing: .2em; font-size: .9rem; }
+    .assinatura span { display: block; color: var(--text2); margin-top: .4rem; font-size: 1rem; }
+
+    @media (max-width: 1000px) {
+      .dores, .auto-grid { grid-template-columns: 1fr 1fr; }
+      .projeto { grid-template-columns: 1fr; padding: 2.2rem; }
+    }
+    @media (max-width: 680px) {
+      .dores, .auto-grid { grid-template-columns: 1fr; }
+      .projeto { padding: 1.6rem; }
     }
   </style>
 </head>
@@ -186,245 +232,195 @@
       <span class="nav-logo-text">ANT Processos<small>Um serviço ANT Capital</small></span>
     </a>
     <div class="nav-links">
-      <a href="#problema">O problema</a>
-      <a href="#como-funciona">Como funciona</a>
+      <a href="#desafio">O desafio</a>
+      <a href="#como-ajudamos">Como ajudamos</a>
       <a href="#automacoes">Automações</a>
-      <a href="#planos">Planos</a>
+      <a href="#projeto">Investimento</a>
       <a href="/" class="nav-back">← ANT Capital</a>
     </div>
     <div class="nav-cta">
-      <a href="#contato" class="btn btn-primary btn-sm">Diagnóstico grátis</a>
+      <a href="#contato" class="btn btn-primary btn-sm">Agendar diagnóstico</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#problema">O problema</a>
-  <a href="#como-funciona">Como funciona</a>
+  <a href="#desafio">O desafio</a>
+  <a href="#como-ajudamos">Como ajudamos</a>
   <a href="#automacoes">Automações</a>
-  <a href="#planos">Planos</a>
+  <a href="#projeto">Investimento</a>
   <a href="/" class="btn btn-outline">← Voltar à ANT Capital</a>
-  <a href="#contato" class="btn btn-primary">Diagnóstico grátis</a>
+  <a href="#contato" class="btn btn-primary">Agendar diagnóstico</a>
 </div>
 
 <!-- HERO -->
 <header class="p-hero" id="topo">
   <div class="container p-hero-inner">
     <div>
-      <span class="p-badge"><i></i>Para escritórios contábeis de 2 a 10 pessoas</span>
-      <h1>Seu escritório contábil <em>no piloto automático.</em></h1>
-      <p class="lead">Diagnóstico, automação e melhoria de processos para escritórios de 2 a 10 funcionários. Menos retrabalho, menos urgência, mais margem para o que realmente importa.</p>
+      <span class="p-badge"><i></i>Para escritórios contábeis</span>
+      <span class="brand-tag">ANT PROCESSOS</span>
+      <h1>Processos inteligentes. <em>Empresas mais eficientes.</em></h1>
+      <p class="lead">Ajudamos escritórios contábeis a identificar gargalos operacionais, organizar rotinas e implementar automações com inteligência artificial.</p>
+      <p class="lead">Unimos consultoria de processos, tecnologia e gestão para reduzir atividades repetitivas, minimizar retrabalhos e liberar tempo para o que realmente importa: entregar mais valor aos clientes.</p>
       <div class="actions">
-        <a href="#contato" class="btn btn-primary">Agendar diagnóstico gratuito ↗</a>
-        <a href="#automacoes" class="btn btn-outline">Ver o que automatizamos</a>
+        <a href="#contato" class="btn btn-primary">Agendar diagnóstico inicial ↗</a>
+        <a href="#como-ajudamos" class="btn btn-outline">Como trabalhamos</a>
       </div>
     </div>
-    <aside class="metrics reveal" aria-label="Números do ANT Processos">
-      <h3>O que esperar</h3>
-      <div class="metric"><b>4–8h</b><span>por semana devolvidas à equipe, em estimativa, com as automações certas</span></div>
-      <div class="metric"><b>30 dias</b><span>do diagnóstico ao go-live das primeiras automações</span></div>
-      <div class="metric"><b>R$ 0</b><span>pelo diagnóstico inicial, sem compromisso</span></div>
-      <small>A economia real de cada escritório é medida no diagnóstico, antes de qualquer contratação.</small>
+    <aside class="pilares reveal" aria-label="O que une o nosso trabalho">
+      <h3>O que une o nosso trabalho</h3>
+      <div class="pilar">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg></div>
+        <div><b>Consultoria de processos</b><span>Entender e organizar antes de automatizar.</span></div>
+      </div>
+      <div class="pilar">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M8 14h.01M16 14h.01"/></svg></div>
+        <div><b>Tecnologia e inteligência artificial</b><span>Automações e agentes que tiram o repetitivo da equipe.</span></div>
+      </div>
+      <div class="pilar">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <div><b>Gestão</b><span>Indicadores e acompanhamento para os resultados se manterem.</span></div>
+      </div>
     </aside>
   </div>
 </header>
 
-<!-- O PROBLEMA -->
-<section class="sec sec-alt" id="problema">
+<!-- O DESAFIO -->
+<section class="sec sec-alt" id="desafio">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">O problema</span>
-      <h2>O maior gargalo do seu escritório <em>não é falta de cliente.</em></h2>
-      <p>É o tempo que a equipe perde com tarefas repetitivas, que poderiam rodar sozinhas.</p>
+      <span class="eyebrow">O desafio</span>
+      <h2>Sua equipe poderia produzir mais <em>sem trabalhar mais horas?</em></h2>
+      <p>Muitos escritórios contábeis perdem tempo diariamente com atividades que poderiam ser simplificadas, padronizadas ou automatizadas.</p>
     </div>
-    <div class="grid-3">
-      <div class="card problem reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Cobrança manual de documentos</h3>
-        <p>Alguém da equipe passa horas enviando mensagens uma por uma pedindo notas, extratos e recibos. Todo mês, do zero.</p>
-      </div>
-      <div class="card problem reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-        <h3>Prazos fiscais no improviso</h3>
-        <p>DCTF, eSocial, SPED, EFD-Reinf — cada cliente tem um calendário. Controlar tudo de cabeça ou em planilha é uma bomba-relógio.</p>
-      </div>
-      <div class="card problem reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
-        <h3>Retrabalho constante</h3>
-        <p>O cliente manda dado errado ou incompleto. O contador corrige, devolve, espera, recebe errado de novo. O ciclo não para.</p>
-      </div>
-      <div class="card problem reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
-        <h3>Onboarding sem padrão</h3>
-        <p>Cada cliente novo é uma correria diferente. Sem checklist, sem fluxo — sempre falta alguma coisa e sempre alguém retrabalha.</p>
-      </div>
-      <div class="card problem reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
-        <h3>Atendimento que interrompe tudo</h3>
-        <p>“Minha guia vence quando?” — o contador para o que está fazendo para responder algo que um bot resolveria em segundos.</p>
-      </div>
-      <div class="card problem reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3>Zero TI — e nunca vai ter</h3>
-        <p>Escritório de 2 a 10 pessoas não tem setor de TI. E fica preso a ferramentas que não conversam entre si.</p>
-      </div>
+    <div class="dores">
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Solicitação e organização manual de documentos.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Informações espalhadas entre e-mails, WhatsApp e planilhas.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Retrabalho causado por falhas de comunicação.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Tarefas repetitivas realizadas manualmente.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Falta de integração entre sistemas.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Processos que dependem excessivamente de pessoas específicas.</div>
     </div>
+    <p class="insight reveal">O problema nem sempre é falta de equipe. Muitas vezes, é <em>falta de processos bem estruturados.</em></p>
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-<section class="sec" id="como-funciona">
+<!-- COMO AJUDAMOS -->
+<section class="sec" id="como-ajudamos">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">Como funciona</span>
-      <h2>Três fases. Do caos à <em>operação que roda sozinha.</em></h2>
+      <span class="eyebrow">Como ajudamos sua empresa</span>
+      <h2>Três etapas, <em>no ritmo do seu escritório.</em></h2>
+      <p>Os prazos de cada etapa são definidos no diagnóstico, de acordo com o tamanho e a complexidade do projeto.</p>
     </div>
     <div class="fases">
       <div class="fase reveal">
-        <div class="fase-top"><span class="fase-num">01</span><span class="fase-tempo">1–2 semanas</span></div>
-        <h3>Diagnóstico aprofundado</h3>
-        <p>Mapeamos todos os processos internos, identificamos onde está o maior desperdício de tempo e definimos juntos quais automações têm maior impacto imediato.</p>
+        <div class="fase-top"><span class="fase-num">01</span><span class="fase-tempo">Diagnóstico</span></div>
+        <h3>Diagnóstico e mapeamento</h3>
+        <p class="fase-sub">Antes de automatizar, precisamos entender.</p>
         <ul>
-          <li>Entrevista estruturada com toda a equipe</li>
-          <li>Mapa visual dos processos atuais</li>
-          <li>Relatório de prioridades com estimativa de ganho por automação</li>
-          <li>Validação do plano com o responsável do escritório</li>
+          <li>Levantamento das rotinas operacionais</li>
+          <li>Identificação de gargalos e desperdícios</li>
+          <li>Análise dos sistemas e ferramentas utilizados</li>
+          <li>Identificação de oportunidades de melhoria</li>
+          <li>Priorização das soluções por impacto e viabilidade</li>
         </ul>
+        <div class="recebe"><b>Você recebe</b>Diagnóstico operacional, mapa de processos e plano de ação.</div>
       </div>
       <div class="fase reveal">
-        <div class="fase-top"><span class="fase-num">02</span><span class="fase-tempo">2–4 semanas</span></div>
-        <h3>Implementação</h3>
-        <p>Configuramos as automações priorizadas, integramos com os sistemas que o escritório já usa e treinamos a equipe para operar tudo com autonomia.</p>
+        <div class="fase-top"><span class="fase-num">02</span><span class="fase-tempo">Implementação</span></div>
+        <h3>Implementação e automação</h3>
+        <p class="fase-sub">Transformamos oportunidades em soluções práticas.</p>
         <ul>
-          <li>Fluxos no Make + inteligência artificial (Claude API)</li>
-          <li>Integração com o sistema contábil, WhatsApp e e-mail</li>
-          <li>Testes e ajustes antes do go-live</li>
-          <li>Treinamento prático da equipe + documentação completa</li>
+          <li>Automação de tarefas repetitivas</li>
+          <li>Integração entre sistemas e ferramentas</li>
+          <li>Implementação de agentes de inteligência artificial</li>
+          <li>Organização de fluxos de trabalho</li>
+          <li>Testes, validações e treinamento da equipe</li>
         </ul>
+        <div class="recebe"><b>Você recebe</b>Soluções implementadas, testadas e documentadas conforme o escopo aprovado.</div>
       </div>
       <div class="fase reveal">
-        <div class="fase-top"><span class="fase-num">03</span><span class="fase-tempo">Mensal</span></div>
-        <h3>Sustentação</h3>
-        <p>Depois do go-live, acompanhamos mês a mês para garantir que tudo funcione e evoluímos as automações conforme o escritório cresce.</p>
+        <div class="fase-top"><span class="fase-num">03</span><span class="fase-tempo">Contínuo</span></div>
+        <h3>Acompanhamento e evolução</h3>
+        <p class="fase-sub">A implementação é apenas o começo.</p>
         <ul>
-          <li>Check-in mensal de performance das automações</li>
-          <li>Ajustes e correções sempre que necessário</li>
-          <li>Suporte via WhatsApp em horário comercial</li>
-          <li>Novas oportunidades de automação</li>
+          <li>Monitoramento das soluções</li>
+          <li>Correções e ajustes previstos no contrato</li>
+          <li>Acompanhamento de indicadores</li>
+          <li>Suporte técnico</li>
+          <li>Identificação de novas oportunidades de melhoria</li>
         </ul>
-      </div>
-    </div>
-    <div class="garantia reveal">
-      <div class="garantia-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <div>
-        <h3>Garantia de resultado</h3>
-        <p>Se ao final da implementação não entregarmos pelo menos 3 automações funcionando e gerando economia real de tempo para o escritório, devolvemos integralmente o valor investido. Nosso compromisso é com resultado — não com horas de consultoria.</p>
+        <div class="recebe"><b>Você recebe</b>Acompanhamento contínuo para manter e evoluir os processos implementados.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AUTOMAÇÕES -->
+<!-- O QUE PODEMOS AUTOMATIZAR -->
 <section class="sec sec-alt" id="automacoes">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">O que automatizamos</span>
-      <h2>Processos que hoje <em>dependem de uma pessoa.</em></h2>
-      <p>Tudo o que é repetitivo, previsível e não exige julgamento técnico pode — e deve — rodar sozinho.</p>
+      <span class="eyebrow">O que podemos automatizar?</span>
+      <h2>O que é repetitivo <em>não precisa depender de uma pessoa.</em></h2>
     </div>
-    <div class="grid-3">
+    <div class="auto-grid">
       <div class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
-        <h3>Régua de cobrança de documentos</h3>
-        <p>Lembretes automáticos no WhatsApp para cada cliente que ainda não enviou os documentos, em sequência de 1, 3 e 7 dias.</p>
-        <div class="flow"><span>Planilha</span><em>→</em><span>Make</span><em>→</em><span>WhatsApp</span></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Organização de documentos</h3>
+        <p>Recebimento, classificação e direcionamento automático de arquivos.</p>
       </div>
       <div class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Alertas de prazos fiscais</h3>
-        <p>A equipe recebe aviso automático com 3 dias e 1 dia de antecedência de cada obrigação — por cliente e por responsável.</p>
-        <div class="flow"><span>Calendário</span><em>→</em><span>Make</span><em>→</em><span>WhatsApp / E-mail</span></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Comunicação com clientes</h3>
+        <p>Lembretes, solicitações de documentos e notificações.</p>
       </div>
       <div class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-        <h3>Triagem inteligente de e-mails</h3>
-        <p>O e-mail com anexo chega, a IA identifica o tipo de documento, extrai os dados relevantes e registra tudo automaticamente.</p>
-        <div class="flow"><span>Gmail</span><em>→</em><span>IA</span><em>→</em><span>Sistema contábil</span></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+        <h3>Gestão de tarefas</h3>
+        <p>Distribuição de atividades, alertas e acompanhamento de prazos.</p>
       </div>
       <div class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
-        <h3>Onboarding de cliente novo</h3>
-        <p>O cadastro de um cliente novo dispara o e-mail de boas-vindas, o checklist de documentos e o agendamento da reunião inicial.</p>
-        <div class="flow"><span>Formulário</span><em>→</em><span>Make</span><em>→</em><span>E-mail + Agenda</span></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 6h7M18 8.5v7"/></svg></div>
+        <h3>Integração de sistemas</h3>
+        <p>Comunicação entre ferramentas que atualmente funcionam de maneira isolada.</p>
       </div>
       <div class="card reveal">
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M8 14h.01M16 14h.01"/></svg></div>
-        <h3>Bot de atendimento ao cliente</h3>
-        <p>A IA responde no WhatsApp as dúvidas simples — prazo de guia, status de entrega, valor do DAS — sem interromper o técnico.</p>
-        <div class="flow"><span>WhatsApp</span><em>→</em><span>IA</span><em>→</em><span>Resposta automática</span></div>
+        <h3>Inteligência artificial</h3>
+        <p>Agentes para triagem, análise e apoio a atividades administrativas.</p>
       </div>
-      <div class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-        <h3>Relatórios automáticos para clientes</h3>
-        <p>Todo mês, o sistema coleta os dados e envia ao cliente um resumo gerencial em linguagem simples — sem o contador escrever nada.</p>
-        <div class="flow"><span>Sistema contábil</span><em>→</em><span>IA</span><em>→</em><span>E-mail do cliente</span></div>
+      <div class="card reveal" style="display:flex;flex-direction:column;justify-content:center;background:rgba(47,203,138,.07);border-color:var(--border);">
+        <h3>Tem uma rotina que não está nesta lista?</h3>
+        <p>Conte para nós no diagnóstico. Avaliamos cada caso.</p>
+        <a href="#contato" class="btn btn-outline btn-sm" style="margin-top:1rem;align-self:flex-start;">Falar sobre minha rotina</a>
       </div>
     </div>
+    <p class="auto-nota reveal">Cada solução é avaliada conforme a realidade, os sistemas e as necessidades do escritório.</p>
   </div>
 </section>
 
-<!-- PLANOS -->
-<section class="sec" id="planos">
+<!-- PROJETO SOB MEDIDA -->
+<section class="sec" id="projeto">
   <div class="container">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Investimento</span>
-      <h2>Planos desenhados para a <em>realidade do seu escritório.</em></h2>
-      <p>Um valor de projeto para implantar e uma mensalidade de sustentação para manter tudo funcionando.</p>
-    </div>
-    <div class="planos">
-      <div class="plano reveal">
-        <h3>Essencial</h3>
-        <div class="preco">R$ 1.500 <small>projeto</small></div>
-        <div class="mensal">+ <b>R$ 350/mês</b> de sustentação</div>
-        <ul>
-          <li>Diagnóstico de processos</li>
-          <li>1–2 automações implantadas</li>
-          <li>Treinamento da equipe</li>
-          <li>Suporte mensal básico</li>
-        </ul>
-        <a href="#contato" class="btn btn-outline" data-plano="Essencial">Quero o Essencial</a>
+    <div class="projeto reveal">
+      <div>
+        <span class="eyebrow">Investimento</span>
+        <h2>Um projeto construído <em>para a sua realidade.</em></h2>
+        <p>Não acreditamos em soluções prontas para problemas diferentes.</p>
+        <p>Cada escritório possui processos, equipes e ferramentas próprias. Por isso, nosso trabalho começa com um diagnóstico e evolui para um projeto dimensionado conforme as suas necessidades.</p>
       </div>
-      <div class="plano top reveal">
-        <span class="plano-flag">Recomendado</span>
-        <h3>Profissional</h3>
-        <div class="preco">R$ 2.800 <small>projeto</small></div>
-        <div class="mensal">+ <b>R$ 650/mês</b> de sustentação</div>
+      <div class="investimento">
+        <span class="tag-inv">Investimento</span>
+        <strong>Sob proposta</strong>
         <ul>
-          <li>Diagnóstico completo</li>
-          <li>3–5 automações implantadas</li>
-          <li>Integração com o seu sistema contábil</li>
-          <li>Treinamento + documentação</li>
-          <li>Suporte mensal + ajustes</li>
-          <li>Relatório de performance mensal</li>
+          <li>Definido após o diagnóstico</li>
+          <li>Considera escopo, complexidade e integrações necessárias</li>
+          <li>Proposta clara, com o que está incluído em cada etapa</li>
         </ul>
-        <a href="#contato" class="btn btn-primary" data-plano="Profissional">Quero o Profissional</a>
-      </div>
-      <div class="plano reveal">
-        <h3>Avançado</h3>
-        <div class="preco">R$ 4.500 <small>projeto</small></div>
-        <div class="mensal">+ <b>R$ 1.000/mês</b> de sustentação</div>
-        <ul>
-          <li>Diagnóstico completo</li>
-          <li>6–10 automações + IA integrada</li>
-          <li>Bot de atendimento ao cliente</li>
-          <li>Treinamento + documentação</li>
-          <li>Suporte prioritário</li>
-          <li>Novos fluxos mensais incluídos</li>
-        </ul>
-        <a href="#contato" class="btn btn-outline" data-plano="Avançado">Quero o Avançado</a>
+        <a href="#contato" class="btn btn-primary">Agendar diagnóstico inicial</a>
       </div>
     </div>
-    <p class="planos-nota reveal">Não tem certeza de qual plano faz sentido? <a href="#contato">O diagnóstico gratuito define isso</a> — sem compromisso.</p>
   </div>
 </section>
 
@@ -436,10 +432,10 @@
       <figcaption><b>Rodrigo Silva</b>Fundador da ANT Capital</figcaption>
     </figure>
     <div class="sobre-texto reveal">
-      <span class="eyebrow">Quem entrega</span>
-      <div class="sec-head" style="margin-bottom:1.4rem;"><h2>Um consultor que <em>conhece a sua realidade.</em></h2></div>
+      <span class="eyebrow">Quem conduz</span>
+      <div class="sec-head" style="margin-bottom:1.4rem;"><h2>Experiência de quem <em>conhece a rotina contábil.</em></h2></div>
       <p><strong>Rodrigo Silva</strong> tem mais de uma década de atuação como consultor especializado em escritórios de contabilidade — ele não precisa de um tour pelo seu escritório para entender como funciona um fechamento de mês.</p>
-      <p>O ANT Processos nasceu dessa experiência: a percepção de que os maiores inimigos da produtividade dos escritórios contábeis não são técnicos, são operacionais. E que a maioria deles tem solução simples, desde que alguém configure.</p>
+      <p>A ANT Processos nasceu dessa experiência: a percepção de que muitos dos maiores obstáculos à produtividade dos escritórios contábeis não são técnicos, são operacionais — e que boa parte deles tem solução, com o processo certo e a tecnologia certa.</p>
       <p>Rodrigo também é fundador da <strong>ANT Capital</strong>, consultoria financeira para PMEs, autônomos e famílias, com base em Belo Horizonte.</p>
       <a href="/" class="btn btn-outline">Conhecer a ANT Capital →</a>
     </div>
@@ -450,15 +446,15 @@
 <section class="sec" id="contato">
   <div class="container contato">
     <div class="contato-left reveal">
-      <span class="eyebrow">Pronto para começar?</span>
-      <h2>O diagnóstico é gratuito. <em>A transformação começa ali.</em></h2>
-      <p>Em até 60 minutos, identificamos os maiores gargalos do seu escritório e mostramos o que dá para automatizar. Sem compromisso, sem letras miúdas.</p>
+      <span class="eyebrow">Diagnóstico inicial</span>
+      <h2>Vamos descobrir onde seu escritório pode <em>ganhar eficiência?</em></h2>
+      <p>Agende uma conversa inicial com a ANT Processos. Vamos conhecer a sua operação, entender os seus desafios e identificar oportunidades de melhoria.</p>
       <div class="info">
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(31) 9 9587-2806</div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>rodrigo@antcapital.com.br</div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Belo Horizonte, MG — atendimento online para todo o Brasil</div>
       </div>
-      <a class="btn wa-btn" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener">
+      <a class="btn wa-btn" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20agendar%20um%20diagn%C3%B3stico%20inicial." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.7-1.1-4.5-3.9-4.6-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>
         Falar agora pelo WhatsApp
       </a>
@@ -466,7 +462,7 @@
 
     <div class="form reveal">
       <div id="formBox">
-        <h3>Agendar diagnóstico gratuito</h3>
+        <h3>Agendar diagnóstico inicial</h3>
         <p>Preencha os dados e retornamos em até 24 horas úteis.</p>
         <div class="row">
           <div class="field"><label for="pNome">Seu nome</label><input id="pNome" type="text" placeholder="Nome completo" autocomplete="name" /></div>
@@ -483,19 +479,22 @@
               <option>Só eu</option>
               <option>2 a 5 pessoas</option>
               <option>6 a 10 pessoas</option>
-              <option>Mais de 10 pessoas</option>
+              <option>11 a 30 pessoas</option>
+              <option>Mais de 30 pessoas</option>
             </select>
           </div>
-          <div class="field"><label for="pPlano">Interesse</label>
-            <select id="pPlano">
+          <div class="field"><label for="pDesafio">Maior desafio hoje</label>
+            <select id="pDesafio">
               <option selected>Ainda não sei</option>
-              <option>Essencial</option>
-              <option>Profissional</option>
-              <option>Avançado</option>
+              <option>Organização de documentos</option>
+              <option>Comunicação com clientes</option>
+              <option>Gestão de tarefas e prazos</option>
+              <option>Integração de sistemas</option>
+              <option>Inteligência artificial</option>
             </select>
           </div>
         </div>
-        <button class="btn btn-primary" id="pBtn" type="button">Quero meu diagnóstico gratuito →</button>
+        <button class="btn btn-primary" id="pBtn" type="button">Agendar diagnóstico inicial →</button>
         <p class="form-legal">Ao enviar, você concorda com a nossa <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</p>
       </div>
       <div class="form-ok" id="formOk">
@@ -507,12 +506,17 @@
   </div>
 </section>
 
+<div class="container assinatura reveal">
+  <b>ANT PROCESSOS</b>
+  <span>Tecnologia a serviço de empresas mais eficientes.</span>
+</div>
+
 <footer class="rodape">
   <div class="container rodape-inner">
     <div class="rodape-links">
       <a href="/">ANT Capital</a>
-      <a href="#problema">O problema</a>
-      <a href="#planos">Planos</a>
+      <a href="#como-ajudamos">Como ajudamos</a>
+      <a href="#automacoes">Automações</a>
       <a href="#contato">Contato</a>
       <a href="/politica-de-privacidade.html">Privacidade</a>
       <a href="https://www.instagram.com/antconsultoria/" target="_blank" rel="noopener">Instagram</a>
@@ -528,31 +532,26 @@
 
 <script src="/blog/assets/blog.js" defer></script>
 <script>
-  /* Botões dos planos preenchem o campo "Interesse" do formulário */
-  document.querySelectorAll('[data-plano]').forEach(function (b) {
-    b.addEventListener('click', function () { document.getElementById('pPlano').value = b.getAttribute('data-plano'); });
-  });
-
   /* Envio do formulário (Formspree) */
   document.getElementById('pBtn').addEventListener('click', async function () {
     var btn = this;
     var v = function (id) { return document.getElementById(id).value.trim(); };
-    var nome = v('pNome'), escritorio = v('pEscritorio'), wpp = v('pWpp'), email = v('pEmail'), equipe = v('pEquipe'), plano = v('pPlano');
+    var nome = v('pNome'), escritorio = v('pEscritorio'), wpp = v('pWpp'), email = v('pEmail'), equipe = v('pEquipe'), desafio = v('pDesafio');
     if (!nome || !escritorio || !wpp || !email || !equipe) { alert('Por favor, preencha todos os campos antes de enviar.'); return; }
     btn.textContent = 'Enviando…'; btn.disabled = true;
     try {
       var r = await fetch('https://formspree.io/f/xlgkvyrw', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ origem: 'ANT Processos', nome: nome, escritorio: escritorio, whatsapp: wpp, email: email, equipe: equipe, plano_interesse: plano, _subject: 'Novo lead ANT Processos — ' + escritorio })
+        body: JSON.stringify({ origem: 'ANT Processos', nome: nome, escritorio: escritorio, whatsapp: wpp, email: email, equipe: equipe, maior_desafio: desafio, _subject: 'Novo lead ANT Processos — ' + escritorio })
       });
       if (!r.ok) throw new Error('erro');
       document.getElementById('formBox').style.display = 'none';
       document.getElementById('formOk').style.display = 'block';
-      var msg = encodeURIComponent('Olá Rodrigo! Sou ' + nome + ', do escritório ' + escritorio + ' (' + equipe + ').\n\nSolicitei um diagnóstico gratuito do ANT Processos pelo site.\nInteresse: ' + plano + '\n\nAguardo contato!');
+      var msg = encodeURIComponent('Olá Rodrigo! Sou ' + nome + ', do escritório ' + escritorio + ' (' + equipe + ').\n\nSolicitei um diagnóstico inicial da ANT Processos pelo site.\nMaior desafio hoje: ' + desafio + '\n\nAguardo contato!');
       setTimeout(function () { window.open('https://wa.me/5531995872806?text=' + msg, '_blank'); }, 800);
     } catch (e) {
-      btn.textContent = 'Quero meu diagnóstico gratuito →'; btn.disabled = false;
+      btn.textContent = 'Agendar diagnóstico inicial →'; btn.disabled = false;
       alert('Houve um problema ao enviar. Tente novamente ou fale pelo WhatsApp.');
     }
   });
