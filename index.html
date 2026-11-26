@@ -3,1862 +3,558 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ANT Capital — Planejamento Financeiro para PMEs e Autônomos em BH</title>
-  <meta name="description" content="A ANT Capital oferece planejamento financeiro estratégico para pequenas empresas, autônomos e pessoas físicas em Belo Horizonte. Agende um diagnóstico gratuito." />
-  <meta name="keywords" content="planejamento financeiro BH, consultoria financeira Belo Horizonte, consultoria financeira PME, planejamento financeiro autônomo, gestão financeira empresarial, consultoria financeira MG" />
+  <title>ANT Processos — Automação para Escritórios Contábeis</title>
+  <meta name="description" content="Consultoria de processos, automação e inteligência artificial para escritórios contábeis: diagnóstico, implementação e acompanhamento. Um serviço ANT Capital." />
   <meta name="author" content="Rodrigo Silva — ANT Capital" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.antcapital.com.br/" />
+  <link rel="canonical" href="https://www.antcapital.com.br/ant-processos.html" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.antcapital.com.br/" />
-  <meta property="og:title" content="ANT Capital — Planejamento Financeiro Estratégico" />
-  <meta property="og:description" content="Transforme dados em decisões que constroem riqueza. Consultoria financeira para PMEs, autônomos e pessoas físicas em BH. Diagnóstico gratuito." />
+  <meta property="og:url" content="https://www.antcapital.com.br/ant-processos.html" />
+  <meta property="og:title" content="ANT Processos — Processos inteligentes. Empresas mais eficientes." />
+  <meta property="og:description" content="Consultoria de processos, automação e inteligência artificial para escritórios contábeis." />
   <meta property="og:image" content="https://www.antcapital.com.br/rodrigo-silva.png" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="ANT Capital" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ANT Capital — Planejamento Financeiro Estratégico" />
-  <meta name="twitter:description" content="Consultoria financeira para PMEs, autônomos e pessoas físicas em BH. Diagnóstico gratuito." />
-  <meta name="twitter:image" content="https://www.antcapital.com.br/rodrigo-silva.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="data:image/png;base64,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">
-  <link rel="apple-touch-icon" href="LOGO_AZUL_TRANSPARENTE.png" />
+  <link rel="icon" type="image/png" href="/blog/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog/assets/blog.css" />
 
-  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "FinancialService",
-        "@id": "https://www.antcapital.com.br/#business",
-        "name": "ANT Capital",
-        "description": "Consultoria de planejamento financeiro estratégico para PMEs, autônomos e pessoas físicas em Belo Horizonte, Minas Gerais.",
-        "url": "https://www.antcapital.com.br",
-        "logo": "https://www.antcapital.com.br/LOGO_AZUL_TRANSPARENTE.png",
-        "image": "https://www.antcapital.com.br/rodrigo-silva.png",
-        "telephone": "+55-31-99587-2806",
-        "email": "rodrigo@antcapital.com.br",
-        "founder": {
-          "@type": "Person",
-          "name": "Rodrigo Silva",
-          "jobTitle": "Consultor Financeiro",
-          "worksFor": { "@id": "https://www.antcapital.com.br/#business" }
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Belo Horizonte",
-          "addressRegion": "MG",
-          "addressCountry": "BR"
-        },
-        "areaServed": { "@type": "Country", "name": "Brasil" },
-        "serviceType": [
-          "Planejamento Financeiro",
-          "Consultoria Financeira para PMEs",
-          "Planejamento Patrimonial",
-          "Diagnóstico Financeiro Empresarial"
-        ],
-        "priceRange": "$$",
-        "openingHours": "Mo-Fr 08:00-18:00",
-        "sameAs": ["https://www.instagram.com/antconsultoria/", "https://wa.me/5531995872806"]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.antcapital.com.br/#website",
-        "url": "https://www.antcapital.com.br",
-        "name": "ANT Capital",
-        "description": "Planejamento financeiro estratégico para PMEs e autônomos",
-        "inLanguage": "pt-BR"
-      }
-    ]
+    "@type": "Service",
+    "name": "ANT Processos",
+    "serviceType": "Automação e melhoria de processos para escritórios de contabilidade",
+    "description": "Consultoria de processos, automação e inteligência artificial para escritórios contábeis.",
+    "areaServed": { "@type": "Country", "name": "Brasil" },
+    "provider": { "@type": "Organization", "name": "ANT Capital", "url": "https://www.antcapital.com.br/" },
+    "url": "https://www.antcapital.com.br/ant-processos.html"
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
   <style>
-    :root {
-      --bg:       #081626;
-      --bg2:      #0C1E33;
-      --surface:  #10263F;
-      --surface2: #15304E;
-      --border:   rgba(47,203,138,0.12);
-      --border2:  rgba(255,255,255,0.07);
-      --green:    #2FCB8A;
-      --green-hi: #6FF0B6;
-      --gold:     #F3BC4E;
-      --text:     #E8F0F8;
-      --text2:    rgba(232,240,248,0.55);
-      --text3:    rgba(232,240,248,0.32);
-      --white:    #FFFFFF;
-      --ff-display: 'Bricolage Grotesque', sans-serif;
-      --ff-body:    'Manrope', sans-serif;
-      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--ff-body);
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
+    /* ===== ANT Processos — complementos ao blog.css ===== */
+    .sec { padding-block: 6rem; position: relative; z-index: 2; }
+    .sec-alt { background: rgba(12,30,51,0.82); }
+    .sec-head { max-width: 760px; margin-bottom: 3.2rem; }
+    .sec-head.center { text-align: center; margin-inline: auto; }
+    .sec-head h2 { font-family: var(--ff-display); font-weight: 700; font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.12; margin: 1rem 0 0.9rem; }
+    .sec-head h2 em { font-style: normal; color: var(--green); }
+    .sec-head p { color: var(--text2); font-size: 1.02rem; }
+    .sec-head.center .eyebrow { justify-content: center; }
 
-    /* Canvas formigas */
-    #ants {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .glow {
-      position: fixed;
-      top: -30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 900px;
-      height: 600px;
-      background: radial-gradient(ellipse at center, rgba(47,203,138,0.05) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
+    /* Hero */
+    .p-hero { padding: 150px 0 80px; position: relative; z-index: 2; }
+    .p-hero-inner { display: grid; grid-template-columns: 1.25fr 1fr; gap: 4rem; align-items: center; }
+    .p-hero h1 { font-family: var(--ff-display); font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.05; margin: 1.3rem 0 1.3rem; }
+    .p-hero h1 em { font-style: normal; color: var(--green); }
+    .p-hero .lead { color: var(--text2); font-size: 1.1rem; max-width: 52ch; }
+    .p-hero .actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2.2rem; }
+    .p-badge { display: inline-flex; align-items: center; gap: .55rem; font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green); background: rgba(47,203,138,.08); border: 1px solid var(--border); padding: .45rem .9rem; border-radius: 999px; }
+    .p-badge i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(47,203,138,.6); animation: pulse 1.8s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(47,203,138,0); } 100% { box-shadow: 0 0 0 0 rgba(47,203,138,0); } }
 
-    /* Utilities */
-    .container {
-      width: min(1160px, 92%);
-      margin-inline: auto;
-      position: relative;
-      z-index: 2;
-    }
-    .label-eyebrow {
-      font-family: var(--ff-body);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--green);
-    }
-    .section-title {
-      font-family: var(--ff-display);
-      font-size: clamp(1.9rem, 3.8vw, 2.9rem);
-      font-weight: 600;
-      line-height: 1.12;
-      color: var(--text);
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      border-radius: 6px;
-      font-family: var(--ff-body);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      cursor: pointer;
-      border: none;
-      transition: all 0.3s var(--ease);
-    }
-    .btn-primary {
-      background: var(--green);
-      color: #081626;
-    }
-    .btn-primary:hover {
-      background: var(--green-hi);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(47,203,138,0.35);
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-    .btn-outline:hover {
-      border-color: var(--green);
-      color: var(--green);
-      background: rgba(47,203,138,0.06);
-    }
+    .metrics { background: linear-gradient(180deg, rgba(21,48,78,.92), rgba(16,38,63,.92)); border: 1px solid var(--border); border-radius: 18px; padding: 2rem; display: grid; gap: 1rem; backdrop-filter: blur(8px); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+    .metrics h3 { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text3); }
+    .metric { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; align-items: center; padding: 1.1rem 0; border-top: 1px solid var(--border2); }
+    .metric:first-of-type { border-top: 0; }
+    .metric b { font-family: var(--ff-display); font-size: 2rem; font-weight: 700; color: var(--green); line-height: 1; }
+    .metric span { color: var(--text2); font-size: .92rem; line-height: 1.45; }
+    .metrics small { color: var(--text3); font-size: .74rem; line-height: 1.5; }
 
-    /* Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
+    /* Problemas */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .card { background: rgba(16,38,63,.88); border: 1px solid var(--border2); border-radius: 14px; padding: 1.8rem; backdrop-filter: blur(6px); transition: border-color .3s var(--ease), transform .3s var(--ease); }
+    .card:hover { border-color: rgba(47,203,138,.3); transform: translateY(-3px); }
+    .card-icon { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: rgba(47,203,138,.1); border: 1px solid var(--border); color: var(--green); margin-bottom: 1.1rem; }
+    .card-icon svg { width: 22px; height: 22px; }
+    .card h3 { font-family: var(--ff-display); font-size: 1.18rem; font-weight: 600; margin-bottom: .5rem; line-height: 1.25; }
+    .card p { color: var(--text2); font-size: .92rem; line-height: 1.65; }
+    .card.problem .card-icon { color: var(--gold); background: rgba(243,188,78,.08); border-color: rgba(243,188,78,.2); }
 
-    /* NAV */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
-    }
-    .nav.scrolled {
-      background: rgba(8,22,38,0.95);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 1px 0 rgba(47,203,138,0.08);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 70px;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-    .nav-logo img { height: 54px; width: auto; }
-    .nav-logo-mark { width: 54px; height: 54px; border-radius: 0; background: none; display: grid; place-items: center; flex-shrink: 0; }
-    .nav-logo-text { white-space: nowrap; font-family: var(--ff-display); font-weight: 800; font-size: 18px; letter-spacing: -.01em; color: var(--text); line-height: 1; }
-    .nav-logo-text small { display: block; font-family: var(--ff-body); font-weight: 600; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text2); margin-top: 3px; }
-    .nav-links { display: flex; align-items: center; gap: 1.3rem; }
-    .nav-links a {
-      font-family: var(--ff-body);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text2);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a.nav-processos {
-      color: var(--green);
-      border: 1px solid rgba(47,203,138,0.3);
-      padding: 0.3rem 0.9rem;
-      border-radius: 4px;
-      transition: all 0.2s;
-    }
-    .nav-links a.nav-processos:hover {
-      background: rgba(47,203,138,0.1);
-      border-color: var(--green);
-    }
-    .nav-cta { display: flex; align-items: center; gap: 1rem; }
-    .nav-cta .btn { white-space: nowrap; }
-    .nav-links a { white-space: nowrap; }
-    @media (max-width: 1280px) {
-      .nav-links, .nav-cta { display: none !important; }
-      .hamburger { display: flex !important; }
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 1.5px;
-      background: var(--text2);
-      transition: all 0.3s var(--ease);
-    }
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: var(--bg);
-      z-index: 99;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1.4rem;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: var(--ff-display);
-      font-size: 2rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .mobile-menu a.btn {
-      font-family: var(--ff-body);
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: inherit;
-    }
-    .mobile-menu a.btn-primary { color: #081626; }
-    .mobile-menu a.mob-processos {
-      font-size: 1.1rem;
-      color: var(--green);
-      font-family: var(--ff-body);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
+    /* Fases */
+    .fases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; position: relative; }
+    .fase { position: relative; background: rgba(16,38,63,.9); border: 1px solid var(--border2); border-radius: 16px; padding: 2rem 1.8rem; }
+    .fase-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; }
+    .fase-num { font-family: var(--ff-display); font-size: 2.6rem; font-weight: 700; color: rgba(47,203,138,.35); line-height: 1; }
+    .fase-tempo { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); background: rgba(47,203,138,.1); border: 1px solid var(--border); padding: .3rem .7rem; border-radius: 999px; }
+    .fase h3 { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; margin-bottom: .6rem; }
+    .fase > p { color: var(--text2); font-size: .92rem; line-height: 1.65; margin-bottom: 1.2rem; }
+    .fase ul { display: flex; flex-direction: column; gap: .55rem; border-top: 1px solid var(--border2); padding-top: 1.1rem; }
+    .fase li { display: flex; gap: .6rem; font-size: .86rem; color: var(--text2); line-height: 1.5; }
+    .fase li::before { content: '✓'; color: var(--green); font-weight: 700; }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      padding-block: 120px 80px;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero-eyebrow-line {
-      width: 28px;
-      height: 1px;
-      background: var(--green);
-    }
-    .hero-heading {
-      font-family: var(--ff-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      line-height: 1.08;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-    .hero-heading em {
-      font-style: normal;
-      color: var(--green);
-    }
-    .hero-sub {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text2);
-      max-width: 44ch;
-      margin-bottom: 2.5rem;
-      line-height: 1.75;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-    }
-    .sim-banner {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(47,203,138,0.07);
-      border: 1px solid rgba(47,203,138,0.2);
-      border-radius: 10px;
-      padding: 0.9rem 1.2rem;
-      max-width: 520px;
-    }
-    .sim-banner-pulse {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-      animation: sim-blink 2s ease-in-out infinite;
-    }
-    @keyframes sim-blink {
-      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
-    }
-    .sim-banner-text {
-      font-size: 0.83rem;
-      color: var(--text2);
-      line-height: 1.4;
-      flex: 1;
-    }
-    .sim-banner-text strong { color: var(--text); font-weight: 600; }
-    .sim-banner-link {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--green);
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: color 0.2s;
-    }
-    .sim-banner-link:hover { color: var(--green-hi); }
-    .hero-right { display: flex; justify-content: center; align-items: center; }
-    .hero-glass {
-      background: rgba(16,38,63,0.75);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 3rem 2.5rem;
-      backdrop-filter: blur(16px);
-      text-align: center;
-      max-width: 380px;
-      width: 100%;
-      box-shadow: 0 0 60px rgba(47,203,138,0.06), 0 24px 48px rgba(0,0,0,0.35);
-    }
-    .hero-glass img { height: 72px; width: auto; margin: 0 auto 1.5rem; filter: brightness(1.3); }
-    .hero-glass-tagline {
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--text2);
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      font-weight: 400;
-    }
-    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .hero-stat {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(47,203,138,0.05);
-      border: 1px solid rgba(47,203,138,0.12);
-      border-radius: 8px;
-    }
-    .hero-stat-number {
-      font-family: var(--ff-display);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-    .hero-stat-label {
-      font-size: 0.66rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text3);
-      font-weight: 600;
-    }
-    .hero-scroll {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text3);
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      z-index: 2;
-    }
-    .hero-scroll-line {
-      width: 1px;
-      height: 36px;
-      background: linear-gradient(to bottom, var(--green), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; } 50% { opacity: 1; }
-    }
 
-    /* SOBRE */
-    .sobre {
-      padding-block: 7rem;
-      background: var(--bg2);
-      position: relative;
-    }
-    .sobre::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 80% 50%, rgba(47,203,138,0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .sobre-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .sobre-label { margin-bottom: 1rem; display: block; }
-    .sobre-title { margin-bottom: 1.5rem; }
-    .sobre-accent-line {
-      width: 40px;
-      height: 2px;
-      background: var(--green);
-      margin-bottom: 2rem;
-    }
-    .sobre-quote {
-      font-family: var(--ff-display);
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.55;
-      padding-left: 1.2rem;
-      border-left: 2px solid var(--green);
-    }
-    .sobre-quote-author {
-      display: block;
-      font-size: 0.76rem;
-      font-style: normal;
-      font-family: var(--ff-body);
-      letter-spacing: 0.1em;
-      color: var(--text3);
-      margin-top: 0.8rem;
-      font-weight: 600;
-    }
-    .sobre-pilares {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .sobre-pilar {
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-radius: 10px;
-      padding: 1.3rem 1.5rem;
-      transition: border-color 0.3s, background 0.3s;
-    }
-    .sobre-pilar:hover {
-      border-color: rgba(47,203,138,0.25);
-      background: rgba(47,203,138,0.04);
-    }
-    .sobre-pilar-icon { font-size: 1.3rem; margin-bottom: 0.5rem; }
-    .sobre-pilar-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-    }
-    .sobre-pilar-text { font-size: 0.82rem; color: var(--text2); line-height: 1.5; }
-    .sobre-photo-wrap {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      max-width: 340px;
-      margin-bottom: 2rem;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px var(--border2);
-    }
-    .sobre-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .sobre-photo-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 1.2rem 1.4rem;
-      background: linear-gradient(to top, rgba(8,22,38,0.95), transparent);
-      color: var(--text2);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    .sobre-right p {
-      font-size: 0.95rem;
-      color: var(--text2);
-      line-height: 1.85;
-      margin-bottom: 1.2rem;
-    }
-    .sobre-right p:last-child { margin-bottom: 0; }
-    .sobre-right strong { color: var(--text); font-weight: 600; }
+    /* Automações */
+    .flow { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border2); }
+    .flow span { font-size: .7rem; font-weight: 700; letter-spacing: .04em; color: var(--text); background: var(--bg2); border: 1px solid var(--border2); padding: .3rem .6rem; border-radius: 6px; }
+    .flow em { font-style: normal; color: var(--green); font-size: .8rem; }
 
-    /* SERVIÇOS */
-    .servicos {
-      padding-block: 7rem;
-      background: var(--bg);
-      position: relative;
-    }
-    .servicos::before {
-      content: '';
-      position: absolute;
-      bottom: -20%;
-      left: -5%;
-      width: 50%;
-      height: 80%;
-      background: radial-gradient(ellipse, rgba(47,203,138,0.05) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .servicos-header { text-align: center; margin-bottom: 4rem; }
-    .servicos-header .label-eyebrow { margin-bottom: 1rem; display: block; }
-    .servicos-header p { font-size: 0.95rem; color: var(--text2); max-width: 50ch; margin: 1rem auto 0; }
-    .servicos-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: rgba(47,203,138,0.08);
-      border: 1px solid rgba(47,203,138,0.1);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    .servico-card {
-      background: var(--surface);
-      padding: 2.5rem 2.8rem;
-      transition: background 0.3s var(--ease);
-    }
-    .servico-card:hover { background: rgba(47,203,138,0.05); }
-    .servico-number {
-      font-family: var(--ff-display);
-      font-size: 3rem;
-      font-weight: 700;
-      color: rgba(47,203,138,0.12);
-      line-height: 1;
-      margin-bottom: 1rem;
-      transition: color 0.3s;
-    }
-    .servico-card:hover .servico-number { color: rgba(47,203,138,0.35); }
-    .servico-title {
-      font-family: var(--ff-display);
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.8rem;
-      line-height: 1.2;
-    }
-    .servico-desc { font-size: 0.88rem; color: var(--text2); line-height: 1.75; margin-bottom: 1.5rem; }
-    .servico-itens { display: flex; flex-direction: column; gap: 0.45rem; }
-    .servico-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.8rem;
-      color: var(--text3);
-      font-weight: 500;
-    }
-    .servico-item::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-    }
-
-    /* ANT PROCESSOS */
-    .processos-band {
-      padding-block: 5rem;
-      background: var(--surface);
-      position: relative;
-      overflow: hidden;
-      border-top: 1px solid var(--border2);
-      border-bottom: 1px solid var(--border2);
-    }
-    .processos-band::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 50%; height: 100%;
-      background: radial-gradient(ellipse at right, rgba(47,203,138,0.06) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .processos-inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: center;
-    }
-    .processos-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 1rem;
-    }
-    .processos-tag-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      animation: blink 2s ease-in-out infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
-    }
-    .processos-heading {
-      font-family: var(--ff-display);
-      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.18;
-      margin-bottom: 0.8rem;
-    }
-    .processos-heading em {
-      font-style: italic;
-      color: var(--text2);
-      font-weight: 400;
-    }
-    .processos-sub { font-size: 0.92rem; color: var(--text2); max-width: 55ch; line-height: 1.75; }
-    .processos-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
-    .processos-pill {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text3);
-      border: 1px solid var(--border2);
-      border-radius: 20px;
-      padding: 0.25rem 0.8rem;
-    }
-    .processos-action { flex-shrink: 0; }
-    .btn-processos {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--green);
-      color: #081626;
-      border-radius: 6px;
-      padding: 1rem 2rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      transition: all 0.3s var(--ease);
-    }
-    .btn-processos:hover {
-      background: var(--green-hi);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(47,203,138,0.35);
-    }
-
-    /* METODOLOGIA */
-    .metodologia {
-      padding-block: 5rem;
-      background: rgba(47,203,138,0.07);
-      border-top: 1px solid rgba(47,203,138,0.15);
-      border-bottom: 1px solid rgba(47,203,138,0.15);
-    }
-    .metodologia-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: center;
-    }
-    .metodologia-text .label-eyebrow { display: block; margin-bottom: 0.8rem; }
-    .metodologia-heading {
-      font-family: var(--ff-display);
-      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-      font-weight: 600;
-      color: var(--text);
-      margin-top: 0.3rem;
-      line-height: 1.18;
-    }
-    .metodologia-heading em { font-style: italic; color: var(--green); font-weight: 400; }
-    .metodologia-sub { font-size: 0.92rem; color: var(--text2); margin-top: 0.8rem; max-width: 55ch; line-height: 1.75; }
-
-    /* DEPOIMENTOS */
-    .depoimentos {
-      padding-block: 7rem;
-      background: var(--bg2);
-    }
-    .depoimentos-header { text-align: center; margin-bottom: 4rem; }
-    .depoimentos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .depoimento-card {
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-radius: 12px;
-      padding: 2rem;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    }
-    .depoimento-card:hover {
-      border-color: rgba(47,203,138,0.2);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-      transform: translateY(-3px);
-    }
-    .depoimento-stars { display: flex; gap: 3px; margin-bottom: 1rem; color: var(--gold); font-size: 0.9rem; }
-    .depoimento-text {
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--text2);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-    .depoimento-author { display: flex; align-items: center; gap: 0.8rem; }
-    .depoimento-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(47,203,138,0.1);
-      border: 1px solid rgba(47,203,138,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--ff-display);
-      font-size: 0.9rem;
-      color: var(--green);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .depoimento-name { font-size: 0.82rem; font-weight: 700; color: var(--text); }
-    .depoimento-role { font-size: 0.74rem; color: var(--text3); }
-
-    /* FAQ */
-    .faq { padding-block: 7rem; background: var(--bg); }
-    .faq-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
-    .faq-left .label-eyebrow { display: block; margin-bottom: 1rem; }
-    .faq-left .section-title { margin-bottom: 1rem; }
-    .faq-left p { font-size: 0.9rem; color: var(--text2); line-height: 1.75; margin-bottom: 2rem; }
-    .faq-list { display: flex; flex-direction: column; }
-    .faq-item { border-top: 1px solid var(--border2); padding-block: 1.5rem; }
-    .faq-item:last-child { border-bottom: 1px solid var(--border2); }
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      gap: 1rem;
-    }
-    .faq-q-text { font-size: 0.95rem; font-weight: 500; color: var(--text); }
-    .faq-icon {
-      width: 26px;
-      height: 26px;
-      border: 1px solid var(--border2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background 0.25s, border-color 0.25s;
-      color: var(--text2);
-      font-size: 1rem;
-      line-height: 1;
-    }
-    .faq-item.open .faq-icon { background: var(--green); border-color: var(--green); color: #081626; }
-    .faq-answer { display: none; padding-top: 1rem; font-size: 0.88rem; color: var(--text2); line-height: 1.8; }
-    .faq-item.open .faq-answer { display: block; }
-
-    /* CONTATO */
-    .contato { padding-block: 7rem; background: var(--bg2); position: relative; overflow: hidden; }
-    .contato::before {
-      content: '';
-      position: absolute;
-      top: -20%; right: -15%;
-      width: 55%; height: 100%;
-      background: radial-gradient(ellipse, rgba(47,203,138,0.07) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .contato-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-    .contato-left .label-eyebrow { display: block; margin-bottom: 1rem; }
-    .contato-heading {
-      font-family: var(--ff-display);
-      font-size: clamp(1.9rem, 3.8vw, 2.9rem);
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.12;
-      margin-bottom: 1.2rem;
-    }
-    .contato-heading em { font-style: italic; color: var(--green); font-weight: 400; }
-    .contato-sub { font-size: 0.92rem; color: var(--text2); line-height: 1.75; margin-bottom: 2.5rem; }
-    .contato-info { display: flex; flex-direction: column; gap: 1rem; }
-    .contato-info-item {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      color: var(--text2);
-      font-size: 0.9rem;
-    }
-    .contato-info-icon {
-      width: 36px; height: 36px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-      background: rgba(47,203,138,0.05);
-    }
-    .form-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2.5rem;
-      box-shadow: 0 0 40px rgba(47,203,138,0.04), 0 20px 40px rgba(0,0,0,0.2);
-    }
-    .form-box h3 {
-      font-family: var(--ff-display);
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-    #formContent > p {
-      font-size: 0.82rem;
-      color: var(--text3);
-      margin-bottom: 1.8rem;
-    }
-    .form-row { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-group label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text3);
-    }
-    .form-group input,
-    .form-group select {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border2);
-      border-radius: 6px;
-      padding: 0.75rem 1rem;
-      color: var(--text);
-      font-family: var(--ff-body);
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      appearance: none;
-    }
-    .form-group input::placeholder { color: var(--text3); }
-    .form-group input:focus,
-    .form-group select:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(47,203,138,0.08);
-    }
-    .form-group select option { background: var(--surface); }
-    .form-submit { width: 100%; justify-content: center; margin-top: 0.5rem; padding: 1rem; font-size: 0.85rem; }
-    .form-success { display: none; text-align: center; padding: 2rem; color: var(--text); }
-    .form-success .check { font-size: 3rem; margin-bottom: 1rem; }
-    .form-success h4 { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .form-success p { font-size: 0.88rem; color: var(--text2); }
-
-    /* RODAPÉ */
-    .rodape {
-      background: rgba(0,0,0,0.35);
-      border-top: 1px solid var(--border2);
-      padding-block: 3rem;
-    }
-    .rodape-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    .rodape-logo img { height: 40px; opacity: 0.7; filter: brightness(1.3); }
-    .rodape-links { display: flex; gap: 2rem; }
-    .rodape-links a {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text3);
-      transition: color 0.2s;
-    }
-    .rodape-links a:hover { color: var(--text2); }
-    .rodape-links a.rodape-processos { color: rgba(47,203,138,0.55); }
-    .rodape-links a.rodape-processos:hover { color: var(--green); }
-    .rodape-links a.rodape-ig { display: inline-flex; align-items: center; gap: 0.4rem; }
-    .rodape-links { flex-wrap: wrap; }
-    .form-legal { margin-top: 0.9rem; font-size: 0.75rem; color: var(--text3); text-align: center; }
-    .form-legal a { color: var(--text2); text-decoration: underline; }
-    .form-legal a:hover { color: var(--green); }
-    .rodape-copy { font-size: 0.72rem; color: var(--text3); font-weight: 500; }
-
-    /* WHATSAPP */
-    .wa-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      background: #25D366;
-      color: white;
-      border-radius: 50px;
-      padding: 0.8rem 1.4rem 0.8rem 1rem;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
-      font-family: var(--ff-body);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
-      animation: waEntrance 0.6s 1.5s var(--ease) both;
-    }
-    .wa-float:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,0.45); }
-    .wa-float svg { width: 22px; height: 22px; flex-shrink: 0; }
-    @keyframes waEntrance {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .wa-inline {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: #25D366;
-      color: white;
-      border-radius: 6px;
-      padding: 0.85rem 1.6rem;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.25s var(--ease);
-      margin-top: 1.5rem;
-      width: 100%;
-      justify-content: center;
-    }
-    .wa-inline:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
-    .wa-inline svg { width: 18px; height: 18px; flex-shrink: 0; }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta .btn-outline { display: none; }
-      .hamburger { display: flex; }
-      .hero-inner { grid-template-columns: 1fr; padding-block: 100px 60px; }
-      .hero-right { display: none; }
-      .hero-heading { font-size: 2.6rem; }
-      .sobre-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .sobre-pilares { grid-template-columns: 1fr; }
-      .servicos-grid { grid-template-columns: 1fr; }
-      .processos-inner { grid-template-columns: 1fr; }
-      .processos-action { margin-top: 1rem; }
-      .metodologia-inner { grid-template-columns: 1fr; }
-      .metodologia-action { margin-top: 1rem; }
-      .depoimentos-grid { grid-template-columns: 1fr; }
-      .faq-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .contato-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .rodape-inner { flex-direction: column; align-items: flex-start; }
-    }
-    @media (max-width: 600px) {
-      .hero-actions { flex-direction: column; }
-      .hero-actions .btn { width: 100%; justify-content: center; }
-      .sobre-pilares { grid-template-columns: 1fr 1fr; }
-      .sim-banner { flex-wrap: wrap; }
-      .sim-banner-link { width: 100%; text-align: right; }
-    }
-
-    /* ===== NOVAS SEÇÕES (out/2026) ===== */
-    .sec { padding-block: 6.5rem; position: relative; }
-    .sec-alt { background: var(--bg2); }
-    .sec-header { text-align: center; margin-bottom: 3.5rem; }
-    .sec-header .label-eyebrow { display: block; margin-bottom: 1rem; }
-    .sec-header p { font-size: 0.98rem; color: var(--text2); max-width: 58ch; margin: 1rem auto 0; }
-    .sec-cta { text-align: center; margin-top: 2.8rem; }
-
-    /* Por onde começar */
-    .escada { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; counter-reset: passo; }
-    .degrau { position: relative; display: flex; flex-direction: column; gap: 0.8rem; background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 1.8rem 1.6rem; transition: border-color .3s var(--ease), transform .3s var(--ease); }
-    .degrau:hover { border-color: rgba(47,203,138,0.35); transform: translateY(-4px); }
-    .degrau-num { font-family: var(--ff-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text3); }
-    .degrau h3 { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; line-height: 1.2; }
-    .degrau-preco { align-self: flex-start; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); background: rgba(47,203,138,0.1); border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 4px; }
-    .degrau p { font-size: 0.9rem; color: var(--text2); line-height: 1.65; }
-    .degrau-link { margin-top: auto; padding-top: 0.6rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); }
-    .degrau-link:hover { color: var(--green-hi); }
-    .degrau.destaque { border-color: rgba(47,203,138,0.4); background: linear-gradient(180deg, rgba(47,203,138,0.09), var(--surface)); }
-
-    /* Para quem é */
-    .publico { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-    .publico-card { display: grid; grid-template-columns: 52px 1fr; gap: 1.2rem; align-items: start; background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 1.8rem; }
-    .publico-icon { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: rgba(47,203,138,0.1); border: 1px solid var(--border); color: var(--green); }
-    .publico-icon svg { width: 24px; height: 24px; }
-    .publico-card h3 { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .publico-card .dor { font-size: 0.95rem; color: var(--text); font-weight: 600; margin-bottom: 0.35rem; }
-    .publico-card p { font-size: 0.9rem; color: var(--text2); line-height: 1.65; }
-
-    /* App */
-    .app-inner { display: grid; grid-template-columns: 1.25fr 1fr; gap: 4rem; align-items: center; }
-    .app-text .section-title { margin: 1rem 0 1rem; }
-    .app-text > p { color: var(--text2); font-size: 1rem; line-height: 1.7; max-width: 52ch; }
-    .app-features { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.6rem; }
-    .app-feature { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: var(--text2); line-height: 1.55; }
-    .app-feature strong { color: var(--text); font-weight: 600; display: block; }
-    .app-feature svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--green); margin-top: 2px; }
-    .plano { background: linear-gradient(180deg, rgba(21,48,78,0.95), rgba(16,38,63,0.95)); border: 1px solid rgba(47,203,138,0.35); border-radius: 18px; padding: 2.4rem 2.2rem; box-shadow: 0 30px 80px rgba(0,0,0,0.35); }
-    .plano-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #081626; background: var(--green); padding: 0.3rem 0.75rem; border-radius: 4px; }
-    .plano h3 { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; margin: 1rem 0 0.4rem; }
-    .plano-preco { display: flex; align-items: baseline; gap: 0.4rem; margin: 0.6rem 0 1.4rem; }
-    .plano-preco .valor { font-family: var(--ff-display); font-size: 3rem; font-weight: 700; color: var(--text); line-height: 1; }
-    .plano-preco .periodo { color: var(--text2); font-size: 0.95rem; }
-    .plano ul { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.8rem; }
-    .plano li { display: flex; gap: 0.6rem; font-size: 0.92rem; color: var(--text2); }
+    /* Planos */
+    .planos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; align-items: stretch; }
+    .plano { position: relative; display: flex; flex-direction: column; background: rgba(16,38,63,.92); border: 1px solid var(--border2); border-radius: 18px; padding: 2.2rem 1.9rem; }
+    .plano.top { border-color: rgba(47,203,138,.5); background: linear-gradient(180deg, rgba(47,203,138,.1), rgba(16,38,63,.95) 45%); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+    .plano-flag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #081626; background: var(--green); padding: .35rem .85rem; border-radius: 999px; white-space: nowrap; }
+    .plano h3 { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 600; }
+    .plano .preco { margin: 1.1rem 0 .3rem; font-family: var(--ff-display); font-size: 2.3rem; font-weight: 700; line-height: 1; }
+    .plano .preco small { font-family: var(--ff-body); font-size: .85rem; font-weight: 500; color: var(--text2); }
+    .plano .mensal { color: var(--text2); font-size: .9rem; margin-bottom: 1.4rem; }
+    .plano .mensal b { color: var(--text); }
+    .plano ul { display: flex; flex-direction: column; gap: .65rem; margin-bottom: 1.8rem; border-top: 1px solid var(--border2); padding-top: 1.3rem; }
+    .plano li { display: flex; gap: .6rem; font-size: .9rem; color: var(--text2); line-height: 1.45; }
     .plano li::before { content: '✓'; color: var(--green); font-weight: 700; }
-    .plano .btn { width: 100%; justify-content: center; }
-    .plano-nota { margin-top: 1rem; font-size: 0.8rem; color: var(--text3); text-align: center; line-height: 1.6; }
-    .plano-nota a { color: var(--text2); text-decoration: underline; }
-    .plano-nota a:hover { color: var(--green); }
+    .plano .btn { margin-top: auto; width: 100%; }
+    .planos-nota { text-align: center; color: var(--text2); margin-top: 2rem; font-size: .95rem; }
+    .planos-nota a { color: var(--green); border-bottom: 1px solid rgba(47,203,138,.35); }
 
-    /* Como funciona o diagnóstico */
-    .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-    .passo { background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 2rem 1.8rem; }
-    .passo-num { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-family: var(--ff-display); font-weight: 700; color: #081626; background: var(--green); margin-bottom: 1.2rem; }
-    .passo h3 { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .passo p { font-size: 0.9rem; color: var(--text2); line-height: 1.65; }
+    /* Sobre */
+    .sobre { display: grid; grid-template-columns: 320px 1fr; gap: 3.5rem; align-items: center; }
+    .sobre-foto { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 4 / 5; background: var(--surface); }
+    .sobre-foto img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .sobre-foto figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 1.2rem; background: linear-gradient(transparent, rgba(8,22,38,.95)); font-size: .8rem; color: var(--text2); }
+    .sobre-foto figcaption b { display: block; color: var(--text); font-family: var(--ff-display); font-size: 1.05rem; }
+    .sobre-texto p { color: var(--text2); font-size: 1rem; line-height: 1.8; }
+    .sobre-texto p + p { margin-top: 1rem; }
+    .sobre-texto strong { color: var(--text); }
+    .sobre-texto .btn { margin-top: 1.8rem; }
 
-    /* Agendamento direto e rodapé */
-    .agenda-direta { display: none; margin-top: 1rem; }
-    .rodape-cnpj { display: none; }
+    /* Contato */
+    .contato { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+    .contato h2 { font-family: var(--ff-display); font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; margin: 1rem 0; }
+    .contato h2 em { font-style: normal; color: var(--green); }
+    .contato-left > p { color: var(--text2); font-size: 1rem; line-height: 1.75; max-width: 46ch; }
+    .info { margin-top: 1.8rem; display: flex; flex-direction: column; gap: .8rem; }
+    .info div { display: flex; align-items: center; gap: .8rem; color: var(--text2); font-size: .95rem; }
+    .info svg { width: 18px; height: 18px; color: var(--green); flex-shrink: 0; }
+    .wa-btn { margin-top: 1.8rem; background: #25D366; color: #fff; }
+    .wa-btn:hover { background: #2ee374; transform: translateY(-2px); }
+    .wa-btn svg { width: 18px; height: 18px; }
+    .form { background: rgba(16,38,63,.94); border: 1px solid var(--border); border-radius: 18px; padding: 2.2rem; box-shadow: 0 30px 80px rgba(0,0,0,.3); }
+    .form h3 { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 600; margin-bottom: .3rem; }
+    .form > p { color: var(--text2); font-size: .9rem; margin-bottom: 1.4rem; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1rem; }
+    .field label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); }
+    .field input, .field select { font: 500 .95rem var(--ff-body); color: var(--text); background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: .8rem .9rem; outline: none; transition: border-color .2s; }
+    .field input:focus, .field select:focus { border-color: var(--green); }
+    .form .btn { width: 100%; margin-top: .4rem; }
+    .form-legal { margin-top: .9rem; font-size: .75rem; color: var(--text3); text-align: center; }
+    .form-legal a { color: var(--text2); text-decoration: underline; }
+    .form-ok { display: none; text-align: center; padding: 1.5rem 0; }
+    .form-ok b { display: block; font-family: var(--ff-display); font-size: 1.4rem; margin: .8rem 0 .4rem; }
+    .form-ok p { color: var(--text2); font-size: .92rem; }
+    .form-ok .ok-icon { width: 58px; height: 58px; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; background: rgba(47,203,138,.12); color: var(--green); font-size: 1.6rem; }
 
-    @media (max-width: 1100px) {
-      .escada { grid-template-columns: repeat(2, 1fr); }
-      .app-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .nav-logo-text small { letter-spacing: .1em; }
+    .nav-back { font-size: .72rem !important; color: var(--text3) !important; }
+    .nav-back:hover { color: var(--green) !important; }
+
+    @media (max-width: 1000px) {
+      .p-hero-inner, .contato, .sobre { grid-template-columns: 1fr; }
+      .grid-3, .fases, .planos { grid-template-columns: 1fr 1fr; }
+      .sobre-foto { max-width: 320px; }
     }
-    @media (max-width: 760px) {
+    @media (max-width: 680px) {
       .sec { padding-block: 4.5rem; }
-      .escada, .publico, .passos, .app-features { grid-template-columns: 1fr; }
-      .publico-card { grid-template-columns: 1fr; }
-      .plano { padding: 2rem 1.5rem; }
+      .p-hero { padding-top: 120px; }
+      .grid-3, .fases, .planos, .row { grid-template-columns: 1fr; }
+      .plano.top { order: -1; }
+      .metric { grid-template-columns: 96px 1fr; }
+      .form { padding: 1.6rem; }
+    }
+
+    /* ===== Ajustes nov/2026 ===== */
+    .p-hero h1 { font-size: clamp(2.3rem, 4.6vw, 3.6rem); }
+    .p-hero .lead + .lead { margin-top: 1rem; font-size: 1rem; }
+    .brand-tag { font-family: var(--ff-display); font-weight: 800; font-size: .95rem; letter-spacing: .28em; color: var(--text); margin-top: 1.3rem; display: block; }
+    .pilares { background: linear-gradient(180deg, rgba(21,48,78,.92), rgba(16,38,63,.92)); border: 1px solid var(--border); border-radius: 18px; padding: 2rem; backdrop-filter: blur(8px); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+    .pilares h3 { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text3); margin-bottom: .6rem; }
+    .pilar { display: grid; grid-template-columns: 46px 1fr; gap: 1rem; align-items: start; padding: 1.1rem 0; border-top: 1px solid var(--border2); }
+    .pilar:first-of-type { border-top: 0; }
+    .pilar .card-icon { margin: 0; }
+    .pilar b { display: block; font-family: var(--ff-display); font-size: 1.08rem; color: var(--text); margin-bottom: .2rem; }
+    .pilar span { color: var(--text2); font-size: .9rem; line-height: 1.5; }
+
+    .dores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .dor { display: flex; gap: .9rem; align-items: flex-start; background: rgba(16,38,63,.88); border: 1px solid var(--border2); border-radius: 12px; padding: 1.3rem 1.4rem; font-size: .95rem; color: var(--text); line-height: 1.5; }
+    .dor svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--gold); margin-top: 2px; }
+    .insight { margin-top: 2rem; border-left: 3px solid var(--green); padding: .4rem 0 .4rem 1.3rem; font-family: var(--ff-display); font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 600; line-height: 1.35; max-width: 46ch; }
+    .insight em { font-style: normal; color: var(--green); }
+
+    .fase .fase-sub { font-family: var(--ff-display); font-size: 1rem; color: var(--green); font-weight: 600; margin: -.2rem 0 1rem; }
+    .recebe { margin-top: 1.3rem; background: rgba(47,203,138,.08); border: 1px solid var(--border); border-radius: 10px; padding: .9rem 1rem; font-size: .86rem; color: var(--text2); line-height: 1.55; }
+    .recebe b { display: block; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin-bottom: .3rem; }
+
+    .auto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .auto-grid .card:nth-child(4), .auto-grid .card:nth-child(5) { grid-column: span 1; }
+    .auto-nota { margin-top: 2rem; color: var(--text2); font-size: .95rem; text-align: center; }
+
+    .projeto { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; background: linear-gradient(120deg, rgba(47,203,138,.1), rgba(16,38,63,.92) 60%); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; }
+    .projeto h2 { font-family: var(--ff-display); font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.12; margin: 1rem 0; }
+    .projeto h2 em { font-style: normal; color: var(--green); }
+    .projeto p { color: var(--text2); font-size: 1rem; line-height: 1.75; }
+    .projeto p + p { margin-top: .9rem; }
+    .investimento { background: rgba(8,22,38,.7); border: 1px solid var(--border2); border-radius: 16px; padding: 2rem; }
+    .investimento .tag-inv { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text3); }
+    .investimento strong { display: block; font-family: var(--ff-display); font-size: 1.7rem; color: var(--text); margin: .5rem 0 .8rem; }
+    .investimento ul { display: flex; flex-direction: column; gap: .55rem; margin-bottom: 1.6rem; }
+    .investimento li { display: flex; gap: .6rem; font-size: .92rem; color: var(--text2); }
+    .investimento li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .investimento .btn { width: 100%; }
+
+    .assinatura { text-align: center; padding: 3.5rem 0 1rem; position: relative; z-index: 2; }
+    .assinatura b { font-family: var(--ff-display); font-weight: 800; letter-spacing: .2em; font-size: .9rem; }
+    .assinatura span { display: block; color: var(--text2); margin-top: .4rem; font-size: 1rem; }
+
+    @media (max-width: 1000px) {
+      .dores, .auto-grid { grid-template-columns: 1fr 1fr; }
+      .projeto { grid-template-columns: 1fr; padding: 2.2rem; }
+    }
+    @media (max-width: 680px) {
+      .dores, .auto-grid { grid-template-columns: 1fr; }
+      .projeto { padding: 1.6rem; }
     }
   </style>
-
-  <!-- =====================================================================
-       CONFIGURAÇÕES DO SITE — preencha aqui (deixe '' para desativar)
-       ===================================================================== -->
-  <script>
-    window.ANT_CONFIG = {
-      GA4_ID:         '',  // Google Analytics 4 — ex.: 'G-XXXXXXXXXX'
-      CLARITY_ID:     '',  // Microsoft Clarity — ex.: 'abcd1234ef'
-      META_PIXEL_ID:  '',  // Meta Pixel (Facebook/Instagram Ads) — ex.: '123456789012345'
-      AGENDA_URL:     '',  // Link da página de agendamento (Google Agenda / Calendly)
-      ASSINATURA_URL: 'https://app.antcapital.com.br',  // Link de assinatura do app (checkout)
-      LINKEDIN_URL:   '',  // ex.: 'https://www.linkedin.com/in/seu-perfil/'
-      CNPJ:           ''   // ex.: '00.000.000/0001-00'
-    };
-  </script>
-  <script>
-  /* Carrega as ferramentas de medição somente se o ID estiver preenchido */
-  (function(){
-    var C = window.ANT_CONFIG || {};
-    if (C.GA4_ID) {
-      var g = document.createElement('script'); g.async = true;
-      g.src = 'https://www.googletagmanager.com/gtag/js?id=' + C.GA4_ID;
-      document.head.appendChild(g);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){ dataLayer.push(arguments); };
-      gtag('js', new Date()); gtag('config', C.GA4_ID);
-    }
-    if (C.CLARITY_ID) {
-      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",C.CLARITY_ID);
-    }
-    if (C.META_PIXEL_ID) {
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', C.META_PIXEL_ID); fbq('track', 'PageView');
-    }
-    /* Registro de eventos de conversão em todas as ferramentas ativas */
-    window.antTrack = function(evento, pixelEvento, dados){
-      try { if (window.gtag) gtag('event', evento, dados || {}); } catch(e){}
-      try { if (window.clarity) clarity('event', evento); } catch(e){}
-      try { if (window.fbq && pixelEvento) fbq('track', pixelEvento, dados || {}); } catch(e){}
-    };
-  })();
-  </script>
 </head>
-<body>
+<body data-page="processos">
+<canvas id="ants" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
 
-<canvas id="ants"></canvas>
-<div class="glow"></div>
-
-<!-- NAV -->
-<nav class="nav" id="nav">
+<nav class="nav" aria-label="Principal">
   <div class="container nav-inner">
-    <a href="#hero" class="nav-logo" aria-label="ANT Capital — início">
-      <span class="nav-logo-mark" aria-hidden="true" style="background:none;"><img src="data:image/png;base64,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" alt="" style="width:48px;height:auto;object-fit:contain;"></span>
-      <span class="nav-logo-text">ANT Capital<small>Planejamento financeiro</small></span>
+    <a href="#topo" class="nav-logo" aria-label="ANT Processos — início">
+      <img src="/blog/assets/logo-ant.png" alt="" width="40" height="40" />
+      <span class="nav-logo-text">ANT Processos<small>Um serviço ANT Capital</small></span>
     </a>
     <div class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#app">App</a>
-      <a href="#faq">FAQ</a>
-      <a href="/blog/">Blog</a>
-      <a href="ant-processos.html">ANT Processos</a>
+      <a href="#desafio">O desafio</a>
+      <a href="#como-ajudamos">Como ajudamos</a>
+      <a href="#automacoes">Automações</a>
+      <a href="#projeto">Investimento</a>
+      <a href="/" class="nav-back">← ANT Capital</a>
     </div>
     <div class="nav-cta">
-      <a href="https://app.antcapital.com.br" class="btn btn-outline" style="padding:0.65rem 1.4rem;font-size:0.75rem;">Acessar o Sistema</a>
-      <a href="#contato" class="btn btn-primary" style="padding:0.65rem 1.4rem;font-size:0.75rem;">Agendar Diagnóstico</a>
+      <a href="#contato" class="btn btn-primary btn-sm">Agendar diagnóstico</a>
     </div>
-    <div class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
-<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#sobre" class="mob-link">Sobre</a>
-  <a href="#servicos" class="mob-link">Serviços</a>
-  <a href="#app" class="mob-link">App</a>
-  <a href="#faq" class="mob-link">FAQ</a>
-  <a href="/blog/" class="mob-link">Blog</a>
-  <a href="ant-processos.html" class="mob-processos mob-link">ANT Processos ↗</a>
-  <a href="https://app.antcapital.com.br" class="btn btn-outline mob-link">Acessar o Sistema</a>
-  <a href="#contato" class="btn btn-primary mob-link">Agendar Diagnóstico</a>
+  <a href="#desafio">O desafio</a>
+  <a href="#como-ajudamos">Como ajudamos</a>
+  <a href="#automacoes">Automações</a>
+  <a href="#projeto">Investimento</a>
+  <a href="/" class="btn btn-outline">← Voltar à ANT Capital</a>
+  <a href="#contato" class="btn btn-primary">Agendar diagnóstico</a>
 </div>
 
 <!-- HERO -->
-<section class="hero" id="hero">
-  <div class="container hero-inner">
-    <div class="hero-left">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span class="label-eyebrow">Planejamento financeiro · Belo Horizonte</span>
-      </div>
-      <h1 class="hero-heading">
-        Você ganha bem.<br>
-        Mas sabe quanto<br>
-        <em>realmente sobra?</em>
-      </h1>
-      <p class="hero-sub">
-        A ANT Capital organiza as finanças de pequenas empresas, autônomos e famílias: diagnóstico claro, plano de ação e acompanhamento até o dinheiro passar a sobrar — e virar patrimônio.
-      </p>
-      <div class="hero-actions">
-        <a href="#contato" class="btn btn-primary">Agendar Diagnóstico Gratuito ↗</a>
-        <a href="#app" class="btn btn-outline">Conhecer o App</a>
-      </div>
-      <div class="sim-banner">
-        <span class="sim-banner-pulse" aria-hidden="true"></span>
-        <span class="sim-banner-text"><strong>Descubra a saúde financeira</strong> da sua empresa ou da sua família em 2 minutos — resultado na hora.</span>
-        <a href="simulador.html" class="sim-banner-link">Fazer simulação →</a>
+<header class="p-hero" id="topo">
+  <div class="container p-hero-inner">
+    <div>
+      <span class="p-badge"><i></i>Para escritórios contábeis</span>
+      <span class="brand-tag">ANT PROCESSOS</span>
+      <h1>Processos inteligentes. <em>Empresas mais eficientes.</em></h1>
+      <p class="lead">Ajudamos escritórios contábeis a identificar gargalos operacionais, organizar rotinas e implementar automações com inteligência artificial.</p>
+      <p class="lead">Unimos consultoria de processos, tecnologia e gestão para reduzir atividades repetitivas, minimizar retrabalhos e liberar tempo para o que realmente importa: entregar mais valor aos clientes.</p>
+      <div class="actions">
+        <a href="#contato" class="btn btn-primary">Agendar diagnóstico inicial ↗</a>
+        <a href="#como-ajudamos" class="btn btn-outline">Como trabalhamos</a>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-glass">
-        <img src="LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
-        <p class="hero-glass-tagline">"Constância constrói."</p>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-number">10+</div>
-            <div class="hero-stat-label">Anos de experiência</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-number">50+</div>
-            <div class="hero-stat-label">Clientes atendidos</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-number">6</div>
-            <div class="hero-stat-label">Etapas da Jornada</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-number">BH</div>
-            <div class="hero-stat-label">Base em MG</div>
-          </div>
-        </div>
+    <aside class="pilares reveal" aria-label="O que une o nosso trabalho">
+      <h3>O que une o nosso trabalho</h3>
+      <div class="pilar">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg></div>
+        <div><b>Consultoria de processos</b><span>Entender e organizar antes de automatizar.</span></div>
       </div>
-    </div>
+      <div class="pilar">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M8 14h.01M16 14h.01"/></svg></div>
+        <div><b>Tecnologia e inteligência artificial</b><span>Automações e agentes que tiram o repetitivo da equipe.</span></div>
+      </div>
+      <div class="pilar">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <div><b>Gestão</b><span>Indicadores e acompanhamento para os resultados se manterem.</span></div>
+      </div>
+    </aside>
   </div>
-  <div class="hero-scroll">
-    <span>scroll</span>
-    <div class="hero-scroll-line"></div>
-  </div>
-</section>
+</header>
 
-<!-- POR ONDE COMEÇAR -->
-<section class="sec sec-alt" id="comecar">
+<!-- O DESAFIO -->
+<section class="sec sec-alt" id="desafio">
   <div class="container">
-    <div class="sec-header reveal">
-      <span class="label-eyebrow">Por onde começar</span>
-      <h2 class="section-title">Um caminho claro, do primeiro passo<br>ao patrimônio construído.</h2>
-      <p>Comece de graça e avance no seu ritmo. Cada etapa entrega valor por si só — e prepara a próxima.</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">O desafio</span>
+      <h2>Sua equipe poderia produzir mais <em>sem trabalhar mais horas?</em></h2>
+      <p>Muitos escritórios contábeis perdem tempo diariamente com atividades que poderiam ser simplificadas, padronizadas ou automatizadas.</p>
     </div>
-    <div class="escada">
-      <div class="degrau reveal">
-        <span class="degrau-num">Passo 1</span>
-        <h3>Simulador financeiro</h3>
-        <span class="degrau-preco">Grátis · 2 minutos</span>
-        <p>Descubra a nota de 0 a 100 da saúde financeira da sua empresa ou da sua casa, com os próximos passos na hora.</p>
-        <a href="simulador.html" class="degrau-link">Fazer simulação →</a>
-      </div>
-      <div class="degrau destaque reveal reveal-delay-1">
-        <span class="degrau-num">Passo 2</span>
-        <h3>Diagnóstico com o Rodrigo</h3>
-        <span class="degrau-preco">Grátis · até 60 minutos</span>
-        <p>Uma conversa para mapear receitas, despesas, dívidas e objetivos. Você sai com um plano de ação, sem compromisso.</p>
-        <a href="#contato" class="degrau-link">Agendar diagnóstico →</a>
-      </div>
-      <div class="degrau reveal reveal-delay-2">
-        <span class="degrau-num">Passo 3</span>
-        <h3>App ANT Capital</h3>
-        <span class="degrau-preco">R$ 79,90 por mês</span>
-        <p>Organize contas, faturas, dívidas e metas no dia a dia, com a ajuda do Assistente ANT, nossa inteligência artificial.</p>
-        <a href="#app" class="degrau-link">Conhecer o app →</a>
-      </div>
-      <div class="degrau reveal reveal-delay-3">
-        <span class="degrau-num">Passo 4</span>
-        <h3>Programa Jornada</h3>
-        <span class="degrau-preco">Sob proposta · 6 meses</span>
-        <p>Acompanhamento próximo, em 6 fases, do diagnóstico à autonomia financeira — com reuniões mensais e o app incluído.</p>
-        <a href="#servicos" class="degrau-link">Ver serviços →</a>
-      </div>
+    <div class="dores">
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Solicitação e organização manual de documentos.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Informações espalhadas entre e-mails, WhatsApp e planilhas.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Retrabalho causado por falhas de comunicação.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Tarefas repetitivas realizadas manualmente.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Falta de integração entre sistemas.</div>
+      <div class="dor reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Processos que dependem excessivamente de pessoas específicas.</div>
     </div>
+    <p class="insight reveal">O problema nem sempre é falta de equipe. Muitas vezes, é <em>falta de processos bem estruturados.</em></p>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-  <div class="container sobre-inner">
-    <div class="sobre-left reveal">
-      <span class="label-eyebrow sobre-label">Quem somos</span>
-      <h2 class="section-title sobre-title">Uma visão diferente sobre finanças.</h2>
-      <div class="sobre-accent-line"></div>
-      <blockquote class="sobre-quote">
-        "A saúde financeira é o pilar de sustentação de qualquer projeto perene."
-        <span class="sobre-quote-author">— Rodrigo Silva, fundador</span>
-      </blockquote>
-      <div class="sobre-pilares">
-        <div class="sobre-pilar">
-          <div class="sobre-pilar-icon">🎯</div>
-          <div class="sobre-pilar-title">Precisão</div>
-          <div class="sobre-pilar-text">Análise financeira com metodologia de alta performance.</div>
-        </div>
-        <div class="sobre-pilar">
-          <div class="sobre-pilar-icon">🏗️</div>
-          <div class="sobre-pilar-title">Processos</div>
-          <div class="sobre-pilar-text">Estruturamos sistemas financeiros inteligentes e duradouros.</div>
-        </div>
-        <div class="sobre-pilar">
-          <div class="sobre-pilar-icon">📈</div>
-          <div class="sobre-pilar-title">Rentabilidade</div>
-          <div class="sobre-pilar-text">Transformamos faturamento em lucro real e previsível.</div>
-        </div>
-        <div class="sobre-pilar">
-          <div class="sobre-pilar-icon">🛡️</div>
-          <div class="sobre-pilar-title">Longevidade</div>
-          <div class="sobre-pilar-text">Construímos bases para negócios que resistem ao tempo.</div>
-        </div>
-      </div>
-    </div>
-    <div class="sobre-right reveal reveal-delay-2">
-      <div class="sobre-photo-wrap">
-        <img src="rodrigo-silva.png" alt="Rodrigo Silva — Fundador ANT Capital" />
-        <div class="sobre-photo-caption">Rodrigo Silva — Fundador &amp; Consultor</div>
-      </div>
-      <p>A trajetória de <strong>Rodrigo Silva</strong> é pautada pela convicção de que a saúde financeira é o pilar de sustentação de qualquer projeto perene. Com mais de uma década de atuação como consultor especializado para escritórios de contabilidade, Rodrigo desenvolveu uma visão privilegiada sobre a gestão empresarial, ajudando dezenas de organizações a atingirem níveis superiores de performance operacional e técnica.</p>
-      <p><strong>A Fundação da ANT Capital</strong> surgiu da observação atenta do mercado brasileiro. Ao presenciar o fechamento precoce de pequenas e médias empresas — muitas vezes por falta de uma reserva de contingência ou de processos financeiros básicos — Rodrigo identificou a necessidade de uma consultoria que fosse além do suporte contábil tradicional.</p>
-      <p>Sua missão é clara: <strong>democratizar a inteligência financeira estratégica</strong> e oferecer às PMEs o rigor e a organização que o mercado exige.</p>
-      <p>O diferencial reside na adaptação de metodologias de alta performance desenvolvidas ao longo de 10 anos de experiência. Não entregamos apenas números; <strong>estruturamos processos financeiros inteligentes e personalizados</strong>. Ao unir expertise em gestão de processos à análise financeira de precisão, garantimos que o empresário recupere o controle total de sua operação, transformando dados em decisões seguras e faturamento em lucro real.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PARA QUEM É -->
-<section class="sec" id="para-quem">
+<!-- COMO AJUDAMOS -->
+<section class="sec" id="como-ajudamos">
   <div class="container">
-    <div class="sec-header reveal">
-      <span class="label-eyebrow">Para quem é</span>
-      <h2 class="section-title">Se você se reconhece aqui,<br>a ANT Capital é para você.</h2>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Como ajudamos sua empresa</span>
+      <h2>Três etapas, <em>no ritmo do seu escritório.</em></h2>
+      <p>Os prazos de cada etapa são definidos no diagnóstico, de acordo com o tamanho e a complexidade do projeto.</p>
     </div>
-    <div class="publico">
-      <div class="publico-card reveal">
-        <div class="publico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12M6 12h12"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg></div>
-        <div>
-          <h3>Donos de clínicas e consultórios</h3>
-          <p class="dor">Agenda cheia, mas o caixa não acompanha?</p>
-          <p>Organizamos custos, pró-labore, precificação e reserva para o negócio crescer sem depender só do seu esforço extra.</p>
-        </div>
+    <div class="fases">
+      <div class="fase reveal">
+        <div class="fase-top"><span class="fase-num">01</span><span class="fase-tempo">Diagnóstico</span></div>
+        <h3>Diagnóstico e mapeamento</h3>
+        <p class="fase-sub">Antes de automatizar, precisamos entender.</p>
+        <ul>
+          <li>Levantamento das rotinas operacionais</li>
+          <li>Identificação de gargalos e desperdícios</li>
+          <li>Análise dos sistemas e ferramentas utilizados</li>
+          <li>Identificação de oportunidades de melhoria</li>
+          <li>Priorização das soluções por impacto e viabilidade</li>
+        </ul>
+        <div class="recebe"><b>Você recebe</b>Diagnóstico operacional, mapa de processos e plano de ação.</div>
       </div>
-      <div class="publico-card reveal reveal-delay-1">
-        <div class="publico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
-        <div>
-          <h3>Donos de pequenas empresas e agências</h3>
-          <p class="dor">O faturamento sobe e desce e você não sabe se dá lucro?</p>
-          <p>Estruturamos fluxo de caixa, DRE gerencial, metas e indicadores para você decidir com números, não com intuição.</p>
-        </div>
+      <div class="fase reveal">
+        <div class="fase-top"><span class="fase-num">02</span><span class="fase-tempo">Implementação</span></div>
+        <h3>Implementação e automação</h3>
+        <p class="fase-sub">Transformamos oportunidades em soluções práticas.</p>
+        <ul>
+          <li>Automação de tarefas repetitivas</li>
+          <li>Integração entre sistemas e ferramentas</li>
+          <li>Implementação de agentes de inteligência artificial</li>
+          <li>Organização de fluxos de trabalho</li>
+          <li>Testes, validações e treinamento da equipe</li>
+        </ul>
+        <div class="recebe"><b>Você recebe</b>Soluções implementadas, testadas e documentadas conforme o escopo aprovado.</div>
       </div>
-      <div class="publico-card reveal">
-        <div class="publico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
-        <div>
-          <h3>Profissionais autônomos</h3>
-          <p class="dor">Renda variável e contas pessoais misturadas com as do trabalho?</p>
-          <p>Separamos as finanças, criamos a sua reserva e um plano para investir com constância, mesmo com renda que oscila.</p>
-        </div>
-      </div>
-      <div class="publico-card reveal reveal-delay-1">
-        <div class="publico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div>
-        <div>
-          <h3>Famílias</h3>
-          <p class="dor">Sente que o salário acaba antes do mês?</p>
-          <p>Montamos o orçamento da casa, um plano para sair das dívidas e metas para os projetos e a aposentadoria.</p>
-        </div>
+      <div class="fase reveal">
+        <div class="fase-top"><span class="fase-num">03</span><span class="fase-tempo">Contínuo</span></div>
+        <h3>Acompanhamento e evolução</h3>
+        <p class="fase-sub">A implementação é apenas o começo.</p>
+        <ul>
+          <li>Monitoramento das soluções</li>
+          <li>Correções e ajustes previstos no contrato</li>
+          <li>Acompanhamento de indicadores</li>
+          <li>Suporte técnico</li>
+          <li>Identificação de novas oportunidades de melhoria</li>
+        </ul>
+        <div class="recebe"><b>Você recebe</b>Acompanhamento contínuo para manter e evoluir os processos implementados.</div>
       </div>
     </div>
-    <div class="sec-cta reveal"><a href="#contato" class="btn btn-primary">Agendar diagnóstico gratuito ↗</a></div>
   </div>
 </section>
 
-<!-- SERVIÇOS -->
-<section class="servicos" id="servicos">
+<!-- O QUE PODEMOS AUTOMATIZAR -->
+<section class="sec sec-alt" id="automacoes">
   <div class="container">
-    <div class="servicos-header reveal">
-      <span class="label-eyebrow">O que entregamos</span>
-      <h2 class="section-title">Soluções para cada etapa<br>da sua jornada financeira.</h2>
-      <p>Do diagnóstico inicial à gestão patrimonial — cobertura completa para PMEs, autônomos e pessoas físicas.</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">O que podemos automatizar?</span>
+      <h2>O que é repetitivo <em>não precisa depender de uma pessoa.</em></h2>
     </div>
-    <div class="servicos-grid">
-      <div class="servico-card reveal">
-        <div class="servico-number">01</div>
-        <h3 class="servico-title">Diagnóstico Financeiro</h3>
-        <p class="servico-desc">O ponto de partida. Mapeamos a situação real da sua empresa ou vida financeira com profundidade e sem julgamentos. Você terá clareza total sobre onde está e para onde pode ir.</p>
-        <div class="servico-itens">
-          <span class="servico-item">Levantamento de receitas e despesas</span>
-          <span class="servico-item">Análise de fluxo de caixa</span>
-          <span class="servico-item">Identificação de gargalos e riscos</span>
-          <span class="servico-item">Relatório com plano de ação</span>
-        </div>
+    <div class="auto-grid">
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Organização de documentos</h3>
+        <p>Recebimento, classificação e direcionamento automático de arquivos.</p>
       </div>
-      <div class="servico-card reveal reveal-delay-1">
-        <div class="servico-number">02</div>
-        <h3 class="servico-title">Planejamento Financeiro para PMEs</h3>
-        <p class="servico-desc">Estruturamos os processos financeiros da sua empresa para que você saia do operacional e tome decisões com base em dados concretos, não intuição.</p>
-        <div class="servico-itens">
-          <span class="servico-item">Orçamento empresarial e DRE gerencial</span>
-          <span class="servico-item">Controle de custos e precificação</span>
-          <span class="servico-item">Reserva de contingência e capital de giro</span>
-          <span class="servico-item">Metas e KPIs financeiros</span>
-        </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Comunicação com clientes</h3>
+        <p>Lembretes, solicitações de documentos e notificações.</p>
       </div>
-      <div class="servico-card reveal reveal-delay-2">
-        <div class="servico-number">03</div>
-        <h3 class="servico-title">Planejamento Pessoal e Patrimonial</h3>
-        <p class="servico-desc">Para autônomos, profissionais liberais e pessoas físicas que querem organizar as finanças, investir com consciência e construir patrimônio de forma consistente.</p>
-        <div class="servico-itens">
-          <span class="servico-item">Orçamento pessoal e controle de dívidas</span>
-          <span class="servico-item">Estratégia de investimentos alinhada ao perfil</span>
-          <span class="servico-item">Planejamento de aposentadoria</span>
-          <span class="servico-item">Proteção patrimonial e seguros</span>
-        </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+        <h3>Gestão de tarefas</h3>
+        <p>Distribuição de atividades, alertas e acompanhamento de prazos.</p>
       </div>
-      <div class="servico-card reveal reveal-delay-3">
-        <div class="servico-number">04</div>
-        <h3 class="servico-title">Consultoria Contínua — Programa Jornada</h3>
-        <p class="servico-desc">Nosso programa de acompanhamento de 6 meses. Do diagnóstico à autonomia financeira, passando por 6 fases estruturadas de evolução com reuniões, ferramentas e suporte dedicado.</p>
-        <div class="servico-itens">
-          <span class="servico-item">6 fases de evolução estruturada</span>
-          <span class="servico-item">Reuniões mensais de acompanhamento</span>
-          <span class="servico-item">Acesso à plataforma ANT Capital</span>
-          <span class="servico-item">Relatórios e dashboards personalizados</span>
-        </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 6h7M18 8.5v7"/></svg></div>
+        <h3>Integração de sistemas</h3>
+        <p>Comunicação entre ferramentas que atualmente funcionam de maneira isolada.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M8 14h.01M16 14h.01"/></svg></div>
+        <h3>Inteligência artificial</h3>
+        <p>Agentes para triagem, análise e apoio a atividades administrativas.</p>
+      </div>
+      <div class="card reveal" style="display:flex;flex-direction:column;justify-content:center;background:rgba(47,203,138,.07);border-color:var(--border);">
+        <h3>Tem uma rotina que não está nesta lista?</h3>
+        <p>Conte para nós no diagnóstico. Avaliamos cada caso.</p>
+        <a href="#contato" class="btn btn-outline btn-sm" style="margin-top:1rem;align-self:flex-start;">Falar sobre minha rotina</a>
       </div>
     </div>
+    <p class="auto-nota reveal">Cada solução é avaliada conforme a realidade, os sistemas e as necessidades do escritório.</p>
   </div>
 </section>
 
-<!-- APP -->
-<section class="sec sec-alt" id="app">
-  <div class="container app-inner">
-    <div class="app-text reveal">
-      <span class="label-eyebrow">Aplicativo ANT Capital</span>
-      <h2 class="section-title">Seu planejamento financeiro no bolso, com a ajuda de inteligência artificial.</h2>
-      <p>A mesma metodologia que usamos com os nossos clientes, numa plataforma simples para acompanhar o seu dinheiro todos os dias — no celular ou no computador.</p>
-      <div class="app-features">
-        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Faturas organizadas pela IA</strong>Importe a fatura em PDF (Nubank, Inter, Itaú, Bradesco, XP) e os lançamentos são classificados para você.</div></div>
-        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Assistente ANT</strong>Tire dúvidas sobre o seu dinheiro a qualquer hora e receba orientações práticas.</div></div>
-        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Metas e reservas</strong>Defina objetivos e acompanhe a evolução da sua reserva de emergência.</div></div>
-        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Controle de dívidas</strong>Visualize todas as dívidas e acompanhe o plano para quitá-las.</div></div>
-        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Projeções e aposentadoria</strong>Simule o futuro e saiba quanto guardar para chegar lá.</div></div>
-        <div class="app-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><strong>Relatórios claros</strong>Entenda para onde vai cada real, por categoria e por mês.</div></div>
-      </div>
-    </div>
-    <div class="plano reveal reveal-delay-2">
-      <span class="plano-tag">Plano Essencial</span>
-      <h3>Organização financeira completa</h3>
-      <div class="plano-preco"><span class="valor">R$ 79,90</span><span class="periodo">/mês</span></div>
-      <ul>
-        <li>Acesso completo à plataforma ANT Capital</li>
-        <li>300 perguntas por mês ao Assistente ANT</li>
-        <li>Importação de faturas com inteligência artificial</li>
-        <li>Metas, dívidas, projeções e relatórios</li>
-        <li>Instalação no celular como aplicativo</li>
-      </ul>
-      <a href="https://app.antcapital.com.br" class="btn btn-primary" id="btnAssinar" data-track="assinar_app">Assinar o plano Essencial →</a>
-      <p class="plano-nota">Clientes do Programa Jornada têm o app incluído.<br>Já é cliente? <a href="https://app.antcapital.com.br">Acessar o sistema</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- METODOLOGIA -->
-<section class="metodologia">
-  <div class="container metodologia-inner">
-    <div class="metodologia-text reveal">
-      <span class="label-eyebrow">Nossa metodologia</span>
-      <h2 class="metodologia-heading">
-        Não entregamos relatórios.<br>
-        <em>Construímos sistemas.</em>
-      </h2>
-      <p class="metodologia-sub">A ANT Capital adapta metodologias de alta performance para a realidade de cada cliente. O resultado: processos financeiros que funcionam sem você estar presente em cada decisão.</p>
-    </div>
-    <div class="metodologia-action reveal reveal-delay-2">
-      <a href="#contato" class="btn btn-primary">Quero conhecer a metodologia →</a>
-    </div>
-  </div>
-</section>
-
-<!-- COMO FUNCIONA O DIAGNÓSTICO -->
-<section class="sec" id="como-funciona">
+<!-- PROJETO SOB MEDIDA -->
+<section class="sec" id="projeto">
   <div class="container">
-    <div class="sec-header reveal">
-      <span class="label-eyebrow">Diagnóstico gratuito</span>
-      <h2 class="section-title">Como funciona o primeiro passo.</h2>
-      <p>Sem compromisso e sem letras miúdas. Você sai da conversa sabendo exatamente onde está e o que fazer.</p>
-    </div>
-    <div class="passos">
-      <div class="passo reveal">
-        <div class="passo-num">1</div>
-        <h3>Você agenda</h3>
-        <p>Pelo formulário abaixo ou pelo WhatsApp. A conversa pode ser online ou presencial, em Belo Horizonte.</p>
+    <div class="projeto reveal">
+      <div>
+        <span class="eyebrow">Investimento</span>
+        <h2>Um projeto construído <em>para a sua realidade.</em></h2>
+        <p>Não acreditamos em soluções prontas para problemas diferentes.</p>
+        <p>Cada escritório possui processos, equipes e ferramentas próprias. Por isso, nosso trabalho começa com um diagnóstico e evolui para um projeto dimensionado conforme as suas necessidades.</p>
       </div>
-      <div class="passo reveal reveal-delay-1">
-        <div class="passo-num">2</div>
-        <h3>Conversamos por até 60 minutos</h3>
-        <p>Mapeamos receitas, despesas, dívidas e objetivos — da empresa, da casa ou dos dois — com sigilo e sem julgamentos.</p>
-      </div>
-      <div class="passo reveal reveal-delay-2">
-        <div class="passo-num">3</div>
-        <h3>Você recebe o plano de ação</h3>
-        <p>Com as prioridades em ordem. Depois, você decide: seguir por conta própria, usar o app ou contar com o nosso acompanhamento.</p>
+      <div class="investimento">
+        <span class="tag-inv">Investimento</span>
+        <strong>Sob proposta</strong>
+        <ul>
+          <li>Definido após o diagnóstico</li>
+          <li>Considera escopo, complexidade e integrações necessárias</li>
+          <li>Proposta clara, com o que está incluído em cada etapa</li>
+        </ul>
+        <a href="#contato" class="btn btn-primary">Agendar diagnóstico inicial</a>
       </div>
     </div>
-    <div class="sec-cta reveal"><a href="#contato" class="btn btn-primary">Quero agendar meu diagnóstico ↗</a></div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container faq-inner">
-    <div class="faq-left reveal">
-      <span class="label-eyebrow">Dúvidas frequentes</span>
-      <h2 class="section-title">Perguntas que todo cliente faz antes de começar.</h2>
-      <p>Não encontrou o que buscava? Entre em contato e respondemos em menos de 24 horas.</p>
-      <a href="#contato" class="btn btn-primary" style="align-self:flex-start;">Falar com a equipe →</a>
-    </div>
-    <div class="faq-list reveal reveal-delay-2">
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span class="faq-q-text">Qual é o valor do diagnóstico inicial?</span>
-          <span class="faq-icon">−</span>
-        </div>
-        <div class="faq-answer">O diagnóstico inicial é gratuito. Em uma reunião de até 60 minutos, mapeamos sua situação financeira e apresentamos um plano de ação personalizado sem nenhum custo ou compromisso.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-q-text">Quais são os perfis de clientes que a ANT Capital atende?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">Atendemos pequenas e médias empresas (PMEs), profissionais autônomos e pessoas físicas que desejam organizar suas finanças e construir patrimônio com estratégia. Se você tem uma empresa de até 50 funcionários ou é um profissional liberal, estamos prontos para ajudar.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-q-text">O que é o Programa Jornada e como funciona?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">O Programa Jornada é nossa consultoria de acompanhamento contínuo com duração de 6 meses. Ele é estruturado em 6 fases — do diagnóstico à autonomia financeira — com reuniões mensais, ferramentas digitais exclusivas e relatórios personalizados. É ideal para quem quer uma transformação financeira completa.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-q-text">Como funciona o aplicativo e quanto custa?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">O app ANT Capital é a nossa plataforma de organização financeira: você registra ou importa as faturas do cartão, acompanha metas, dívidas e projeções e conta com o Assistente ANT, nossa inteligência artificial. O plano Essencial custa R$ 79,90 por mês e inclui 300 perguntas mensais ao Assistente. Para clientes do Programa Jornada, o acesso já está incluído.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-q-text">Preciso ter um contador para contratar a ANT Capital?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">Não. A ANT Capital atua como consultoria financeira estratégica e gerencial, complementando — mas não substituindo — o trabalho do contador. Trabalhamos com os dados que você já tem e organizamos a gestão financeira da operação.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-q-text">O atendimento é presencial ou online?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">Atendemos em ambas as modalidades. Clientes de Belo Horizonte têm a opção de reuniões presenciais; clientes de outras cidades são atendidos 100% online com a mesma qualidade e estrutura.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-q-text">Em quanto tempo vejo resultados?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">Os primeiros impactos — clareza financeira, controle de fluxo de caixa e identificação de desperdícios — são percebidos já nas primeiras semanas. Resultados mais estruturais, como crescimento de margem e formação de reservas, se consolidam ao longo de 3 a 6 meses de acompanhamento.</div>
-      </div>
+<!-- QUEM ENTREGA -->
+<section class="sec sec-alt" id="sobre">
+  <div class="container sobre">
+    <figure class="sobre-foto reveal">
+      <img src="/rodrigo-silva.png" alt="Rodrigo Silva" />
+      <figcaption><b>Rodrigo Silva</b>Fundador da ANT Capital</figcaption>
+    </figure>
+    <div class="sobre-texto reveal">
+      <span class="eyebrow">Quem conduz</span>
+      <div class="sec-head" style="margin-bottom:1.4rem;"><h2>Experiência de quem <em>conhece a rotina contábil.</em></h2></div>
+      <p><strong>Rodrigo Silva</strong> tem mais de uma década de atuação como consultor especializado em escritórios de contabilidade — ele não precisa de um tour pelo seu escritório para entender como funciona um fechamento de mês.</p>
+      <p>A ANT Processos nasceu dessa experiência: a percepção de que muitos dos maiores obstáculos à produtividade dos escritórios contábeis não são técnicos, são operacionais — e que boa parte deles tem solução, com o processo certo e a tecnologia certa.</p>
+      <p>Rodrigo também é fundador da <strong>ANT Capital</strong>, consultoria financeira para PMEs, autônomos e famílias, com base em Belo Horizonte.</p>
+      <a href="/" class="btn btn-outline">Conhecer a ANT Capital →</a>
     </div>
   </div>
 </section>
 
 <!-- CONTATO -->
-<section class="contato" id="contato">
-  <div class="container contato-inner">
+<section class="sec" id="contato">
+  <div class="container contato">
     <div class="contato-left reveal">
-      <span class="label-eyebrow">Agende seu diagnóstico</span>
-      <h2 class="contato-heading">
-        O primeiro passo<br>não custa nada. <em>Literalmente.</em>
-      </h2>
-      <p class="contato-sub">Em uma reunião gratuita de até 60 minutos, identificamos os principais pontos de melhoria da sua vida financeira e apresentamos um caminho claro para você. Sem compromisso, sem letras miúdas.</p>
-      <div class="contato-info">
-        <div class="contato-info-item">
-          <div class="contato-info-icon">📞</div>
-          <span>(31) 9 9587-2806</span>
-        </div>
-        <div class="contato-info-item">
-          <div class="contato-info-icon">✉️</div>
-          <span>rodrigo@antcapital.com.br</span>
-        </div>
-        <div class="contato-info-item">
-          <div class="contato-info-icon">📍</div>
-          <span>Belo Horizonte, MG — Atendimento online para todo o Brasil</span>
-        </div>
+      <span class="eyebrow">Diagnóstico inicial</span>
+      <h2>Vamos descobrir onde seu escritório pode <em>ganhar eficiência?</em></h2>
+      <p>Agende uma conversa inicial com a ANT Processos. Vamos conhecer a sua operação, entender os seus desafios e identificar oportunidades de melhoria.</p>
+      <div class="info">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(31) 9 9587-2806</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>rodrigo@antcapital.com.br</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Belo Horizonte, MG — atendimento online para todo o Brasil</div>
       </div>
-      <a class="wa-inline" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-        Prefiro falar pelo WhatsApp
+      <a class="btn wa-btn" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20agendar%20um%20diagn%C3%B3stico%20inicial." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.7-1.1-4.5-3.9-4.6-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>
+        Falar agora pelo WhatsApp
       </a>
-      <a class="btn btn-outline agenda-direta" id="agendaDireta" href="#" target="_blank" rel="noopener" data-track="agenda_direta">Prefiro escolher o horário agora →</a>
     </div>
-    <div class="form-box reveal reveal-delay-2">
-      <div id="formContent">
-        <h3>Agendar Diagnóstico Gratuito</h3>
-        <p>Preencha os dados abaixo e entraremos em contato em até 24 horas.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" placeholder="Seu nome" />
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="seu@email.com" />
-          </div>
+
+    <div class="form reveal">
+      <div id="formBox">
+        <h3>Agendar diagnóstico inicial</h3>
+        <p>Preencha os dados e retornamos em até 24 horas úteis.</p>
+        <div class="row">
+          <div class="field"><label for="pNome">Seu nome</label><input id="pNome" type="text" placeholder="Nome completo" autocomplete="name" /></div>
+          <div class="field"><label for="pEscritorio">Escritório</label><input id="pEscritorio" type="text" placeholder="Nome do escritório" autocomplete="organization" /></div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="whatsapp">WhatsApp</label>
-            <input type="tel" id="whatsapp" placeholder="(31) 9 0000-0000" />
-          </div>
-          <div class="form-group">
-            <label for="perfil">Seu perfil</label>
-            <select id="perfil">
+        <div class="row">
+          <div class="field"><label for="pWpp">WhatsApp</label><input id="pWpp" type="tel" placeholder="(31) 9 0000-0000" autocomplete="tel" /></div>
+          <div class="field"><label for="pEmail">E-mail</label><input id="pEmail" type="email" placeholder="seu@email.com" autocomplete="email" /></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="pEquipe">Tamanho da equipe</label>
+            <select id="pEquipe">
               <option value="" disabled selected>Selecione…</option>
-              <option>Dono de empresa (PME)</option>
-              <option>Profissional autônomo</option>
-              <option>Pessoa física</option>
-              <option>Outro</option>
+              <option>Só eu</option>
+              <option>2 a 5 pessoas</option>
+              <option>6 a 10 pessoas</option>
+              <option>11 a 30 pessoas</option>
+              <option>Mais de 30 pessoas</option>
+            </select>
+          </div>
+          <div class="field"><label for="pDesafio">Maior desafio hoje</label>
+            <select id="pDesafio">
+              <option selected>Ainda não sei</option>
+              <option>Organização de documentos</option>
+              <option>Comunicação com clientes</option>
+              <option>Gestão de tarefas e prazos</option>
+              <option>Integração de sistemas</option>
+              <option>Inteligência artificial</option>
             </select>
           </div>
         </div>
-        <button class="btn btn-primary form-submit" id="formBtn" onclick="submitForm()">
-          Quero meu Diagnóstico Gratuito →
-        </button>
+        <button class="btn btn-primary" id="pBtn" type="button">Agendar diagnóstico inicial →</button>
         <p class="form-legal">Ao enviar, você concorda com a nossa <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</p>
       </div>
-      <div class="form-success" id="formSuccess">
-        <div class="check">✅</div>
-        <a class="btn btn-primary agenda-direta" id="agendaSucesso" href="#" target="_blank" rel="noopener" style="margin-bottom:1.2rem;" data-track="agenda_direta">Escolher meu horário agora →</a>
-        <h4>Recebemos sua solicitação!</h4>
-        <p>Entraremos em contato em até 24 horas pelo WhatsApp ou e-mail informado.<br><br>Enquanto isso, que tal nos seguir no Instagram?</p>
-        <a href="https://www.instagram.com/antconsultoria/" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1.2rem;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @antconsultoria</a>
+      <div class="form-ok" id="formOk">
+        <div class="ok-icon">✓</div>
+        <b>Recebemos a sua solicitação!</b>
+        <p>Vamos falar com você em até 24 horas úteis pelo WhatsApp ou e-mail informado.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RODAPÉ -->
+<div class="container assinatura reveal">
+  <b>ANT PROCESSOS</b>
+  <span>Tecnologia a serviço de empresas mais eficientes.</span>
+</div>
+
 <footer class="rodape">
   <div class="container rodape-inner">
-    <a href="#hero" class="rodape-logo">
-      <img src="LOGO_AZUL_TRANSPARENTE.png" alt="ANT Capital" />
-    </a>
     <div class="rodape-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#faq">FAQ</a>
-      <a href="/blog/">Blog</a>
+      <a href="/">ANT Capital</a>
+      <a href="#como-ajudamos">Como ajudamos</a>
+      <a href="#automacoes">Automações</a>
       <a href="#contato">Contato</a>
-      <a href="ant-processos.html" class="rodape-processos">ANT Processos ↗</a>
       <a href="/politica-de-privacidade.html">Privacidade</a>
-      <a href="#" target="_blank" rel="noopener" id="rodapeLinkedin" style="display:none;">LinkedIn</a>
-      <a href="https://www.instagram.com/antconsultoria/" target="_blank" rel="noopener" class="rodape-ig" aria-label="Instagram da ANT Capital"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a>
+      <a href="https://www.instagram.com/antconsultoria/" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <div class="rodape-copy">© 2026 ANT Capital. Todos os direitos reservados.<span class="rodape-cnpj" id="rodapeCnpj"></span></div>
+    <div class="rodape-copy">© 2026 ANT Capital. Todos os direitos reservados.</div>
   </div>
 </footer>
 
-<!-- WhatsApp flutuante -->
-<a class="wa-float" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Capital%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.524 5.862L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.722.976.993-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-  Falar no WhatsApp
+<a class="wa-float" href="https://wa.me/5531995872806?text=Ol%C3%A1%20Rodrigo%2C%20vim%20pelo%20site%20da%20ANT%20Processos%20e%20quero%20saber%20mais." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.7-1.1-4.5-3.9-4.6-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>
+  <span>Falar no WhatsApp</span>
 </a>
 
+<script src="/blog/assets/blog.js" defer></script>
 <script>
-/* ── CANVAS FORMIGAS ── */
-(function(){
-  const canvas = document.getElementById('ants');
-  const ctx = canvas.getContext('2d');
-  let W, H;
-  function resize(){
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const N = 28;
-  const ants = Array.from({length: N}, () => ({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    angle: Math.random() * Math.PI * 2,
-    speed: 0.35 + Math.random() * 0.55,
-    turn:  0.04 + Math.random() * 0.06,
-    trail: [],
-    trailMax: 55 + Math.floor(Math.random() * 35),
-    size:  1 + Math.random() * 1.2,
-    alpha: 0.18 + Math.random() * 0.22
-  }));
-
-  function step(){
-    ctx.clearRect(0, 0, W, H);
-    ants.forEach(a => {
-      a.angle += (Math.random() - 0.5) * a.turn * 2;
-      a.x += Math.cos(a.angle) * a.speed;
-      a.y += Math.sin(a.angle) * a.speed;
-      if (a.x < 0) a.x = W; if (a.x > W) a.x = 0;
-      if (a.y < 0) a.y = H; if (a.y > H) a.y = 0;
-      a.trail.push({x: a.x, y: a.y});
-      if (a.trail.length > a.trailMax) a.trail.shift();
-      if (a.trail.length < 2) return;
-      ctx.beginPath();
-      ctx.moveTo(a.trail[0].x, a.trail[0].y);
-      for (let i = 1; i < a.trail.length; i++) ctx.lineTo(a.trail[i].x, a.trail[i].y);
-      const grad = ctx.createLinearGradient(
-        a.trail[0].x, a.trail[0].y,
-        a.trail[a.trail.length-1].x, a.trail[a.trail.length-1].y
-      );
-      grad.addColorStop(0, 'rgba(47,203,138,0)');
-      grad.addColorStop(1, `rgba(47,203,138,${a.alpha})`);
-      ctx.strokeStyle = grad;
-      ctx.lineWidth   = a.size;
-      ctx.lineCap     = 'round';
-      ctx.lineJoin    = 'round';
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, a.size * 1.2, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(47,203,138,${a.alpha + 0.15})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(step);
-  }
-  step();
-})();
-
-/* NAV scroll */
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
-
-/* Hamburger */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
-/* Scroll reveal */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
+  /* Envio do formulário (Formspree) */
+  document.getElementById('pBtn').addEventListener('click', async function () {
+    var btn = this;
+    var v = function (id) { return document.getElementById(id).value.trim(); };
+    var nome = v('pNome'), escritorio = v('pEscritorio'), wpp = v('pWpp'), email = v('pEmail'), equipe = v('pEquipe'), desafio = v('pDesafio');
+    if (!nome || !escritorio || !wpp || !email || !equipe) { alert('Por favor, preencha todos os campos antes de enviar.'); return; }
+    btn.textContent = 'Enviando…'; btn.disabled = true;
+    try {
+      var r = await fetch('https://formspree.io/f/xlgkvyrw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ origem: 'ANT Processos', nome: nome, escritorio: escritorio, whatsapp: wpp, email: email, equipe: equipe, maior_desafio: desafio, _subject: 'Novo lead ANT Processos — ' + escritorio })
+      });
+      if (!r.ok) throw new Error('erro');
+      document.getElementById('formBox').style.display = 'none';
+      document.getElementById('formOk').style.display = 'block';
+      var msg = encodeURIComponent('Olá Rodrigo! Sou ' + nome + ', do escritório ' + escritorio + ' (' + equipe + ').\n\nSolicitei um diagnóstico inicial da ANT Processos pelo site.\nMaior desafio hoje: ' + desafio + '\n\nAguardo contato!');
+      setTimeout(function () { window.open('https://wa.me/5531995872806?text=' + msg, '_blank'); }, 800);
+    } catch (e) {
+      btn.textContent = 'Agendar diagnóstico inicial →'; btn.disabled = false;
+      alert('Houve um problema ao enviar. Tente novamente ou fale pelo WhatsApp.');
+    }
   });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-/* FAQ */
-document.querySelectorAll('.faq-question').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.closest('.faq-item');
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-icon').textContent = '+'; });
-    if (!wasOpen){ item.classList.add('open'); q.querySelector('.faq-icon').textContent = '−'; }
-  });
-});
-
-/* Form submit */
-async function submitForm(){
-  const nome   = document.getElementById('nome').value.trim();
-  const email  = document.getElementById('email').value.trim();
-  const wpp    = document.getElementById('whatsapp').value.trim();
-  const perfil = document.getElementById('perfil').value;
-  const btn    = document.getElementById('formBtn');
-  if (!nome || !email || !wpp || !perfil){ alert('Por favor, preencha todos os campos antes de enviar.'); return; }
-  btn.textContent = 'Enviando…'; btn.disabled = true;
-  try {
-    const response = await fetch('https://formspree.io/f/xlgkvyrw', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ nome, email, whatsapp: wpp, perfil, _subject: `Novo lead ANT Capital — ${nome}` })
-    });
-    if (response.ok){
-      document.getElementById('formContent').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-      if (window.antTrack) antTrack('generate_lead', 'Lead', { perfil: perfil });
-      if ((window.ANT_CONFIG || {}).AGENDA_URL) return;
-      const msg = encodeURIComponent(`Olá Rodrigo! Meu nome é ${nome}.\n\nSolicitei um diagnóstico gratuito pelo site da ANT Capital.\n\nPerfil: ${perfil}\nE-mail: ${email}\nWhatsApp: ${wpp}\n\nAguardo contato!`);
-      setTimeout(() => window.open(`https://wa.me/5531995872806?text=${msg}`, '_blank'), 800);
-    } else { throw new Error('erro'); }
-  } catch(err) {
-    btn.textContent = 'Quero meu Diagnóstico Gratuito →'; btn.disabled = false;
-    alert('Houve um problema ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
-  }
-}
-</script>
-
-<script>
-/* ── APLICA AS CONFIGURAÇÕES E REGISTRA CLIQUES IMPORTANTES ── */
-(function(){
-  var C = window.ANT_CONFIG || {};
-  if (C.AGENDA_URL) {
-    document.querySelectorAll('.agenda-direta').forEach(function(a){ a.href = C.AGENDA_URL; a.style.display = 'inline-flex'; });
-    var sub = document.querySelector('#formContent > p');
-    if (sub) sub.textContent = 'Preencha os dados abaixo e, em seguida, escolha o melhor horário na agenda.';
-  }
-  if (C.ASSINATURA_URL) { var b = document.getElementById('btnAssinar'); if (b) b.href = C.ASSINATURA_URL; }
-  if (C.LINKEDIN_URL) { var l = document.getElementById('rodapeLinkedin'); if (l) { l.href = C.LINKEDIN_URL; l.style.display = ''; } }
-  if (C.CNPJ) { var c = document.getElementById('rodapeCnpj'); if (c) { c.textContent = ' · CNPJ ' + C.CNPJ; c.style.display = 'inline'; } }
-
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a'); if (!a || !window.antTrack) return;
-    var h = a.getAttribute('href') || '';
-    var t = a.getAttribute('data-track');
-    if (t === 'assinar_app')         antTrack('clique_assinar_app', 'InitiateCheckout');
-    else if (t === 'agenda_direta')  antTrack('clique_agenda', 'Schedule');
-    else if (h.indexOf('wa.me') > -1)            antTrack('contato_whatsapp', 'Contact');
-    else if (h.indexOf('simulador.html') > -1)   antTrack('clique_simulador');
-    else if (h.indexOf('app.antcapital.com.br') > -1) antTrack('clique_acessar_sistema');
-    else if (h.indexOf('instagram.com') > -1)    antTrack('clique_instagram');
-  });
-})();
 </script>
 </body>
 </html>
